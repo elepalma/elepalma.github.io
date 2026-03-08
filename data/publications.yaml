@@ -1,49 +1,133 @@
 papers:
   - year: "2025"
-    title: "Spatial transcriptomics reveals zonation-specific fibrogenic niches in MAFLD"
-    authors: "Williams D, Smith A, Jones B, et al."
-    journal: "Journal of Hepatology · 2025"
-    doi: "https://doi.org/10.1016/j.jhep.2025.01.001"
-    keywords: ["spatial omics", "MAFLD", "fibrosis"]
-
-  - year: "2024"
-    title: "Mitochondrial dynamics in alcohol-associated hepatitis: a multi-omics analysis"
-    authors: "Smith A, Jones B, Patel C, et al."
-    journal: "Journal of Hepatology · 2024"
-    doi: "https://doi.org/10.1016/j.jhep.2024.03.012"
-    keywords: ["mitochondria", "alcohol", "omics"]
-
-  - year: "2024"
-    title: "Single-cell transcriptomics reveals fibrogenic niches in metabolic liver disease"
-    authors: "Williams D, Brown E, Smith A, et al."
-    journal: "Nature Communications · 2024"
-    doi: "https://doi.org/10.1038/s41467-024-12345-6"
-    keywords: ["single-cell", "fibrosis", "transcriptomics"]
+    title: "Comprehensive Analysis of Extracellular Matrix Remodelling via Cyclophilin Inhibition in Human Models of Alcohol-Related Liver Fibrosis"
+    authors: "Rastovic U, Campinoti S, Wei L, Almeida B, Bozzano SF, Amiri R, Harris N, Ajayi O, Koay TS, Kerins C, et al."
+    journal: "British Journal of Pharmacology · 2025"
+    doi: "https://doi.org/10.1111/BPH.70139"
+    keywords: ["fibrosis", "cyclophilin", "ALD", "extracellular matrix"]
 
   - year: "2023"
-    title: "Biomarker discovery in early-stage fatty liver: the FLR cohort study"
-    authors: "Patel C, Smith A, Davies F, et al."
-    journal: "Gut · 2023"
-    doi: "https://doi.org/10.1136/gutjnl-2023-123456"
-    keywords: ["biomarkers", "FLR", "NAFLD"]
+    title: "Human Precision-Cut Liver Slices: A Potential Platform to Study Alcohol-Related Liver Disease"
+    authors: "Rastovic U, Bozzano SF, Riva A, Simoni-Nieves A, Harris N, Miquel R, Lackner C, Zen Y, Zamalloa A, Menon K, et al."
+    journal: "International Journal of Molecular Sciences · 2023"
+    doi: "https://doi.org/10.3390/IJMS25010150"
+    keywords: ["precision-cut liver slices", "ALD", "ex vivo model"]
 
   - year: "2023"
-    title: "ESBRA consensus: alcohol research priorities for the next decade"
-    authors: "Consortium Authors incl. Smith A"
-    journal: "Alcohol and Alcoholism · 2023"
-    doi: "https://doi.org/10.1093/alcalc/agad045"
-    keywords: ["ESBRA", "alcohol", "consensus"]
+    title: "Patient-Derived Precision Cut Tissue Slices from Primary Liver Cancer as a Potential Platform for Preclinical Drug Testing"
+    authors: "Jagatia R, Doornebal EJ, Rastovic U, Harris N, Feyide M, Lyons AM, Miquel R, Zen Y, Zamalloa A, Malik F, et al."
+    journal: "2023"
+    doi: "https://doi.org/10.1016/j.ebiom.2023.104826"
+    keywords: ["liver cancer", "precision-cut slices", "drug testing"]
+
+  - year: "2023"
+    title: "Giant Mitochondria in Human Liver Disease"
+    authors: "Shami GJ, Samarska IV, Koek GH, Li A, Palma E, Chokshi S, Wisse E, Braet F"
+    journal: "Liver International · 2023"
+    doi: "https://doi.org/10.1111/LIV.15711"
+    keywords: ["megamitochondria", "liver disease", "mitochondria"]
 
   - year: "2022"
-    title: "Hepatic stellate cell activation by lipotoxic damage-associated molecular patterns"
-    authors: "Jones B, Smith A, Kumar R, et al."
-    journal: "Hepatology · 2022"
-    doi: "https://doi.org/10.1002/hep.32456"
-    keywords: ["stellate cells", "lipotoxicity", "DAMPs"]
+    title: "Human Immunocompetent Model of Neuroendocrine Liver Metastases Recapitulates Patient-Specific Tumour Microenvironment"
+    authors: "Doornebal EJ, Harris N, Riva A, Jagatia R, Pizanias M, Prachalias A, Menon K, Preziosi M, Zamalloa A, Miquel R, et al."
+    journal: "Frontiers in Endocrinology · 2022"
+    doi: "https://doi.org/10.3389/FENDO.2022.909180"
+    keywords: ["liver metastases", "tumour microenvironment", "ex vivo model"]
 
   - year: "2022"
-    title: "Machine learning prediction of cirrhosis progression in MAFLD patients"
-    authors: "Brown E, Williams D, Patel C, Smith A"
-    journal: "eBioMedicine · 2022"
-    doi: "https://doi.org/10.1016/j.ebiom.2022.104156"
-    keywords: ["machine learning", "cirrhosis", "MAFLD"]
+    title: "Extracellular Vesicle-Mediated Mitochondrial Reprogramming in Cancer"
+    authors: "Carles-Fontana R, Heaton N, Palma E, Khorsandi SE"
+    journal: "Cancers · 2022"
+    doi: "https://doi.org/10.3390/CANCERS14081865"
+    keywords: ["extracellular vesicles", "mitochondria", "cancer"]
+
+  - year: "2021"
+    title: "Interplay between Cellular and Non-Cellular Components of the Tumour Microenvironment in Hepatocellular Carcinoma"
+    authors: "Sükei T, Palma E, Urbani L"
+    journal: "Cancers · 2021"
+    doi: "https://doi.org/10.3390/cancers13215586"
+    keywords: ["hepatocellular carcinoma", "tumour microenvironment", "HCC"]
+
+  - year: "2021"
+    title: "Soluble TIM3 and Its Ligands Galectin-9 and CEACAM1 Are in Disequilibrium During Alcohol-Related Liver Disease and Promote Impairment of Anti-Bacterial Immunity"
+    authors: "Riva A, Palma E, Devshi D, Corrigall D, Adams H, Heaton N, Menon K, Preziosi M, Zamalloa A, Miquel R, et al."
+    journal: "Frontiers in Physiology · 2021"
+    doi: "https://doi.org/10.3389/fphys.2021.632502"
+    keywords: ["TIM3", "ALD", "immunity", "galectin-9"]
+
+  - year: "2020"
+    title: "Perturbations in Mitochondrial Dynamics Are Closely Involved in the Progression of Alcoholic Liver Disease"
+    authors: "Palma E, Riva A, Moreno C, Odena G, Mudan S, Manyakin N, Miquel R, Degré D, Trepo E, Sancho-Bru P, et al."
+    journal: "Alcoholism: Clinical and Experimental Research · 2020"
+    doi: "https://doi.org/10.1111/acer.14299"
+    keywords: ["mitochondrial dynamics", "ALD", "alcoholic liver disease"]
+
+  - year: "2019"
+    title: "Dynamin-1-Like Protein Inhibition Drives Megamitochondria Formation as an Adaptive Response in Alcohol-Induced Hepatotoxicity"
+    authors: "Palma E, Ma X, Riva A, Iansante V, Dhawan A, Wang S, Ni HM, Sesaki H, Williams R, Ding WX, et al."
+    journal: "American Journal of Pathology · 2019"
+    doi: "https://doi.org/10.1016/j.ajpath.2018.11.008"
+    keywords: ["DRP1", "megamitochondria", "hepatotoxicity", "ALD"]
+
+  - year: "2019"
+    title: "Precision-Cut Liver Slices: A Versatile Tool to Advance Liver Research"
+    authors: "Palma E, Doornebal EJ, Chokshi S"
+    journal: "Hepatology International · 2019"
+    doi: "https://doi.org/10.1007/s12072-018-9913-7"
+    keywords: ["precision-cut liver slices", "liver research", "ex vivo"]
+
+  - year: "2019"
+    title: "Deficient IL-6/Stat3 Signaling, High TLR7, and Type I Interferons in Early Human Alcoholic Liver Disease: A Triad for Liver Damage and Fibrosis"
+    authors: "Stärkel P, Schnabl B, Leclercq S, Komuta M, Bataller R, Argemi J, Palma E, Chokshi S, Hellerbrand C, Maccioni L, et al."
+    journal: "Hepatology Communications · 2019"
+    doi: "https://doi.org/10.1002/hep4.1364"
+    keywords: ["IL-6", "ALD", "fibrosis", "interferon"]
+
+  - year: "2016"
+    title: "Osteopontin Is a Proximal Effector of Leptin-Mediated Non-Alcoholic Steatohepatitis (NASH) Fibrosis"
+    authors: "Coombes JD, Choi SS, Swiderska-Syn M, Manka P, Reid DT, Palma E, Briones-Orta MA, Xie G, Younis R, Kitamura N, et al."
+    journal: "Biochimica et Biophysica Acta · 2016"
+    doi: "https://doi.org/10.1016/j.bbadis.2015.10.028"
+    keywords: ["osteopontin", "NASH", "fibrosis", "leptin"]
+
+  - year: "2015"
+    title: "Blockade of PD1 and TIM3 Restores Innate and Adaptive Immunity in Patients with Acute Alcoholic Hepatitis"
+    authors: "Markwick LJL, Riva A, Ryan JM, Cooksley H, Palma E, Tranah TH, Manakkat Vijay GK, Vergis N, Thursz M, Evans A, et al."
+    journal: "Gastroenterology · 2015"
+    doi: "https://doi.org/10.1053/j.gastro.2014.11.041"
+    keywords: ["PD1", "TIM3", "alcoholic hepatitis", "immunity"]
+
+  - year: "2014"
+    title: "NIM811, a Cyclophilin Inhibitor without Immunosuppressive Activity, Is Beneficial in Collagen VI Congenital Muscular Dystrophy Models"
+    authors: "Zulian A, Rizzo E, Schiavone M, Palma E, Tagliavini F, Blaauw B, Merlini L, Maraldi NM, Sabatelli P, Braghetta P, et al."
+    journal: "Human Molecular Genetics · 2014"
+    doi: "https://doi.org/10.1093/hmg/ddu254"
+    keywords: ["cyclophilin", "muscular dystrophy", "collagen VI", "NIM811"]
+
+  - year: "2012"
+    title: "Critical Evaluation of the Use of Cell Cultures for Inclusion in Clinical Trials of Patients Affected by Collagen VI Myopathies"
+    authors: "Sabatelli P, Palma E, Angelin A, Squarzoni S, Urciuolo A, Pellegrini C, Tiepolo T, Bonaldo P, Gualandi F, Merlini L, et al."
+    journal: "Journal of Cellular Physiology · 2012"
+    doi: "https://doi.org/10.1002/jcp.23039"
+    keywords: ["collagen VI", "myopathy", "cell culture", "clinical trial"]
+
+  - year: "2011"
+    title: "A Glutamine Synthetase Inhibitor Increases Survival and Decreases Cytokine Response in a Mouse Model of Acute Liver Failure"
+    authors: "Jambekar AA, Palma E, Nicolosi L, Rasola A, Petronilli V, Chiara F, Bernardi P, Needleman R, Brusilow WSA"
+    journal: "Liver International · 2011"
+    doi: "https://doi.org/10.1111/j.1478-3231.2011.02553.x"
+    keywords: ["glutamine synthetase", "acute liver failure", "cytokines"]
+
+  - year: "2009"
+    title: "Genetic Ablation of Cyclophilin D Rescues Mitochondrial Defects and Prevents Muscle Apoptosis in Collagen VI Myopathic Mice"
+    authors: "Palma E, Tiepolo T, Angelin A, Sabatelli P, Maraldi NM, Basso E, Forte MA, Bernardi P, Bonaldo P"
+    journal: "Human Molecular Genetics · 2009"
+    doi: "https://doi.org/10.1093/hmg/ddp126"
+    keywords: ["cyclophilin D", "mitochondria", "collagen VI", "myopathy"]
+
+  - year: "2009"
+    title: "The Cyclophilin Inhibitor Debio 025 Normalizes Mitochondrial Function, Muscle Apoptosis and Ultrastructural Defects in Col6a1-/- Myopathic Mice"
+    authors: "Tiepolo T, Angelin A, Palma E, Sabatelli P, Merlini L, Nicolosi L, Finetti F, Braghetta P, Vuagniaux G, Dumont JM, et al."
+    journal: "British Journal of Pharmacology · 2009"
+    doi: "https://doi.org/10.1111/j.1476-5381.2009.00316.x"
+    keywords: ["cyclophilin inhibitor", "Debio 025", "mitochondria", "myopathy"]
