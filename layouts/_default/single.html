@@ -1,0 +1,18 @@
+{{ define "main" }}
+
+<!-- Page hero -->
+<div class="page-hero">
+  <div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-10 sm:py-14">
+    <p class="text-2xs font-semibold uppercase tracking-widest text-accent mb-2">{{ .Params.eyebrow | default .Section }}</p>
+    <h1 class="font-serif text-3xl sm:text-4xl xl:text-5xl tracking-tight text-ink">{{ .Title }}</h1>
+    {{ with .Params.subtitle }}<p class="mt-3 text-sm sm:text-base text-ink-light max-w-xl leading-relaxed">{{ . }}</p>{{ end }}
+  </div>
+</div>
+
+<div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-10 sm:py-14">
+  <div class="max-w-3xl prose-lab">
+    {{ .Content }}
+  </div>
+</div>
+
+{{ end }}

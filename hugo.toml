@@ -1,0 +1,77 @@
+baseURL = "https://elepalma.github.io/"
+languageCode = "en-gb"
+title = "Palma Lab · King's College London"
+
+[params]
+  labName        = "Palma Lab"
+  labSubtitle    = "King's College London"
+  labDescription = "A translational research group developing novel treatments for alcohol-related liver disease and liver cancers — dissecting fibrosis, inflammation, hepatotoxicity, and mitochondrial dysfunction from bench to bedside."
+  department     = "The Roger Williams Institute of Liver Studies"
+  institution    = "King's College London · Faculty of Life Sciences & Medicine"
+  address        = "111 Coldharbour Ln, London SE5 9NT"
+  email          = "e.palma@researchinliver.org.uk"
+  phone          = "(+44) 020 7255 9844"
+  twitter        = "https://x.com/DrElePalma"
+  linkedin       = "https://www.linkedin.com/in/elena-palma-4400a52a/"
+  researchgate   = "https://www.researchgate.net/profile/Elena-Palma-2"
+  github         = ""
+
+[menu]
+  [[menu.main]]
+    name       = "Welcome"
+    url        = "/"
+    weight     = 1
+  [[menu.main]]
+    name       = "Research"
+    url        = "/research/"
+    weight     = 2
+    [menu.main.params]
+      dropdown = true
+  [[menu.main]]
+    name   = "Projects"
+    url    = "/research/"
+    parent = "Research"
+    weight = 1
+  [[menu.main]]
+    name   = "Techniques"
+    url    = "/research/techniques/"
+    parent = "Research"
+    weight = 2
+  [[menu.main]]
+    name   = "Publications"
+    url    = "/publications/"
+    parent = "Research"
+    weight = 3
+  [[menu.main]]
+    name       = "People"
+    url        = "/people/"
+    weight     = 3
+    [menu.main.params]
+      dropdown = true
+  [[menu.main]]
+    name   = "Lab Members"
+    url    = "/people/"
+    parent = "People"
+    weight = 1
+  [[menu.main]]
+    name   = "Collaborators"
+    url    = "/people/collaborators/"
+    parent = "People"
+    weight = 2
+  [[menu.main]]
+    name   = "Opportunities"
+    url    = "/join/"
+    parent = "People"
+    weight = 3
+  [[menu.main]]
+    name   = "News"
+    url    = "/news/"
+    weight = 4
+  [[menu.main]]
+    name   = "Events"
+    url    = "/events/"
+    weight = 5
+  [[menu.main]]
+    name   = "Contact"
+    url    = "/contact/"
+    weight = 6

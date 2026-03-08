@@ -1,0 +1,24 @@
+groups:
+  - type: "Academic"
+    name: "Prof Michele Vacca"
+    description: "Application of Precision Cut Liver Slices for the study of the effects of polyphenols in metabolic dysfunction-associated steatotic liver disease (MASLD)."
+
+  - type: "Academic"
+    name: "Mitochondrial Biology Unit, MRC"
+    description: "Collaboration on mitochondrial dysfunction in hepatic disease with Dr. K. Collins."
+
+  - type: "Consortium"
+    name: "ESBRA Research Network"
+    description: "European Society for Biomedical Research on Alcoholism — multi-centre collaborative research."
+
+  - type: "Clinical"
+    name: "King's Liver Unit (KCL)"
+    description: "Direct clinical partnership for patient sample access and translational studies."
+
+  - type: "Academic"
+    name: "Wellcome Sanger Institute"
+    description: "Single-cell genomics collaboration for liver atlas studies."
+
+  - type: "Industry"
+    name: "Confidential Pharma Partner"
+    description: "Target identification and validation for antifibrotic therapy development."

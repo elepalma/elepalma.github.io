@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Params.labName }}{{ end }}</title>
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.labDescription }}{{ end }}">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+          sans:  ['"DM Sans"', 'system-ui', 'sans-serif'],
+        },
+        colors: {
+          ink:    { DEFAULT: '#1a1a1a', light: '#555', faint: '#999' },
+          rule:   '#e2e2de',
+          bg:     { DEFAULT: '#fafaf8', card: '#ffffff' },
+          accent: { DEFAULT: '#2a5c45', mid: '#4a8c6a', light: '#eaf2ee', dark: '#1e4533' },
+        },
+        maxWidth: { wide: '1400px' },
+        fontSize: { '2xs': ['0.68rem', { lineHeight: '1rem' }] },
+      }
+    }
+  }
+</script>
+<link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
+</head>
+<body class="font-sans antialiased bg-bg text-ink">
+
+{{ partial "nav.html" . }}
+
+<main>
+  {{ block "main" . }}{{ end }}
+</main>
+
+{{ partial "footer.html" . }}
+
+<script src="{{ "js/main.js" | relURL }}"></script>
+</body>
+</html>

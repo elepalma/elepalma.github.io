@@ -1,0 +1,74 @@
+<footer id="contact" class="bg-white border-t border-rule">
+  <div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-10 sm:py-12">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+
+      <!-- Brand -->
+      <div class="sm:col-span-2 lg:col-span-1">
+        <a href="{{ "/" | relURL }}" class="font-serif text-xl text-ink">
+          {{ .Site.Params.labName }}
+        </a>
+        <p class="text-xs text-ink-faint leading-relaxed mt-2 mb-4 max-w-xs">
+          {{ .Site.Params.department }},<br>{{ .Site.Params.institution }}.
+        </p>
+        <div class="flex gap-2">
+          {{ with .Site.Params.twitter }}
+          <a href="{{ . }}" target="_blank" rel="noopener" class="w-8 h-8 border border-rule rounded flex items-center justify-center text-ink-faint hover:border-accent hover:text-accent hover:bg-accent-light transition-colors" title="X">𝕏</a>
+          {{ end }}
+          {{ with .Site.Params.linkedin }}
+          <a href="{{ . }}" target="_blank" rel="noopener" class="w-8 h-8 border border-rule rounded flex items-center justify-center text-ink-faint hover:border-accent hover:text-accent hover:bg-accent-light transition-colors" title="LinkedIn">in</a>
+          {{ end }}
+          {{ with .Site.Params.email }}
+          <a href="mailto:{{ . }}" class="w-8 h-8 border border-rule rounded flex items-center justify-center text-ink-faint hover:border-accent hover:text-accent hover:bg-accent-light transition-colors" title="Email">✉</a>
+          {{ end }}
+          {{ with .Site.Params.github }}
+          <a href="{{ . }}" target="_blank" rel="noopener" class="w-8 h-8 border border-rule rounded flex items-center justify-center text-xs text-ink-faint hover:border-accent hover:text-accent hover:bg-accent-light transition-colors" title="GitHub">GH</a>
+          {{ end }}
+        </div>
+      </div>
+
+      <!-- Research -->
+      <div>
+        <h4 class="text-2xs font-semibold uppercase tracking-widest text-ink mb-3">Research</h4>
+        <ul class="flex flex-col gap-2">
+          <li><a href="{{ "/research/" | relURL }}"      class="text-xs text-ink-faint hover:text-accent transition-colors">Projects</a></li>
+          <li><a href="{{ "/research/techniques/" | relURL }}" class="text-xs text-ink-faint hover:text-accent transition-colors">Techniques</a></li>
+          <li><a href="{{ "/publications/" | relURL }}"  class="text-xs text-ink-faint hover:text-accent transition-colors">Publications</a></li>
+        </ul>
+      </div>
+
+      <!-- People -->
+      <div>
+        <h4 class="text-2xs font-semibold uppercase tracking-widest text-ink mb-3">People</h4>
+        <ul class="flex flex-col gap-2">
+          <li><a href="{{ "/people/" | relURL }}"               class="text-xs text-ink-faint hover:text-accent transition-colors">Lab Members</a></li>
+          <li><a href="{{ "/people/collaborators/" | relURL }}" class="text-xs text-ink-faint hover:text-accent transition-colors">Collaborators</a></li>
+          <li><a href="{{ "/people/" | relURL }}#alumni"        class="text-xs text-ink-faint hover:text-accent transition-colors">Alumni</a></li>
+          <li><a href="{{ "/join/" | relURL }}"                 class="text-xs text-ink-faint hover:text-accent transition-colors">Opportunities</a></li>
+        </ul>
+      </div>
+
+      <!-- Address -->
+      <div>
+        <h4 class="text-2xs font-semibold uppercase tracking-widest text-ink mb-3">Where we are</h4>
+        <address class="not-italic text-xs text-ink-faint leading-relaxed">
+          {{ .Site.Params.address | replaceRE ", " "<br>" | safeHTML }}
+        </address>
+        {{ with .Site.Params.email }}
+        <a href="mailto:{{ . }}" class="inline-block mt-3 text-xs text-accent hover:underline">{{ . }}</a>
+        {{ end }}
+        <a href="https://maps.google.com/?q=The+Roger+Williams+Building,+King%27s+College+London/" target="_blank" rel="noopener"
+           class="mt-3 h-16 bg-accent-light border border-rule rounded flex items-center justify-center text-xs text-accent hover:bg-green-100 transition-colors cursor-pointer">
+          📍 View on map
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="border-t border-rule">
+    <div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-4 flex flex-col sm:flex-row justify-between items-center gap-2">
+      <p class="text-2xs text-ink-faint">© {{ now.Year }} {{ .Site.Params.labName }}.</p>
+      <p class="text-2xs text-ink-faint">Built with Hugo · Hosted on GitHub Pages</p>
+    </div>
+  </div>
+</footer>

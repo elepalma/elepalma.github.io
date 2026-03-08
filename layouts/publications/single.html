@@ -1,0 +1,62 @@
+{{ define "main" }}
+
+<div class="page-hero">
+  <div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-10 sm:py-14">
+    <p class="text-2xs font-semibold uppercase tracking-widest text-accent mb-2">Research</p>
+    <h1 class="font-serif text-3xl sm:text-4xl xl:text-5xl tracking-tight text-ink">Publications</h1>
+    <p class="mt-3 text-sm text-ink-light max-w-xl leading-relaxed">Full list of peer-reviewed papers, reviews, and book chapters from the lab.</p>
+  </div>
+</div>
+
+<div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-10 sm:py-14">
+
+  <!-- Filter bar -->
+  <div class="flex flex-wrap gap-2 mb-8" id="filter-bar">
+    <button onclick="filterPubs('all')"   class="pub-filter active px-3 py-1.5 rounded-full text-xs font-medium border border-accent bg-accent text-white transition-colors">All</button>
+    <button onclick="filterPubs('2025')"  class="pub-filter px-3 py-1.5 rounded-full text-xs font-medium border border-rule text-ink-light hover:border-accent hover:text-accent transition-colors">2025</button>
+    <button onclick="filterPubs('2024')"  class="pub-filter px-3 py-1.5 rounded-full text-xs font-medium border border-rule text-ink-light hover:border-accent hover:text-accent transition-colors">2024</button>
+    <button onclick="filterPubs('2023')"  class="pub-filter px-3 py-1.5 rounded-full text-xs font-medium border border-rule text-ink-light hover:border-accent hover:text-accent transition-colors">2023</button>
+    <button onclick="filterPubs('2022')"  class="pub-filter px-3 py-1.5 rounded-full text-xs font-medium border border-rule text-ink-light hover:border-accent hover:text-accent transition-colors">2022</button>
+  </div>
+
+  <!-- Publications list -->
+  <div class="divide-y divide-rule" id="pub-list">
+    {{ range $.Site.Data.publications.papers }}
+    <div class="pub-item flex gap-4 sm:gap-6 py-5 items-start" data-year="{{ .year }}">
+      <div class="font-serif text-sm italic text-accent shrink-0 w-10 pt-0.5">{{ .year }}</div>
+      <div class="flex-1 min-w-0">
+        <p class="text-sm font-medium leading-snug mb-1">{{ .title }}</p>
+        <p class="text-xs text-ink-faint mb-0.5">{{ .authors }}</p>
+        <p class="text-xs text-ink-light italic mb-2">{{ .journal }}</p>
+        {{ with .keywords }}
+        <div class="flex flex-wrap gap-1.5">
+          {{ range . }}<span class="text-2xs bg-accent-light text-accent px-2 py-0.5 rounded-full">{{ . }}</span>{{ end }}
+        </div>
+        {{ end }}
+      </div>
+      {{ with .doi }}
+      <a href="{{ . }}" target="_blank" rel="noopener"
+         class="hidden sm:inline-flex shrink-0 self-start mt-1 text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors whitespace-nowrap">DOI →</a>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+
+</div>
+
+<script>
+function filterPubs(year) {
+  document.querySelectorAll('.pub-item').forEach(el => {
+    el.style.display = (year === 'all' || el.dataset.year === year) ? 'flex' : 'none';
+  });
+  document.querySelectorAll('.pub-filter').forEach(btn => {
+    const active = btn.textContent.trim() === (year === 'all' ? 'All' : year);
+    btn.classList.toggle('bg-accent', active);
+    btn.classList.toggle('text-white', active);
+    btn.classList.toggle('border-accent', active);
+    btn.classList.toggle('border-rule', !active);
+    btn.classList.toggle('text-ink-light', !active);
+  });
+}
+</script>
+{{ end }}

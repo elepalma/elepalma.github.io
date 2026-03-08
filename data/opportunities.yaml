@@ -1,0 +1,24 @@
+roles:
+  - emoji: "🎓"
+    title: "PhD Studentships"
+    subtitle: "Funded positions available"
+    description: "We offer fully-funded PhD studentships through BBSRC, MRC, and KCL doctoral training programmes. Projects are available in omics, liver biology, and clinical translation."
+    status: "Open"
+
+  - emoji: "🔬"
+    title: "Postdoctoral Fellowships"
+    subtitle: "Apply with your own fellowship"
+    description: "We strongly support candidates applying for independent fellowships (Wellcome, UKRI, Marie Curie). Please contact us to discuss project alignment."
+    status: "Open"
+
+  - emoji: "🏥"
+    title: "Clinical Research Fellows"
+    subtitle: "MD/PhD integrated programmes"
+    description: "Clinically-qualified researchers can join through the KCL MD/PhD programme or through NIHR/Wellcome clinical fellowship schemes."
+    status: "Open"
+
+  - emoji: "🤝"
+    title: "Collaborators"
+    subtitle: "Industry & academic partnerships"
+    description: "We welcome discussions with academic groups and industry partners interested in shared projects or sponsored research."
+    status: "Enquire"

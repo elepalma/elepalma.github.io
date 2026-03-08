@@ -1,0 +1,49 @@
+papers:
+  - year: "2025"
+    title: "Spatial transcriptomics reveals zonation-specific fibrogenic niches in MAFLD"
+    authors: "Williams D, Smith A, Jones B, et al."
+    journal: "Journal of Hepatology · 2025"
+    doi: "https://doi.org/10.1016/j.jhep.2025.01.001"
+    keywords: ["spatial omics", "MAFLD", "fibrosis"]
+
+  - year: "2024"
+    title: "Mitochondrial dynamics in alcohol-associated hepatitis: a multi-omics analysis"
+    authors: "Smith A, Jones B, Patel C, et al."
+    journal: "Journal of Hepatology · 2024"
+    doi: "https://doi.org/10.1016/j.jhep.2024.03.012"
+    keywords: ["mitochondria", "alcohol", "omics"]
+
+  - year: "2024"
+    title: "Single-cell transcriptomics reveals fibrogenic niches in metabolic liver disease"
+    authors: "Williams D, Brown E, Smith A, et al."
+    journal: "Nature Communications · 2024"
+    doi: "https://doi.org/10.1038/s41467-024-12345-6"
+    keywords: ["single-cell", "fibrosis", "transcriptomics"]
+
+  - year: "2023"
+    title: "Biomarker discovery in early-stage fatty liver: the FLR cohort study"
+    authors: "Patel C, Smith A, Davies F, et al."
+    journal: "Gut · 2023"
+    doi: "https://doi.org/10.1136/gutjnl-2023-123456"
+    keywords: ["biomarkers", "FLR", "NAFLD"]
+
+  - year: "2023"
+    title: "ESBRA consensus: alcohol research priorities for the next decade"
+    authors: "Consortium Authors incl. Smith A"
+    journal: "Alcohol and Alcoholism · 2023"
+    doi: "https://doi.org/10.1093/alcalc/agad045"
+    keywords: ["ESBRA", "alcohol", "consensus"]
+
+  - year: "2022"
+    title: "Hepatic stellate cell activation by lipotoxic damage-associated molecular patterns"
+    authors: "Jones B, Smith A, Kumar R, et al."
+    journal: "Hepatology · 2022"
+    doi: "https://doi.org/10.1002/hep.32456"
+    keywords: ["stellate cells", "lipotoxicity", "DAMPs"]
+
+  - year: "2022"
+    title: "Machine learning prediction of cirrhosis progression in MAFLD patients"
+    authors: "Brown E, Williams D, Patel C, Smith A"
+    journal: "eBioMedicine · 2022"
+    doi: "https://doi.org/10.1016/j.ebiom.2022.104156"
+    keywords: ["machine learning", "cirrhosis", "MAFLD"]

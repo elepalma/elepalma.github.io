@@ -1,0 +1,207 @@
+{{ define "main" }}
+
+<!-- ══ HERO ══ -->
+<section id="welcome" class="border-b border-rule">
+  <div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-12 sm:py-16 lg:py-20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+      <div class="fade-up">
+        <p class="text-2xs font-semibold uppercase tracking-widest text-accent mb-3">Welcome to Palma Lab</p>
+        <h1 class="font-serif text-4xl sm:text-5xl xl:text-6xl leading-tight tracking-tight text-ink mb-5">
+          Advancing <em class="italic text-accent">science</em><br>at the frontier<br>of discovery
+        </h1>
+        <p class="text-sm sm:text-base text-ink-light leading-relaxed max-w-md mb-7">
+          {{ .Site.Params.labDescription }}
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="{{ "/research/" | relURL }}" class="inline-flex items-center px-5 py-2.5 rounded bg-accent text-white text-sm font-medium hover:bg-accent-dark transition-colors">Our Research</a>
+          <a href="{{ "/join/" | relURL }}"     class="inline-flex items-center px-5 py-2.5 rounded border border-accent text-accent text-sm font-medium hover:bg-accent-light transition-colors">Join the Lab</a>
+        </div>
+      </div>
+      <div class="fade-up-2 grid grid-cols-2 gap-px bg-rule rounded-lg overflow-hidden border border-rule">
+        <div class="bg-white p-5 hover:bg-accent-light transition-colors">
+          <p class="text-2xs font-semibold uppercase tracking-widest text-accent mb-2">What</p>
+          <h3 class="font-serif text-base leading-snug mb-1.5">Metabolic Liver Disease</h3>
+          <p class="text-xs text-ink-light leading-relaxed">Mechanisms of hepatic injury and fibrosis in metabolic conditions.</p>
+        </div>
+        <div class="bg-white p-5 hover:bg-accent-light transition-colors">
+          <p class="text-2xs font-semibold uppercase tracking-widest text-accent mb-2">How</p>
+          <h3 class="font-serif text-base leading-snug mb-1.5">Multi-scale Techniques</h3>
+          <p class="text-xs text-ink-light leading-relaxed">Single-cell omics to clinical cohorts — the right tool for each question.</p>
+        </div>
+        <div class="bg-white p-5 hover:bg-accent-light transition-colors">
+          <p class="text-2xs font-semibold uppercase tracking-widest text-accent mb-2">Why</p>
+          <h3 class="font-serif text-base leading-snug mb-1.5">Patient Impact</h3>
+          <p class="text-xs text-ink-light leading-relaxed">FLR, KCL & ESBRA partnerships driving translational discoveries.</p>
+        </div>
+        <div class="bg-white p-5 hover:bg-accent-light transition-colors">
+          <p class="text-2xs font-semibold uppercase tracking-widest text-accent mb-2">Who</p>
+          <h3 class="font-serif text-base leading-snug mb-1.5">Collaborative Team</h3>
+          <p class="text-xs text-ink-light leading-relaxed">Scientists, clinicians, and trainees across all career stages.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ RESEARCH HIGHLIGHTS ══ -->
+<section class="border-b border-rule">
+  <div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-12 sm:py-14">
+    <div class="flex items-end justify-between mb-7 gap-4 flex-wrap">
+      <div>
+        <p class="text-2xs font-semibold uppercase tracking-widest text-accent mb-1">Research</p>
+        <h2 class="font-serif text-2xl sm:text-3xl tracking-tight">Our Projects</h2>
+      </div>
+      <a href="{{ "/research/" | relURL }}" class="text-xs font-medium text-accent hover:underline whitespace-nowrap shrink-0">View all →</a>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-px bg-rule rounded-lg overflow-hidden border border-rule">
+      {{ range first 3 (where .Site.RegularPages "Section" "research") }}
+      <div class="bg-white p-5 sm:p-6 hover:bg-accent-light transition-colors">
+        <span class="inline-block text-2xs font-semibold uppercase tracking-widest text-accent bg-accent-light px-2.5 py-0.5 rounded-full mb-3">{{ .Params.tag }}</span>
+        <h3 class="font-serif text-lg leading-snug mb-2"><a href="{{ .RelPermalink }}" class="hover:text-accent transition-colors">{{ .Title }}</a></h3>
+        <p class="text-xs text-ink-light leading-relaxed">{{ .Params.summary }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- ══ LATEST PUBLICATIONS ══ -->
+<section class="border-b border-rule">
+  <div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-12 sm:py-14">
+    <div class="flex items-end justify-between mb-7 gap-4 flex-wrap">
+      <div>
+        <p class="text-2xs font-semibold uppercase tracking-widest text-accent mb-1">Publications</p>
+        <h2 class="font-serif text-2xl sm:text-3xl tracking-tight">Selected Papers</h2>
+      </div>
+      <a href="{{ "/publications/" | relURL }}" class="text-xs font-medium text-accent hover:underline whitespace-nowrap shrink-0">Full list →</a>
+    </div>
+    <div class="divide-y divide-rule">
+      {{ range first 4 ($.Site.Data.publications.papers) }}
+      <div class="flex gap-4 sm:gap-6 py-4 items-start">
+        <div class="font-serif text-sm italic text-accent shrink-0 w-10 pt-0.5">{{ .year }}</div>
+        <div class="flex-1 min-w-0">
+          <p class="text-sm font-medium leading-snug mb-1">{{ .title }}</p>
+          <p class="text-xs text-ink-faint mb-0.5">{{ .authors }}</p>
+          <p class="text-xs text-ink-light italic">{{ .journal }}</p>
+        </div>
+        {{ with .doi }}<a href="{{ . }}" target="_blank" rel="noopener" class="hidden sm:inline-flex shrink-0 self-center text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors whitespace-nowrap">DOI →</a>{{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- ══ TEAM PREVIEW ══ -->
+<section class="border-b border-rule">
+  <div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-12 sm:py-14">
+    <div class="flex items-end justify-between mb-7 gap-4 flex-wrap">
+      <div>
+        <p class="text-2xs font-semibold uppercase tracking-widest text-accent mb-1">The Team</p>
+        <h2 class="font-serif text-2xl sm:text-3xl tracking-tight">Lab Members</h2>
+      </div>
+      <a href="{{ "/people/" | relURL }}" class="text-xs font-medium text-accent hover:underline whitespace-nowrap shrink-0">All people →</a>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 sm:gap-6">
+      {{ range first 5 $.Site.Data.people.members }}
+      <div class="text-center">
+        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-accent-light border-2 border-rule flex items-center justify-center font-serif text-xl text-accent mx-auto mb-3 overflow-hidden">
+          {{ if .photo }}<img src="{{ .photo }}" alt="{{ .name }}" class="w-full h-full object-cover">{{ else }}{{ .initials }}{{ end }}
+        </div>
+        <p class="text-sm font-medium">{{ .name }}</p>
+        <p class="text-xs text-accent mt-0.5">{{ .role }}</p>
+        <p class="text-2xs text-ink-faint mt-0.5">{{ .area }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- ══ NEWS ══ -->
+<section class="border-b border-rule">
+  <div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-12 sm:py-14">
+    <div class="flex items-end justify-between mb-7 gap-4 flex-wrap">
+      <div>
+        <p class="text-2xs font-semibold uppercase tracking-widest text-accent mb-1">Latest</p>
+        <h2 class="font-serif text-2xl sm:text-3xl tracking-tight">News</h2>
+      </div>
+      <a href="{{ "/news/" | relURL }}" class="text-xs font-medium text-accent hover:underline whitespace-nowrap shrink-0">All news →</a>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5">
+      {{ range first 3 (where .Site.RegularPages "Section" "news") }}
+      <a href="{{ .RelPermalink }}" class="card-hover bg-white border border-rule rounded-lg overflow-hidden block">
+        <div class="h-24 bg-gradient-to-br from-accent-light to-green-100 flex items-center justify-center text-3xl">{{ .Params.emoji | default "📰" }}</div>
+        <div class="p-4 sm:p-5">
+          <p class="text-2xs text-ink-faint mb-1.5">{{ .Date.Format "January 2006" }}</p>
+          <h3 class="text-sm font-medium leading-snug mb-1.5">{{ .Title }}</h3>
+          <p class="text-xs text-ink-light leading-relaxed">{{ .Params.summary }}</p>
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- ══ EVENTS ══ -->
+<section class="border-b border-rule">
+  <div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-12 sm:py-14">
+    <div class="flex items-end justify-between mb-7 gap-4 flex-wrap">
+      <div>
+        <p class="text-2xs font-semibold uppercase tracking-widest text-accent mb-1">Upcoming</p>
+        <h2 class="font-serif text-2xl sm:text-3xl tracking-tight">Events</h2>
+      </div>
+      <a href="{{ "/events/" | relURL }}" class="text-xs font-medium text-accent hover:underline whitespace-nowrap shrink-0">Full calendar →</a>
+    </div>
+    <div class="divide-y divide-rule">
+      {{ range first 3 $.Site.Data.events.upcoming }}
+      <div class="flex items-center gap-4 sm:gap-5 py-4">
+        <div class="shrink-0 w-12 bg-accent text-white rounded-md text-center py-1.5">
+          <p class="text-2xs font-semibold uppercase tracking-widest opacity-75">{{ .month }}</p>
+          <p class="font-serif text-xl leading-none">{{ .day }}</p>
+        </div>
+        <div class="flex-1 min-w-0">
+          <p class="text-sm font-medium leading-snug">{{ .title }}</p>
+          <p class="text-xs text-ink-faint mt-0.5">{{ .location }}</p>
+        </div>
+        <span class="hidden sm:inline-block text-2xs font-semibold uppercase tracking-wide text-accent bg-accent-light px-2.5 py-1 rounded-full shrink-0">{{ .type }}</span>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- ══ QUOTE ══ -->
+<div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-8">
+  <div class="bg-accent rounded-lg px-6 sm:px-12 py-10 sm:py-12">
+    <blockquote class="font-serif text-xl sm:text-2xl xl:text-3xl italic text-white leading-relaxed text-center max-w-2xl mx-auto">
+      "Science is not only a discipline of reason but also one of romance and passion — the best research comes from those who genuinely care about the question."
+    </blockquote>
+    <cite class="block text-center text-xs mt-5 text-white/60 uppercase tracking-widest not-italic">— Lab Philosophy</cite>
+  </div>
+</div>
+
+<!-- ══ JOIN CTA ══ -->
+<section class="border-t border-rule">
+  <div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-12 sm:py-14">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <p class="text-2xs font-semibold uppercase tracking-widest text-accent mb-1">Join Us</p>
+        <h2 class="font-serif text-2xl sm:text-3xl tracking-tight mb-4">Work with us</h2>
+        <p class="text-sm text-ink-light leading-relaxed mb-6 max-w-md">We welcome talented individuals at all career stages. PhD studentships, postdoctoral fellowships, and clinical research positions available.</p>
+        <a href="{{ "/join/" | relURL }}" class="inline-flex items-center px-5 py-2.5 rounded bg-accent text-white text-sm font-medium hover:bg-accent-dark transition-colors">See opportunities →</a>
+      </div>
+      <div class="grid grid-cols-2 gap-3">
+        {{ range $.Site.Data.opportunities.roles }}
+        <a href="{{ "/join/" | relURL }}" class="flex items-center gap-3 p-4 bg-white border border-rule rounded-lg hover:border-accent hover:bg-accent-light transition-colors group">
+          <span class="text-xl shrink-0">{{ .emoji }}</span>
+          <div class="min-w-0">
+            <p class="text-sm font-medium leading-snug">{{ .title }}</p>
+            <p class="text-2xs text-ink-faint">{{ .subtitle }}</p>
+          </div>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

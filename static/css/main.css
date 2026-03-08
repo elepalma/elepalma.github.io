@@ -1,0 +1,30 @@
+body { background-color: #fafaf8; color: #1a1a1a; font-family: 'DM Sans', system-ui, sans-serif; }
+
+/* Nav dropdowns */
+.nav-item:hover .dropdown { display: block; }
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up   { animation: fadeUp 0.5s ease both; }
+.fade-up-2 { animation: fadeUp 0.5s 0.12s ease both; }
+.fade-up-3 { animation: fadeUp 0.5s 0.22s ease both; }
+
+/* Card hover lift */
+.card-hover { transition: box-shadow 0.18s, transform 0.18s; }
+.card-hover:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.08); transform: translateY(-2px); }
+
+/* Page hero banner */
+.page-hero {
+  background: linear-gradient(135deg, #eaf2ee 0%, #f5faf7 60%, #fafaf8 100%);
+  border-bottom: 1px solid #e2e2de;
+}
+
+/* Prose content */
+.prose-lab p   { margin-bottom: 1rem; font-size: 0.9rem; line-height: 1.75; color: #555; }
+.prose-lab h3  { font-family: 'Instrument Serif', Georgia, serif; font-size: 1.3rem; margin: 1.5rem 0 0.5rem; }
+.prose-lab ul  { list-style: disc; padding-left: 1.4rem; margin-bottom: 1rem; }
+.prose-lab li  { font-size: 0.88rem; color: #555; line-height: 1.7; margin-bottom: 0.25rem; }
+.prose-lab a   { color: #2a5c45; text-decoration: underline; }
