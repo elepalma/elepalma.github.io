@@ -11,22 +11,44 @@
 <div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-10 sm:py-14">
 
   <!-- Filter bar -->
-  <div class="flex flex-wrap gap-2 mb-8" id="filter-bar">
-    <button onclick="filterPubs('all')" class="pub-filter active px-3 py-1.5 rounded-full text-xs font-medium border border-accent bg-accent text-white transition-colors">All</button>
-    {{ range ($years := slice) }}{{ end }}
-    {{ $years := slice }}
-    {{ range $.Site.Data.publications.papers }}
-      {{ $years = $years | append .year }}
-    {{ end }}
-    {{ range ($years | uniq) }}
-    <button onclick="filterPubs('{{ . }}')" class="pub-filter px-3 py-1.5 rounded-full text-xs font-medium border border-rule text-ink-light hover:border-accent hover:text-accent transition-colors">{{ . }}</button>
-    {{ end }}
+  <div class="mb-8 flex flex-col gap-3">
+
+    <!-- Year filters -->
+    <div class="flex flex-wrap items-center gap-2">
+      <span class="text-2xs font-semibold uppercase tracking-widest text-ink-faint w-14 shrink-0">Year</span>
+      <button onclick="filterPubs('all', 'year')" class="pub-filter active px-3 py-1.5 rounded-full text-xs font-medium border border-accent bg-accent text-white transition-colors">All</button>
+      {{ $years := slice }}
+      {{ range $.Site.Data.publications.papers }}
+        {{ $years = $years | append .year }}
+      {{ end }}
+      {{ range ($years | uniq) }}
+      <button onclick="filterPubs('{{ . }}', 'year')" class="pub-filter px-3 py-1.5 rounded-full text-xs font-medium border border-rule text-ink-light hover:border-accent hover:text-accent transition-colors">{{ . }}</button>
+      {{ end }}
+    </div>
+
+    <!-- Author filters -->
+    <div class="flex flex-wrap items-center gap-2">
+      <span class="text-2xs font-semibold uppercase tracking-widest text-ink-faint w-14 shrink-0">Author</span>
+      {{ range $.Site.Data.people.members }}{{ with .pub_name }}
+      <button onclick="filterPubs('{{ . }}', 'author')" data-pubname="{{ . }}"
+              class="pub-filter px-3 py-1.5 rounded-full text-xs font-medium border border-rule text-ink-light hover:border-accent hover:text-accent transition-colors">
+        {{ index (split . " ") 0 }}
+      </button>
+      {{ end }}{{ end }}
+      {{ range $.Site.Data.people.alumni }}{{ with .pub_name }}
+      <button onclick="filterPubs('{{ . }}', 'author')" data-pubname="{{ . }}"
+              class="pub-filter px-3 py-1.5 rounded-full text-xs font-medium border border-rule text-ink-light hover:border-accent hover:text-accent transition-colors">
+        {{ index (split . " ") 0 }}
+      </button>
+      {{ end }}{{ end }}
+    </div>
+
   </div>
 
   <!-- Publications list -->
   <div class="divide-y divide-rule" id="pub-list">
     {{ range $.Site.Data.publications.papers }}
-    <div class="pub-item flex gap-4 sm:gap-6 py-5 items-start" data-year="{{ .year }}">
+    <div class="pub-item flex gap-4 sm:gap-6 py-5 items-start" data-year="{{ .year }}" data-authors="{{ .authors }}">
       <div class="font-serif text-sm italic text-accent shrink-0 w-10 pt-0.5">{{ .year }}</div>
       <div class="flex-1 min-w-0">
         <p class="text-sm font-medium leading-snug mb-1">{{ .title }}</p>
@@ -49,12 +71,25 @@
 </div>
 
 <script>
-function filterPubs(year) {
+document.addEventListener('DOMContentLoaded', () => {
+  const author = new URLSearchParams(location.search).get('author');
+  if (author) filterPubs(author, 'author');
+});
+
+function filterPubs(value, type) {
   document.querySelectorAll('.pub-item').forEach(el => {
-    el.style.display = (year === 'all' || el.dataset.year === year) ? 'flex' : 'none';
+    let show;
+    if (type === 'year') {
+      show = value === 'all' || el.dataset.year === value;
+    } else {
+      show = el.dataset.authors.includes(value);
+    }
+    el.style.display = show ? 'flex' : 'none';
   });
   document.querySelectorAll('.pub-filter').forEach(btn => {
-    const active = btn.textContent.trim() === (year === 'all' ? 'All' : year);
+    const active = type === 'year'
+      ? btn.textContent.trim() === (value === 'all' ? 'All' : value)
+      : btn.dataset.pubname === value;
     btn.classList.toggle('bg-accent', active);
     btn.classList.toggle('text-white', active);
     btn.classList.toggle('border-accent', active);

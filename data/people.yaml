@@ -1,5 +1,6 @@
 members:
   - name: "Dr. Elena Palma"
+    pub_name: "Palma E"
     photo: "/images/people/elepalma.JPG"
     initials: "EP"
     role: "Principal Investigator and Lecturer (Adj/Hon)"
@@ -14,6 +15,7 @@ members:
     gscholar: ""
 
   - name: "Dr. Meliz Sahuri-Arisoylu"
+    pub_name: "Sahuri-Arisoylu M"
     photo: "/images/people/meliz.jpg"
     initials: "MA"
     role: "Research Fellow"
@@ -23,6 +25,7 @@ members:
     kcl: "https://www.kcl.ac.uk/people/meliz-sahuri-arisoylu"
 
   - name: "Una Rastovic"
+    pub_name: "Rastovic U"
     photo: "/images/people/una.jpg"
     initials: "UR"
     role: "PhD Student"
@@ -32,6 +35,7 @@ members:
     kcl: "https://www.kcl.ac.uk/people/una-rastovic"
 
   - name: "Moyosoreoluwa Feyide"
+    pub_name: "Feyide M"
     photo: "/images/people/moyo.jpeg"
     initials: "MF"
     role: "PhD Student"
@@ -41,19 +45,15 @@ members:
 
 alumni:
   - name: "Ravi Jagatia"
+    pub_name: "Jagatia R"
     role: "PhD Student"
     years: "2020–2024"
     now: "Currently working in the industry."
     thesis: "Novel therapeutic strategies for primary and secondary liver cancers."
-    publications:
-      - title: "Paper title"
-        doi: "https://doi.org/..."
 
   - name: "Ewald Jan Doornebal"
+    pub_name: "Doornebal EJ"
     role: "PhD Student"
     years: "2018–2021"
     now: "Currently working in the industry."
     thesis: "Personalised human immunocompetent ex vivo models for primary and secondary liver cancer."
-    publications:
-      - title: "Paper title"
-        doi: "https://doi.org/..."
