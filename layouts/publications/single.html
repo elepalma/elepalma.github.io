@@ -12,11 +12,15 @@
 
   <!-- Filter bar -->
   <div class="flex flex-wrap gap-2 mb-8" id="filter-bar">
-    <button onclick="filterPubs('all')"   class="pub-filter active px-3 py-1.5 rounded-full text-xs font-medium border border-accent bg-accent text-white transition-colors">All</button>
-    <button onclick="filterPubs('2025')"  class="pub-filter px-3 py-1.5 rounded-full text-xs font-medium border border-rule text-ink-light hover:border-accent hover:text-accent transition-colors">2025</button>
-    <button onclick="filterPubs('2024')"  class="pub-filter px-3 py-1.5 rounded-full text-xs font-medium border border-rule text-ink-light hover:border-accent hover:text-accent transition-colors">2024</button>
-    <button onclick="filterPubs('2023')"  class="pub-filter px-3 py-1.5 rounded-full text-xs font-medium border border-rule text-ink-light hover:border-accent hover:text-accent transition-colors">2023</button>
-    <button onclick="filterPubs('2022')"  class="pub-filter px-3 py-1.5 rounded-full text-xs font-medium border border-rule text-ink-light hover:border-accent hover:text-accent transition-colors">2022</button>
+    <button onclick="filterPubs('all')" class="pub-filter active px-3 py-1.5 rounded-full text-xs font-medium border border-accent bg-accent text-white transition-colors">All</button>
+    {{ range ($years := slice) }}{{ end }}
+    {{ $years := slice }}
+    {{ range $.Site.Data.publications.papers }}
+      {{ $years = $years | append .year }}
+    {{ end }}
+    {{ range ($years | uniq) }}
+    <button onclick="filterPubs('{{ . }}')" class="pub-filter px-3 py-1.5 rounded-full text-xs font-medium border border-rule text-ink-light hover:border-accent hover:text-accent transition-colors">{{ . }}</button>
+    {{ end }}
   </div>
 
   <!-- Publications list -->
