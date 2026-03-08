@@ -55,7 +55,7 @@ title = "Palma Lab · King's College London"
     weight = 1
   [[menu.main]]
     name   = "Collaborators"
-    url    = "/people/collaborators/"
+    url    = "/collaborators/"
     parent = "People"
     weight = 2
   [[menu.main]]

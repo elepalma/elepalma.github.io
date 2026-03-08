@@ -1,0 +1,46 @@
+{{ define "main" }}
+
+<div class="page-hero">
+  <div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-10 sm:py-14">
+    <p class="text-2xs font-semibold uppercase tracking-widest text-accent mb-2">The Team</p>
+    <h1 class="font-serif text-3xl sm:text-4xl xl:text-5xl tracking-tight text-ink">Collaborators</h1>
+    <p class="mt-3 text-sm text-ink-light max-w-xl leading-relaxed">We work with outstanding academic groups, clinical teams, consortia, and industry partners around the world.</p>
+  </div>
+</div>
+
+<div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-10 sm:py-14">
+
+  {{ $types := slice }}
+  {{ range $.Site.Data.collaborators.groups }}
+    {{ $types = $types | append .type }}
+  {{ end }}
+
+  {{ range ($types | uniq) }}
+  {{ $type := . }}
+  <div class="mb-12">
+    <h2 class="font-serif text-2xl tracking-tight mb-6 pb-3 border-b border-rule">{{ $type }}</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {{ range where $.Site.Data.collaborators.groups "type" $type }}
+      <div class="bg-white border border-rule rounded-lg p-5 flex flex-col gap-3 hover:border-accent transition-colors">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-lg bg-accent-light flex items-center justify-center shrink-0">
+            {{ if eq $type "Academic" }}<span class="text-lg">🎓</span>
+            {{ else if eq $type "Clinical" }}<span class="text-lg">🏥</span>
+            {{ else if eq $type "Industry" }}<span class="text-lg">🏭</span>
+            {{ else if eq $type "Consortium" }}<span class="text-lg">🌐</span>
+            {{ else }}<span class="text-lg">🤝</span>{{ end }}
+          </div>
+          <h3 class="text-sm font-medium leading-snug">{{ .name }}</h3>
+        </div>
+        <p class="text-xs text-ink-light leading-relaxed">{{ .description }}</p>
+        {{ with .url }}
+        <a href="{{ . }}" target="_blank" rel="noopener" class="self-start text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors">Visit →</a>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+
+</div>
+{{ end }}

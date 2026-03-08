@@ -4,8 +4,12 @@ groups:
     description: "Application of Precision Cut Liver Slices for the study of the effects of polyphenols in metabolic dysfunction-associated steatotic liver disease (MASLD)."
 
   - type: "Academic"
-    name: "Mitochondrial Biology Unit, MRC"
-    description: "Collaboration on mitochondrial dysfunction in hepatic disease with Dr. K. Collins."
+    name: "Prof Shilpa Chokshi"
+    description: "Testing the efficacy of immunomodulatory therapies in Precision Cut Tumour Slices from Hepatocellular Carcinoma."
+
+  - type: "Academic"
+    name: "Dr Luca Urbanii"
+    description: "Investigation of the role of cyclophilin inhibition in hepatic fibrosis and ALD; Study of mitochondria regulation in Hepatic Stellate Cells activation; Effect of immunotherapy in combination with anti-fibrotic in CCA.Testing the efficacy of immunomodulatory therapies in Precision Cut Tumour Slices from Hepatocellular Carcinoma."
 
   - type: "Consortium"
     name: "ESBRA Research Network"
@@ -14,10 +18,6 @@ groups:
   - type: "Clinical"
     name: "King's Liver Unit (KCL)"
     description: "Direct clinical partnership for patient sample access and translational studies."
-
-  - type: "Academic"
-    name: "Wellcome Sanger Institute"
-    description: "Single-cell genomics collaboration for liver atlas studies."
 
   - type: "Industry"
     name: "Confidential Pharma Partner"
