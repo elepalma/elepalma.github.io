@@ -65,32 +65,6 @@
   </div>
 </section>
 
-<!-- ══ LATEST PUBLICATIONS ══ -->
-<section class="border-b border-rule">
-  <div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-12 sm:py-14">
-    <div class="flex items-end justify-between mb-7 gap-4 flex-wrap">
-      <div>
-        <p class="text-2xs font-semibold uppercase tracking-widest text-accent mb-1">Publications</p>
-        <h2 class="font-serif text-2xl sm:text-3xl tracking-tight">Selected Papers</h2>
-      </div>
-      <a href="{{ "/publications/" | relURL }}" class="text-xs font-medium text-accent hover:underline whitespace-nowrap shrink-0">Full list →</a>
-    </div>
-    <div class="divide-y divide-rule">
-      {{ range first 4 ($.Site.Data.publications.papers) }}
-      <div class="flex gap-4 sm:gap-6 py-4 items-start">
-        <div class="font-serif text-sm italic text-accent shrink-0 w-10 pt-0.5">{{ .year }}</div>
-        <div class="flex-1 min-w-0">
-          <p class="text-sm font-medium leading-snug mb-1">{{ .title }}</p>
-          <p class="text-xs text-ink-faint mb-0.5">{{ .authors }}</p>
-          <p class="text-xs text-ink-light italic">{{ .journal }}</p>
-        </div>
-        {{ with .doi }}<a href="{{ . }}" target="_blank" rel="noopener" class="hidden sm:inline-flex shrink-0 self-center text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors whitespace-nowrap">DOI →</a>{{ end }}
-      </div>
-      {{ end }}
-    </div>
-  </div>
-</section>
-
 <!-- ══ TEAM PREVIEW ══ -->
 <section class="border-b border-rule">
   <div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-12 sm:py-14">
@@ -115,6 +89,33 @@
     </div>
   </div>
 </section>
+
+<!-- ══ LATEST PUBLICATIONS ══ -->
+<!--<section class="border-b border-rule">
+  <div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-12 sm:py-14">
+    <div class="flex items-end justify-between mb-7 gap-4 flex-wrap">
+      <div>
+        <p class="text-2xs font-semibold uppercase tracking-widest text-accent mb-1">Publications</p>
+        <h2 class="font-serif text-2xl sm:text-3xl tracking-tight">Selected Papers</h2>
+      </div>
+      <a href="{{ "/publications/" | relURL }}" class="text-xs font-medium text-accent hover:underline whitespace-nowrap shrink-0">Full list →</a>
+    </div>
+    <div class="divide-y divide-rule">
+      {{ range first 4 ($.Site.Data.publications.papers) }}
+      <div class="flex gap-4 sm:gap-6 py-4 items-start">
+        <div class="font-serif text-sm italic text-accent shrink-0 w-10 pt-0.5">{{ .year }}</div>
+        <div class="flex-1 min-w-0">
+          <p class="text-sm font-medium leading-snug mb-1">{{ .title }}</p>
+          <p class="text-xs text-ink-faint mb-0.5">{{ .authors }}</p>
+          <p class="text-xs text-ink-light italic">{{ .journal }}</p>
+        </div>
+        {{ with .doi }}<a href="{{ . }}" target="_blank" rel="noopener" class="hidden sm:inline-flex shrink-0 self-center text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors whitespace-nowrap">DOI →</a>{{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+-->
 
 <!-- ══ NEWS ══ -->
 <section class="border-b border-rule">
