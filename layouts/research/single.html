@@ -1,7 +1,7 @@
 {{ define "main" }}
 
 <div class="page-hero">
-  <div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-10 sm:py-14">
+  <div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-6 sm:py-10">
     <a href="{{ "/research/" | relURL }}" class="text-xs text-accent hover:underline mb-3 inline-block">← All Projects</a>
     {{ with .Params.tag }}<span class="inline-block text-2xs font-semibold uppercase tracking-widest text-accent bg-accent-light px-2.5 py-0.5 rounded-full mb-3">{{ . }}</span>{{ end }}
     <h1 class="font-serif text-3xl sm:text-4xl xl:text-5xl tracking-tight text-ink">{{ .Title }}</h1>
@@ -9,8 +9,8 @@
   </div>
 </div>
 
-<div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-10 sm:py-14">
-  <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+<div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-6 sm:py-10">
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
     <!-- Main content -->
     <div class="lg:col-span-2 prose-lab">

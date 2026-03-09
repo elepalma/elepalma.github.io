@@ -1,17 +1,17 @@
 {{ define "main" }}
 
 <div class="page-hero">
-  <div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-10 sm:py-14">
+  <div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-6 sm:py-10">
     <p class="text-2xs font-semibold uppercase tracking-widest text-accent mb-2">Calendar</p>
     <h1 class="font-serif text-3xl sm:text-4xl xl:text-5xl tracking-tight text-ink">Events</h1>
     <p class="mt-3 text-sm text-ink-light max-w-xl">Upcoming conferences, seminars, and lab events.</p>
   </div>
 </div>
 
-<div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-10 sm:py-14">
+<div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-6 sm:py-10">
 
   <!-- Upcoming -->
-  <div class="mb-12">
+  <div class="mb-8">
     <h2 class="font-serif text-2xl tracking-tight mb-6 pb-3 border-b border-rule">Upcoming</h2>
     <div class="divide-y divide-rule">
       {{ range $.Site.Data.events.upcoming }}
@@ -37,7 +37,7 @@
   </div>
 
   <!-- Past -->
-  <div class="border-t border-rule pt-10">
+  <div class="border-t border-rule pt-6">
     <h2 class="font-serif text-2xl tracking-tight mb-6">Past Events</h2>
     <div class="divide-y divide-rule">
       {{ range $.Site.Data.events.past }}

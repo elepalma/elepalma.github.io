@@ -1,17 +1,17 @@
 {{ define "main" }}
 
 <div class="page-hero">
-  <div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-10 sm:py-14">
+  <div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-6 sm:py-10">
     <p class="text-2xs font-semibold uppercase tracking-widest text-accent mb-2">The Team</p>
     <h1 class="font-serif text-3xl sm:text-4xl xl:text-5xl tracking-tight text-ink">People</h1>
     <p class="mt-3 text-sm text-ink-light max-w-xl leading-relaxed">A diverse, interdisciplinary group of scientists, clinicians, and trainees united by a shared commitment to understanding liver disease.</p>
   </div>
 </div>
 
-<div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-10 sm:py-14">
+<div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-6 sm:py-10">
 
   <!-- PI -->
-  <div class="mb-12">
+  <div class="mb-8">
     <h2 class="font-serif text-2xl tracking-tight mb-6 pb-3 border-b border-rule">Principal Investigator</h2>
     {{ range where $.Site.Data.people.members "role_type" "pi" }}
     <div class="flex flex-col sm:flex-row gap-6 bg-white border border-rule rounded-lg p-6">
@@ -37,7 +37,7 @@
   <!-- Lab Members -->
   {{ $members := where $.Site.Data.people.members "role_type" "ne" "pi" }}
   {{ if $members }}
-  <div class="mb-12">
+  <div class="mb-8">
     <h2 class="font-serif text-2xl tracking-tight mb-6 pb-3 border-b border-rule">Lab Members</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
       {{ range $members }}
@@ -61,7 +61,7 @@
   {{ end }}
 
   <!-- Alumni -->
-  <div id="alumni" class="border-t border-rule pt-10">
+  <div id="alumni" class="border-t border-rule pt-6">
     <h2 class="font-serif text-2xl tracking-tight mb-6">Alumni</h2>
     <div class="divide-y divide-rule">
       {{ range $.Site.Data.people.alumni }}

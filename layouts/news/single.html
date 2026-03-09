@@ -1,7 +1,7 @@
 {{ define "main" }}
 
 <div class="page-hero">
-  <div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-10 sm:py-14">
+  <div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-6 sm:py-10">
     <a href="{{ "/news/" | relURL }}" class="text-xs text-accent hover:underline mb-3 inline-block">← All News</a>
     {{ with .Params.category }}<span class="inline-block text-2xs font-semibold uppercase tracking-widest text-accent bg-accent-light px-2.5 py-0.5 rounded-full mb-3">{{ . }}</span>{{ end }}
     <h1 class="font-serif text-3xl sm:text-4xl xl:text-5xl tracking-tight text-ink max-w-3xl">{{ .Title }}</h1>
@@ -9,7 +9,7 @@
   </div>
 </div>
 
-<div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-10 sm:py-14">
+<div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-6 sm:py-10">
   <div class="max-w-2xl prose-lab">
     {{ .Content }}
   </div>
