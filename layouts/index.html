@@ -75,15 +75,20 @@
       </div>
       <a href="{{ "/people/" | relURL }}" class="text-xs font-medium text-accent hover:underline whitespace-nowrap shrink-0">All people →</a>
     </div>
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 sm:gap-6">
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-5">
       {{ range first 5 $.Site.Data.people.members }}
-      <div class="text-center">
-        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-accent-light border-2 border-rule flex items-center justify-center font-serif text-xl text-accent mx-auto mb-3 overflow-hidden">
-          {{ if .photo }}<img src="{{ .photo }}" alt="{{ .name }}" class="w-full h-full object-cover">{{ else }}{{ .initials }}{{ end }}
+      <div class="bg-white border border-rule rounded-lg overflow-hidden hover:border-accent transition-colors group">
+        <div class="aspect-square bg-accent-light overflow-hidden">
+          {{ if .photo }}
+          <img src="{{ .photo }}" alt="{{ .name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          {{ else }}
+          <div class="w-full h-full flex items-center justify-center font-serif text-4xl text-accent">{{ .initials }}</div>
+          {{ end }}
         </div>
-        <p class="text-sm font-medium">{{ .name }}</p>
-        <p class="text-xs text-accent mt-0.5">{{ .role }}</p>
-        <p class="text-2xs text-ink-faint mt-0.5">{{ .area }}</p>
+        <div class="p-3">
+          <p class="text-sm font-medium leading-snug">{{ .name }}</p>
+          <p class="text-xs text-accent mt-0.5">{{ .role }}</p>
+        </div>
       </div>
       {{ end }}
     </div>

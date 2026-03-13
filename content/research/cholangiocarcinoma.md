@@ -1,20 +1,21 @@
 ---
-title: "Mitochondria and the Tumour Microenvironment in Cholangiocarcinoma"
-tag: "CCA"
-summary: "Investigating the molecular drivers of alcoholic hepatitis and MAFLD, with focus on early biomarkers and therapeutic targets."
+title: "Mitochondrial dynamics in cholangiocarcinoma"
+tag: "CCA Mito"
+summary: "Understanding how mitochondrial dynamics contribute to tumour progression in intrahepatic cholangiocarcinoma."
 funders: []
 team: ["Una Rastovic", "Dr. Meliz Sahuri-Arisoylu"]
-weight: 4
+weight: 5
 ---
 
 # **Overview**
 
-Cholangiocarcinoma is an aggressive liver cancer with limited treatment options. Our research explores how **mitochondrial function and metabolic reprogramming influence tumour progression and the tumour microenvironment**.
-
-Using patient-derived tumour slices and organotypic culture systems, we investigate how mitochondrial pathways interact with immune cells, stromal components, and metabolic signalling within the tumour microenvironment.
-
-These models provide powerful tools to study tumour biology and enable **preclinical testing of emerging therapeutic strategies**, including immunotherapies and targeted metabolic interventions.
-
-Our goal is to better understand the role of mitochondria in cholangiocarcinoma biology and to contribute to the development of more effective treatments.
+Intrahepatic cholangiocarcinoma (iCCA) is an aggressive liver cancer with limited therapeutic options. Increasing evidence suggests that alterations in mitochondrial dynamics influence tumour behaviour and cellular adaptation in cancer.
+Our research investigates how mitochondrial structural remodelling and dynamics contribute to tumour progression and cellular responses in cholangiocarcinoma.
+Using human tumour slice models and organotypic systems, we study mitochondrial organisation within the tumour microenvironment and explore how mitochondrial pathways influence tumour biology.
 
 
+# **Objectives**
+- Investigate mitochondrial dynamics in intrahepatic cholangiocarcinoma
+- Characterise mitochondrial remodelling in tumour cells
+- Study mitochondrial responses within the tumour microenvironment
+- Identify mitochondrial pathways that could represent therapeutic vulnerabilities

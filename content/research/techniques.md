@@ -2,6 +2,7 @@
 title: "Techniques & Platforms"
 tag: "Methods"
 summary: "An overview of the key experimental and computational platforms used in the lab."
+weight: 6
 ---
 
 ## Experimental Platforms

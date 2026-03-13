@@ -18,5 +18,3 @@ Understanding how mitochondria adapt to stress will provide new insights into ho
 - Characterise how mitochondrial shape and size respond to signalling pathways
 - Identify structural and functional signatures of mitochondrial adaptation
 - Establish frameworks linking mitochondrial morphology to organelle function
-
-
