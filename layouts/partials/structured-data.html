@@ -1,0 +1,32 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ResearchOrganization",
+  "name": "{{ .Site.Params.labName }}",
+  "url": "{{ .Site.BaseURL }}",
+  "description": "{{ .Site.Params.labDescription }}",
+  "parentOrganization": {
+    "@type": "EducationalOrganization",
+    "name": "King's College London",
+    "url": "https://www.kcl.ac.uk"
+  },
+  "department": {
+    "@type": "Organization",
+    "name": "{{ .Site.Params.department }}"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "111 Coldharbour Lane",
+    "addressLocality": "London",
+    "postalCode": "SE5 9NT",
+    "addressCountry": "GB"
+  },
+  "email": "{{ .Site.Params.email }}",
+  "telephone": "{{ .Site.Params.phone }}",
+  "sameAs": [
+    "{{ .Site.Params.twitter }}",
+    "{{ .Site.Params.linkedin }}",
+    "{{ .Site.Params.researchgate }}"
+  ]
+}
+</script>

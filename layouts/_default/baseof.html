@@ -1,10 +1,38 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="{{ .Site.LanguageCode }}" class="scroll-smooth">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Params.labName }}{{ end }}</title>
-<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.labDescription }}{{ end }}">
+
+{{- $title := cond .IsHome .Site.Title (printf "%s · %s" .Title .Site.Params.labName) }}
+{{- $desc  := or .Description .Site.Params.labDescription }}
+{{- $url   := .Permalink }}
+{{- $image := printf "%s%s" .Site.BaseURL "images/og-image.jpg" }}
+
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $desc }}">
+<link rel="canonical" href="{{ $url }}">
+
+<!-- Open Graph -->
+<meta property="og:type"        content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+<meta property="og:title"       content="{{ $title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:url"         content="{{ $url }}">
+<meta property="og:image"       content="{{ $image }}">
+<meta property="og:site_name"   content="{{ .Site.Params.labName }}">
+
+<!-- Twitter Card -->
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:title"       content="{{ $title }}">
+<meta name="twitter:description" content="{{ $desc }}">
+<meta name="twitter:image"       content="{{ $image }}">
+
+<!-- Favicon -->
+<link rel="icon"             type="image/svg+xml" href="{{ "images/favicon.svg" | relURL }}">
+<link rel="icon"             type="image/png"     href="{{ "images/favicon-96x96.png" | relURL }}" sizes="96x96">
+<link rel="apple-touch-icon"                      href="{{ "images/apple-touch-icon.png" | relURL }}" sizes="180x180">
+
+{{ partial "structured-data.html" . }}
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">

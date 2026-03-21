@@ -1,5 +1,6 @@
 ---
 title: "Join Us"
+description: "Open positions and opportunities to join the Palma Lab at King's College London — PhD studentships, postdoctoral fellowships, and research collaborations in liver disease."
 ---
 
 The lab is based at King's College London, Denmark Hill — one of the UK's leading academic medical centres, with direct access to King's College Hospital and world-class core facilities.
