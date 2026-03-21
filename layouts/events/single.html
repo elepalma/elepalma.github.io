@@ -14,14 +14,14 @@
   <div class="mb-8">
     <h2 class="font-sans text-2xl tracking-tight mb-6 pb-3 border-b border-rule">Upcoming</h2>
     <div class="divide-y divide-rule">
-      {{ range $.Site.Data.events.upcoming }}
+      {{ range sort $.Site.Data.events.upcoming "sort_key" "asc" }}
       <div class="flex items-start gap-4 sm:gap-6 py-5">
         <div class="shrink-0 w-14 bg-accent text-white rounded-lg text-center py-2">
-          <p class="text-2xs font-semibold uppercase tracking-widest opacity-75">{{ .month }}</p>
           {{ if .day }}
-          <p class="font-sans text-sm leading-none mt-0.5 opacity-90">{{ .day }}</p>
+          <p class="text-2xs font-semibold uppercase tracking-widest opacity-75">{{ .day }}</p>
           {{ end }}
-          <p class="font-sans text-sm leading-none mt-0.5 opacity-90">{{ .year }}</p>
+          <p class="text-2xs font-semibold uppercase tracking-widest opacity-75">{{ .month }}</p>
+          <p class="text-2xs font-semibold uppercase tracking-widest opacity-75">{{ .year }}</p>
         </div>
         <div class="flex-1 min-w-0">
           <div class="flex flex-wrap items-start gap-2 mb-1">
@@ -43,18 +43,16 @@
   <div class="border-t border-rule pt-6">
     <h2 class="font-sans text-2xl tracking-tight mb-6">Past Events</h2>
     <div class="divide-y divide-rule">
-      {{ range $.Site.Data.events.past }}
+      {{ range sort $.Site.Data.events.past "sort_key" "desc" }}
       {{- $cutoffYear := now.AddDate -2 0 0 }}
       {{- $isRecent := gt (.year | int) $cutoffYear.Year }}
       <div class="flex items-start gap-4 sm:gap-6 py-4 opacity-70">
         <div class="shrink-0 w-14 bg-rule rounded-lg text-center py-2">
           {{ if and $isRecent .day }}
-          <p class="text-2xs font-semibold uppercase tracking-widest text-ink-faint">{{ .month }}</p>
-          <p class="font-sans text-base leading-none text-ink-light mt-0.5">{{ .day }}</p>
-          {{ else }}
-          <p class="text-2xs font-semibold uppercase tracking-widest text-ink-faint">{{ .month }}</p>
-          <p class="font-sans text-sm leading-none text-ink-light mt-0.5">{{ .year }}</p>
+          <p class="text-2xs font-semibold uppercase tracking-widest text-ink-faint">{{ .day }}</p>
           {{ end }}
+          <p class="text-2xs font-semibold uppercase tracking-widest text-ink-faint">{{ .month }}</p>
+          <p class="text-2xs font-semibold uppercase tracking-widest text-ink-faint">{{ .year }}</p>
         </div>
         <div class="flex-1 min-w-0">
           <p class="text-sm font-medium">{{ .title }}</p>
