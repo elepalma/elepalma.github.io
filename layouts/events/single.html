@@ -18,7 +18,11 @@
       <div class="flex items-start gap-4 sm:gap-6 py-5">
         <div class="shrink-0 w-14 bg-accent text-white rounded-lg text-center py-2">
           <p class="text-2xs font-semibold uppercase tracking-widest opacity-75">{{ .month }}</p>
+          {{ if .day }}
           <p class="font-sans text-2xl leading-none">{{ .day }}</p>
+          {{ else }}
+          <p class="font-sans text-sm leading-none mt-0.5 opacity-90">{{ .year }}</p>
+          {{ end }}
         </div>
         <div class="flex-1 min-w-0">
           <div class="flex flex-wrap items-start gap-2 mb-1">
