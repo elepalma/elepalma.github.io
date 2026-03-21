@@ -2,6 +2,16 @@ upcoming:
   - sort_key: 202605
     month: "May"
     year: "2026"
+    day: "18"
+    title: "Yellow Webinars 2026"
+    location: "on-line, Italy"
+    type: "Webinar"
+    detail: "Mitochondrial Plasticity in Steatotic Liver Disease: from Adaptive Dynamics to Organelle Pathology"
+    link: "https://www.fegato.it/eng/yellow-webinars/"
+
+  - sort_key: 202605
+    month: "May"
+    year: "2026"
     day: "23-26"
     title: "The Liver Sinusoid Meeting 2026"
     location: "Tarragona, Spain"
@@ -24,6 +34,7 @@ upcoming:
     year: "2026"
     day: "20-22"
     title: "FEBS Advanced Course 2026"
+    location: "Spetses, Greece"
     type: "Course"
     detail: "MASLD: from novel liver model systems to organelle pathophysiology"
     link: "https://febscongress.org/"
