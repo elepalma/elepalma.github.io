@@ -69,27 +69,38 @@
     <h2 class="font-serif text-2xl tracking-tight mb-6">Alumni</h2>
     <div class="divide-y divide-rule">
       {{ range $.Site.Data.people.alumni }}
-      <div class="py-4">
-        <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4">
-          <p class="text-sm font-medium min-w-[180px]">{{ .name }}</p>
-          <p class="text-xs text-ink-faint flex-1">{{ .role }} · {{ .years }}</p>
-          {{ with .now }}<p class="text-xs text-ink-faint shrink-0">{{ . }}</p>{{ end }}
-          {{ with .pub_name }}<a href="{{ "/publications/" | relURL }}?author={{ . | urlquery }}" class="text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors shrink-0">Papers</a>{{ end }}
-        </div>
-        {{ with .thesis }}
-        <p class="text-xs text-ink-faint italic mt-1 ml-0 sm:ml-[196px]">Thesis: "{{ . }}"</p>
-        {{ end }}
-        {{ with .publications }}
-        <div class="flex flex-wrap gap-2 mt-2 ml-0 sm:ml-[196px]">
-          {{ range . }}
-          {{ if .doi }}
-          <a href="{{ .doi }}" target="_blank" rel="noopener" class="text-2xs text-accent border border-accent/40 px-2 py-0.5 rounded hover:bg-accent hover:text-white transition-colors">{{ .title }}</a>
+      {{- $parts := split .name " " }}
+      {{- $initials := printf "%s%s" (substr (index $parts 0) 0 1) (substr (index $parts (sub (len $parts) 1)) 0 1) }}
+      <div class="py-4 flex gap-4 items-start">
+        <div style="width:44px;height:54px;border-radius:0.5rem;background:#eaf2ee;flex-shrink:0;overflow:hidden;margin-top:2px;">
+          {{ if .photo }}
+          <img src="{{ .photo }}" alt="{{ .name }}" style="width:100%;height:100%;object-fit:cover;object-position:top;">
           {{ else }}
-          <span class="text-2xs text-ink-faint border border-rule px-2 py-0.5 rounded">{{ .title }}</span>
-          {{ end }}
+          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:0.9rem;color:#2a5c45;font-weight:600;">{{ or .initials $initials }}</div>
           {{ end }}
         </div>
-        {{ end }}
+        <div class="flex-1 min-w-0">
+          <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4">
+            <p class="text-sm font-medium min-w-[180px]">{{ .name }}</p>
+            <p class="text-xs text-ink-faint flex-1">{{ .role }} · {{ .years }}</p>
+            {{ with .now }}<p class="text-xs text-ink-faint shrink-0">{{ . }}</p>{{ end }}
+            {{ with .pub_name }}<a href="{{ "/publications/" | relURL }}?author={{ . | urlquery }}" class="text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors shrink-0">Papers</a>{{ end }}
+          </div>
+          {{ with .thesis }}
+          <p class="text-xs text-ink-faint italic mt-1">Thesis: "{{ . }}"</p>
+          {{ end }}
+          {{ with .publications }}
+          <div class="flex flex-wrap gap-2 mt-2">
+            {{ range . }}
+            {{ if .doi }}
+            <a href="{{ .doi }}" target="_blank" rel="noopener" class="text-2xs text-accent border border-accent/40 px-2 py-0.5 rounded hover:bg-accent hover:text-white transition-colors">{{ .title }}</a>
+            {{ else }}
+            <span class="text-2xs text-ink-faint border border-rule px-2 py-0.5 rounded">{{ .title }}</span>
+            {{ end }}
+            {{ end }}
+          </div>
+          {{ end }}
+        </div>
       </div>
       {{ end }}
     </div>
