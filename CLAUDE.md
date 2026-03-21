@@ -212,3 +212,19 @@ Defined in `hugo.toml` `[menu]` blocks. The nav partial reads `$.Site.Menus.main
 ## Deployment
 Push to `main` → GitHub Actions auto-builds and deploys to GitHub Pages.
 GitHub Pages source must be set to **"GitHub Actions"** (not "Deploy from a branch") in repo settings.
+
+## TODO
+
+### SEO assets still needed
+- [ ] `static/images/og-image.jpg` — 1200×630px image for social share previews (use a lab photo or branded banner); referenced in all Open Graph + Twitter Card `<meta>` tags
+- [ ] `static/images/favicon-96x96.png` — PNG favicon for older browsers; referenced in `baseof.html`
+- [ ] `static/images/apple-touch-icon.png` — 180×180px icon for iOS home screen bookmarks; referenced in `baseof.html`
+
+### Content still placeholder / to be filled
+- [ ] Research pages (`content/research/techniques.md`) — still placeholder
+- [ ] News posts (`content/news/`) — currently 3 placeholder posts
+- [ ] Events (`data/events.yaml`) — placeholder data
+- [ ] ORCID + Google Scholar for Dr. Elena Palma (empty strings in `data/people.yaml`)
+- [ ] Bio for Moyosoreoluwa Feyide (`data/people.yaml`)
+- [ ] Real "now" positions for alumni Ravi Jagatia and Ewald Jan Doornebal
+- [ ] `apply_url` for "Collaborators" role in `data/opportunities.yaml` is empty
