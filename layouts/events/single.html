@@ -41,14 +41,22 @@
     <h2 class="font-sans text-2xl tracking-tight mb-6">Past Events</h2>
     <div class="divide-y divide-rule">
       {{ range $.Site.Data.events.past }}
-      <div class="flex items-center gap-4 sm:gap-6 py-4 opacity-70">
+      {{- $cutoffYear := now.AddDate -2 0 0 }}
+      {{- $isRecent := gt (.year | int) $cutoffYear.Year }}
+      <div class="flex items-start gap-4 sm:gap-6 py-4 opacity-70">
         <div class="shrink-0 w-14 bg-rule rounded-lg text-center py-2">
+          {{ if and $isRecent .day }}
           <p class="text-2xs font-semibold uppercase tracking-widest text-ink-faint">{{ .month }}</p>
-          <p class="font-sans text-xl leading-none text-ink-light">{{ .day }}</p>
+          <p class="font-sans text-base leading-none text-ink-light mt-0.5">{{ .day }}</p>
+          {{ else }}
+          <p class="text-2xs font-semibold uppercase tracking-widest text-ink-faint">{{ .month }}</p>
+          <p class="font-sans text-sm leading-none text-ink-light mt-0.5">{{ .year }}</p>
+          {{ end }}
         </div>
         <div class="flex-1 min-w-0">
           <p class="text-sm font-medium">{{ .title }}</p>
-          <p class="text-xs text-ink-faint">{{ .location }} · {{ .year }}</p>
+          <p class="text-xs text-ink-faint">{{ with .location }}{{ . }} · {{ end }}{{ .year }}</p>
+          {{ with .detail }}<p class="text-xs text-ink-light italic mt-0.5">{{ . }}</p>{{ end }}
         </div>
         <span class="hidden sm:inline-block text-2xs font-medium text-ink-faint border border-rule px-2 py-0.5 rounded-full">{{ .type }}</span>
       </div>
