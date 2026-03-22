@@ -70,32 +70,5 @@
 
 </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const author = new URLSearchParams(location.search).get('author');
-  if (author) filterPubs(author, 'author');
-});
-
-function filterPubs(value, type) {
-  document.querySelectorAll('.pub-item').forEach(el => {
-    let show;
-    if (type === 'year') {
-      show = value === 'all' || el.dataset.year === value;
-    } else {
-      show = el.dataset.authors.includes(value);
-    }
-    el.style.display = show ? 'flex' : 'none';
-  });
-  document.querySelectorAll('.pub-filter').forEach(btn => {
-    const active = type === 'year'
-      ? btn.textContent.trim() === (value === 'all' ? 'All' : value)
-      : btn.dataset.pubname === value;
-    btn.classList.toggle('bg-accent', active);
-    btn.classList.toggle('text-white', active);
-    btn.classList.toggle('border-accent', active);
-    btn.classList.toggle('border-rule', !active);
-    btn.classList.toggle('text-ink-light', !active);
-  });
-}
-</script>
+<script src="{{ "js/publications-filter.js" | relURL }}"></script>
 {{ end }}

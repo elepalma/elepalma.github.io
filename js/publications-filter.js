@@ -1,7 +1,7 @@
 /**
  * Pure filtering logic for the publications page.
  * These functions are DOM-free and fully unit-testable.
- * The DOM wiring lives in layouts/publications/single.html.
+ * The DOM wiring lives in static/js/publications-filter.js.
  */
 
 /**
