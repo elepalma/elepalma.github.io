@@ -45,6 +45,7 @@ upcoming:
     day: "18-20"
     title: "DDM Summit: Cellular Drivers of Inflammation"
     type: "Conference"
+    location: "Barcelona, Spain"
     detail: "Digestive Disease Mechanism Summit, organised by UEG (United European Gastroenterology)"
     link: "https://ueg.eu/week/programme/ddm-summit"
 
@@ -121,9 +122,9 @@ past:
     detail: "Precision-cut liver slices to model aetiology-specific disease and liver cancer"
 
   - sort_key: 202200
-    month: ""
+    month: "Sep"
     year: "2022"
     title: "2nd World Congress on Alcohol and Alcoholism (ESBRA-ISBRA)"
-    location: ""
+    location: "Cracow, Poland"
     type: "Conference"
     detail: "Alcohol-related hepatotoxicity and mitochondria: can we consider ALD as a mitochondrial disorder?"
