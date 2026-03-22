@@ -84,7 +84,7 @@
             <p class="text-sm font-medium min-w-[180px]">{{ .name }}</p>
             <p class="text-xs text-ink-faint flex-1">{{ .role }} · {{ .years }}</p>
             {{ with .now }}<p class="text-xs text-ink-faint shrink-0">{{ . }}</p>{{ end }}
-            {{ with .pub_name }}<a href="{{ "/publications/" | relURL }}?author={{ . | urlquery }}" class="text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors shrink-0">Papers</a>{{ end }}
+            {{ with .pub_name }}<a href="{{ "/publications/" | relURL }}?author={{ . | urlquery }}" class="text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors shrink-0 self-start">Papers</a>{{ end }}
           </div>
           {{ with .thesis }}
           <p class="text-xs text-ink-faint italic mt-1">Thesis: "{{ . }}"</p>
