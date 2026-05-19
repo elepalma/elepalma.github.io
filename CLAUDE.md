@@ -213,6 +213,21 @@ Defined in `hugo.toml` `[menu]` blocks. The nav partial reads `$.Site.Menus.main
 Push to `main` → GitHub Actions auto-builds and deploys to GitHub Pages.
 GitHub Pages source must be set to **"GitHub Actions"** (not "Deploy from a branch") in repo settings.
 
+## Hidden / temporarily disabled features
+
+### News section
+The News section is fully built but intentionally hidden. All files are preserved — do not delete them.
+
+**To re-enable:**
+1. In `hugo.toml`: uncomment the `[[menu.main]]` block for News (weight 4)
+2. In `layouts/index.html`: unwrap the `{{/* ... */}}` Hugo comment around the `<!-- ══ NEWS ══ -->` section
+3. Replace placeholder posts in `content/news/` with real content
+
+**Files preserved:**
+- `content/news/` — news posts (currently placeholder)
+- `layouts/news/list.html` — news list page
+- `layouts/news/single.html` — individual news post
+
 ## TODO
 
 ### SEO assets still needed

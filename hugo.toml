@@ -63,10 +63,11 @@ title = "Palma Lab · King's College London"
     url    = "/join/"
     parent = "People"
     weight = 3
-  [[menu.main]]
-    name   = "News"
-    url    = "/news/"
-    weight = 4
+  # News menu entry hidden — content/news/ and layouts/news/ preserved for future use
+  # [[menu.main]]
+  #   name   = "News"
+  #   url    = "/news/"
+  #   weight = 4
   [[menu.main]]
     name   = "Events"
     url    = "/events/"
