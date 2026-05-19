@@ -53,8 +53,8 @@
       </div>
       <a href="{{ "/research/" | relURL }}" class="text-xs font-medium text-accent hover:underline whitespace-nowrap shrink-0">View all →</a>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-px bg-rule rounded-lg overflow-hidden border border-rule">
-      {{ range first 3 (where .Site.RegularPages "Section" "research") }}
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-px bg-rule rounded-lg overflow-hidden border border-rule">
+      {{ range first 4 (where .Site.RegularPages "Section" "research") }}
       <div class="bg-white p-5 sm:p-6 hover:bg-accent-light transition-colors">
         <span class="inline-block text-2xs font-semibold uppercase tracking-widest text-accent bg-accent-light px-2.5 py-0.5 rounded-full mb-3">{{ .Params.tag }}</span>
         <h3 class="font-sans text-lg leading-snug mb-2"><a href="{{ .RelPermalink }}" class="hover:text-accent transition-colors">{{ .Title }}</a></h3>
