@@ -64,6 +64,13 @@ members:
     kcl: ""
 
 alumni:
+  - name: "Sergio Francesco Bozzano"
+    pub_name: "Bozzano SF"
+    role: "Research Assistant"
+    years: "2024–2026"
+    now: "Currently working at Imperial College London."
+    thesis: ""
+
   - name: "Ravi Jagatia"
     pub_name: "Jagatia R"
     role: "PhD Student"

@@ -51,6 +51,7 @@
       <div>
         <h4 class="text-2xs font-semibold uppercase tracking-widest text-ink mb-3">Where we are</h4>
         <address class="not-italic text-xs text-ink-faint leading-relaxed">
+          {{ .Site.Params.department | replaceRE ", " "<br>" | safeHTML }}<br>
           {{ .Site.Params.address | replaceRE ", " "<br>" | safeHTML }}
         </address>
         {{ with .Site.Params.email }}
