@@ -158,7 +158,8 @@
       <a href="{{ "/events/" | relURL }}" class="text-xs font-medium text-accent hover:underline whitespace-nowrap shrink-0">Full calendar →</a>
     </div>
     <div class="divide-y divide-rule">
-      {{ range first 3 $.Site.Data.events.upcoming }}
+      {{ $today := now.Format "2006-01-02" }}
+      {{ range first 3 (sort (where $.Site.Data.events.events "date" "ge" $today) "date" "asc") }}
       <div class="flex items-center gap-4 sm:gap-5 py-4">
         <div class="shrink-0 w-12 bg-accent text-white rounded-md text-center py-1.5">
           {{ if .day }}

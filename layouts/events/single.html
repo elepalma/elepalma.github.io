@@ -13,57 +13,35 @@
   <!-- Upcoming -->
   <div class="mb-8">
     <h2 class="font-sans text-2xl tracking-tight mb-6 pb-3 border-b border-rule">Upcoming</h2>
-    <div class="divide-y divide-rule">
-      {{ range sort $.Site.Data.events.upcoming "sort_key" "asc" }}
-      <div class="flex items-start gap-4 sm:gap-6 py-5">
-        <div class="shrink-0 w-14 bg-accent text-white rounded-lg text-center py-2">
-          {{ if .day }}
-          <p class="text-2xs font-semibold uppercase tracking-widest opacity-75">{{ .day }}</p>
-          {{ end }}
-          <p class="text-2xs font-semibold uppercase tracking-widest opacity-75">{{ .month }}</p>
-          <p class="text-2xs font-semibold uppercase tracking-widest opacity-75">{{ .year }}</p>
-        </div>
-        <div class="flex-1 min-w-0">
-          <div class="flex flex-wrap items-start gap-2 mb-1">
-            <h3 class="text-sm font-medium">{{ .title }}</h3>
-            <span class="text-2xs font-semibold uppercase tracking-wide text-accent bg-accent-light px-2 py-0.5 rounded-full">{{ .type }}</span>
-          </div>
-          <p class="text-xs text-ink-faint mb-1">{{ .location }}</p>
-          {{ with .detail }}<p class="text-xs text-ink-light">{{ . }}</p>{{ end }}
-        </div>
-        {{ with .link }}
-        <a href="{{ . }}" target="_blank" rel="noopener" class="hidden sm:inline-flex shrink-0 text-xs text-accent border border-accent px-3 py-1.5 rounded hover:bg-accent hover:text-white transition-colors whitespace-nowrap">Info →</a>
-        {{ end }}
-      </div>
-      {{ end }}
-    </div>
+    <div id="upcoming-list" class="divide-y divide-rule"></div>
+    <p id="upcoming-empty" class="text-sm text-ink-faint py-4 hidden">No upcoming events at the moment.</p>
   </div>
 
   <!-- Past -->
   <div class="border-t border-rule pt-6">
     <h2 class="font-sans text-2xl tracking-tight mb-6">Past Events</h2>
-    <div class="divide-y divide-rule">
-      {{ range sort $.Site.Data.events.past "sort_key" "desc" }}
-      {{- $cutoffYear := now.AddDate -2 0 0 }}
-      {{- $isRecent := gt (.year | int) $cutoffYear.Year }}
-      <div class="flex items-start gap-4 sm:gap-6 py-4 opacity-70">
-        <div class="shrink-0 w-14 bg-rule rounded-lg text-center py-2">
-          {{ if and $isRecent .day }}
-          <p class="text-2xs font-semibold uppercase tracking-widest text-ink-faint">{{ .day }}</p>
-          {{ end }}
-          <p class="text-2xs font-semibold uppercase tracking-widest text-ink-faint">{{ .month }}</p>
-          <p class="text-2xs font-semibold uppercase tracking-widest text-ink-faint">{{ .year }}</p>
-        </div>
-        <div class="flex-1 min-w-0">
-          <p class="text-sm font-medium">{{ .title }}</p>
-          <p class="text-xs text-ink-faint">{{ with .location }}{{ . }} · {{ end }}{{ .year }}</p>
-          {{ with .detail }}<p class="text-xs text-ink-light italic mt-0.5">{{ . }}</p>{{ end }}
-        </div>
-        <span class="hidden sm:inline-block text-2xs font-medium text-ink-faint border border-rule px-2 py-0.5 rounded-full">{{ .type }}</span>
-      </div>
-      {{ end }}
-    </div>
+    <div id="past-list" class="divide-y divide-rule"></div>
+    <p id="past-empty" class="text-sm text-ink-faint py-4 hidden">No past events yet.</p>
   </div>
 
 </div>
+
+<!-- Hidden data source: Hugo emits all events as data attributes -->
+<div id="event-data" class="hidden" aria-hidden="true">
+  {{ range $.Site.Data.events.events }}
+  <div class="event-item"
+    data-date="{{ .date }}"
+    data-month="{{ .month }}"
+    data-day="{{ .day }}"
+    data-year="{{ .year }}"
+    data-title="{{ .title }}"
+    data-type="{{ .type }}"
+    data-location="{{ .location }}"
+    data-detail="{{ .detail }}"
+    data-link="{{ .link }}">
+  </div>
+  {{ end }}
+</div>
+
+<script src="{{ "js/events-filter.js" | relURL }}"></script>
 {{ end }}

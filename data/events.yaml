@@ -1,56 +1,61 @@
-upcoming:
-  - sort_key: 202605
+events:
+  - date: "2026-05-18"
+    sort_key: 202605
     month: "May"
-    year: "2026"
     day: "18"
+    year: "2026"
     title: "Yellow Webinars 2026"
     location: "Virtual, Italy"
     type: "Webinar"
     detail: "Mitochondrial Plasticity in Steatotic Liver Disease: from Adaptive Dynamics to Organelle Pathology"
     link: "https://www.fegato.it/eng/yellow-webinars/"
 
-  - sort_key: 202605
+  - date: "2026-05-26"
+    sort_key: 202605
     month: "May"
+    day: "23–26"
     year: "2026"
-    day: "23-26"
     title: "The Liver Sinusoid Meeting 2026"
     location: "Tarragona, Spain"
     type: "Conference"
     detail: "Lead of the international consensus on PCLS for translational liver research — Advancing the field: key findings and future directions in PCLS research"
     link: "https://tarragona.ishsr.net/"
 
-  - sort_key: 202605
+  - date: "2026-05-30"
+    sort_key: 202605
     month: "May"
+    day: "27–30"
     year: "2026"
-    day: "27-30"
     title: "EASL Congress 2026"
     location: "Barcelona, Spain"
     type: "Conference"
     detail: "Tissue-derived models to study alcohol-associated liver disease"
     link: "https://www.easlcongress.eu/"
 
-  - sort_key: 202609
+  - date: "2026-09-22"
+    sort_key: 202609
     month: "Sep"
+    day: "20–22"
     year: "2026"
-    day: "20-22"
     title: "FEBS Advanced Course 2026"
     location: "Spetses, Greece"
     type: "Course"
     detail: "MASLD: from novel liver model systems to organelle pathophysiology"
     link: "https://febscongress.org/"
 
-  - sort_key: 202610
+  - date: "2026-10-20"
+    sort_key: 202610
     month: "Oct"
+    day: "18–20"
     year: "2026"
-    day: "18-20"
     title: "DDM Summit: Cellular Drivers of Inflammation"
-    type: "Conference"
     location: "Barcelona, Spain"
+    type: "Conference"
     detail: "Digestive Disease Mechanism Summit, organised by UEG (United European Gastroenterology)"
     link: "https://ueg.eu/week/programme/ddm-summit"
 
-past:
-  - sort_key: 202602
+  - date: "2026-02-28"
+    sort_key: 202602
     month: "Feb"
     year: "2026"
     title: "ABCD–SIBBM PhD Meeting 2026"
@@ -58,7 +63,8 @@ past:
     type: "Conference"
     detail: "Studying mitochondria in complex human models of liver disease"
 
-  - sort_key: 202505
+  - date: "2025-05-31"
+    sort_key: 202505
     month: "May"
     year: "2025"
     title: "EASL Congress 2025"
@@ -66,7 +72,8 @@ past:
     type: "Conference"
     detail: "Meet the experts — Metabolism, Alcohol and Toxicity: Pre-clinical models of ALD; Best of EASL Basic Science highlights"
 
-  - sort_key: 202504
+  - date: "2025-04-30"
+    sort_key: 202504
     month: "Apr"
     year: "2025"
     title: "Experimental Hepatology Days (Falk Foundation Symposium)"
@@ -74,7 +81,8 @@ past:
     type: "Symposium"
     detail: "Precision Cut Liver Slices: versatile ex-vivo models of liver disease"
 
-  - sort_key: 202502
+  - date: "2025-02-28"
+    sort_key: 202502
     month: "Feb"
     year: "2025"
     title: "EASL SLD Summit 2025"
@@ -82,14 +90,16 @@ past:
     type: "Conference"
     detail: "Pathogenesis of MASLD and ALD: similarities and differences — the mito-centric perspective"
 
-  - sort_key: 202502
+  - date: "2025-02-28"
+    sort_key: 202502
     month: "Feb"
     year: "2025"
     title: "Symposium on Hepatic Organoids and 3D Culture (IHU EVEREST)"
     location: "Lyon, France"
     type: "Symposium"
 
-  - sort_key: 202410
+  - date: "2024-10-31"
+    sort_key: 202410
     month: "Oct"
     year: "2024"
     title: "15th Targeting Mitochondria Congress (World Mitochondria Society)"
@@ -97,7 +107,8 @@ past:
     type: "Conference"
     detail: "Targeting Megamitochondria in Human Liver Disease: Potential Diagnostic and Therapeutic Interventions"
 
-  - sort_key: 202410
+  - date: "2024-10-31"
+    sort_key: 202410
     month: "Oct"
     year: "2024"
     title: "Organ Modelling & 3D Cell Culture Conference 2024"
@@ -105,7 +116,8 @@ past:
     type: "Conference"
     detail: "Unlocking the potential of human Precision Cut Tissue Slices to bridge preclinical and clinical studies"
 
-  - sort_key: 202409
+  - date: "2024-09-30"
+    sort_key: 202409
     month: "Sep"
     year: "2024"
     title: "ESBRA Webinar Series"
@@ -113,7 +125,8 @@ past:
     type: "Webinar"
     detail: "Exploring the potentials of human precision cut liver slices in advancing ALD research"
 
-  - sort_key: 202308
+  - date: "2023-08-31"
+    sort_key: 202308
     month: "Aug"
     year: "2023"
     title: "BASL Basic Science Retreat"
@@ -121,7 +134,8 @@ past:
     type: "Conference"
     detail: "Precision-cut liver slices to model aetiology-specific disease and liver cancer"
 
-  - sort_key: 202209
+  - date: "2022-09-30"
+    sort_key: 202209
     month: "Sep"
     year: "2022"
     title: "2nd World Congress on Alcohol and Alcoholism (ESBRA-ISBRA)"
