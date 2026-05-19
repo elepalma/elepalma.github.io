@@ -75,8 +75,8 @@
       </div>
       <a href="{{ "/people/" | relURL }}" class="text-xs font-medium text-accent hover:underline whitespace-nowrap shrink-0">All people →</a>
     </div>
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-5">
-      {{ range first 5 $.Site.Data.people.members }}
+    <div class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-4 sm:gap-5">
+      {{ range first 6 $.Site.Data.people.members }}
       <div class="bg-white border border-rule rounded-lg overflow-hidden hover:border-accent transition-colors group">
         <div class="aspect-square bg-accent-light overflow-hidden">
           {{ if .photo }}
@@ -178,16 +178,6 @@
     </div>
   </div>
 </section>
-
-<!-- ══ QUOTE ══ -->
-<div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-5">
-  <div class="bg-accent rounded-lg px-6 sm:px-12 py-6 sm:py-8">
-    <blockquote class="font-sans text-xl sm:text-2xl xl:text-3xl italic text-white leading-relaxed text-center max-w-2xl mx-auto">
-      "Science is not only a discipline of reason but also one of romance and passion — the best research comes from those who genuinely care about the question."
-    </blockquote>
-    <cite class="block text-center text-xs mt-5 text-white/60 uppercase tracking-widest not-italic">— Lab Philosophy</cite>
-  </div>
-</div>
 
 <!-- ══ JOIN CTA ══ -->
 <section class="border-t border-rule">
