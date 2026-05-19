@@ -1,5 +1,5 @@
 ---
-title: "Mitochondrial in human hepatic models"
+title: "Human hepatic models to study mitochondria"
 tag: "Mito Models"
 summary: "Developing complex human models to investigate mitochondrial morphology and megamitochondria in the liver."
 funders: []

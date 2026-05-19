@@ -5,43 +5,27 @@ summary: "An overview of the key experimental and computational platforms used i
 weight: 6
 ---
 
-## Experimental Platforms
+### Experimental Platforms
 
-We combine cutting-edge experimental approaches across scales — from molecules to patients.
+We combine cutting-edge experimental approaches across scales from organelles to tissues.
 
-### Genomics & Transcriptomics
-- Single-cell RNA sequencing (10x Genomics Chromium)
-- Spatial transcriptomics (Visium, Xenium)
-- Bulk RNA sequencing
-- ATAC-seq (chromatin accessibility)
+### Models
+- Human precision cut liver slices
+- Human precision cut tumour slices
+- Primary human hepatocytes
+- Human liver organoids
+- Co culture models with immune cells
 
-### Proteomics & Metabolomics
-- Label-free quantitative mass spectrometry
-- Phosphoproteomics
-- Targeted metabolomics (LC-MS/MS)
-
-### Cell & Molecular Biology
-- Primary human hepatocyte isolation and culture
-- Hepatic stellate cell activation models
-- CRISPR-Cas9 gene editing
-- Live-cell mitochondrial imaging
-
-### Clinical & Translational
-- Liver biopsy biobanking (FLR cohort)
-- Non-invasive biomarker measurement
-- Patient phenotyping and longitudinal follow-up
-
-## Computational Platforms
-
-- **Bioinformatics:** Nextflow pipelines, Seurat, Scanpy, Squidpy
-- **Statistics:** R, Python
-- **Machine learning:** scikit-learn, PyTorch
-- **Data sharing:** GitHub, Zenodo, GEO
-
-## Core Facility Access
-
-We have direct access to the following KCL core facilities:
-- Genomics Centre (Denmark Hill)
-- Proteomics Facility
-- Bioimaging Core
-- Flow Cytometry Core
+### Techniques
+- Mitochondrial morphology analysis
+- Mitochondrial size and shape quantification
+- Megamitochondria characterisation
+- Super resolution and confocal imaging
+- Immunofluorescence staining
+- Digital image analysis
+- Histology and tissue viability assessment
+- Drug testing in human tissue models
+- Functional mitochondrial assays
+- RNA sequencing and proteomics in selected models
+- Extracellular matrix assessment
+- Tumour microenvironment profiling

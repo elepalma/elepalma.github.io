@@ -4,7 +4,7 @@ tag: "Alcohol Mitochondria"
 summary: "How ethanol reshapes mitochondrial architecture in hepatocytes and drives the formation of megamitochondria in steatotic liver disease."
 funders: []
 team: ["Dr. Elena Palma"]
-weight: 2
+weight: 1
 ---
 
 # Overview

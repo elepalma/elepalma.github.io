@@ -38,7 +38,8 @@
       {{ range $.Site.Data.collaborators.groups }}
       <div class="bg-white border border-rule rounded-lg p-5">
         <p class="text-2xs font-semibold uppercase tracking-widest text-accent mb-1">{{ .type }}</p>
-        <h3 class="text-sm font-medium mb-1">{{ .name }}</h3>
+        <h3 class="text-sm font-medium mb-0.5">{{ .name }}</h3>
+        {{ with .affiliation }}<p class="text-2xs text-ink-faint italic mb-1.5">{{ . }}</p>{{ end }}
         <p class="text-xs text-ink-faint">{{ .description }}</p>
       </div>
       {{ end }}

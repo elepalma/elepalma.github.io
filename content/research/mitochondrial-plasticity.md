@@ -1,10 +1,10 @@
 ---
-title: "Mitochondrial Plasticity and Organelle Biology"
+title: "Mitochondrial plasticity and organelle biology"
 tag: "Mito Plasticty"
 summary: "Deciphering the fundamental principles governing mitochondrial plasticity in response to cellular signalling and metabolic stress."
 funders: []
 team: ["Una Rastovic", "Dr. Meliz Sahuri-Arisoylu"]
-weight: 1
+weight: 2
 ---
 
 # **Overview**
