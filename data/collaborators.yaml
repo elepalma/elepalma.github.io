@@ -43,3 +43,8 @@ groups:
     name: "Dr Thomas Marjot"
     affiliation: "Roger Williams Institute of Liver Studies, King’s College London"
     description: "Steatotic liver disease and experimental medicine."
+
+  - type: "Academic"
+    name: "Prof Pedro Baptista"
+    affiliation: "Center for Biomedical Research Network Liver and Digestive Diseases (CIBERehd), Zaragoza"
+    description: "Translational validation of gut microbiota-derived peptides in liver regeneration and fibrosis using Precision-Cut Liver Slices."
