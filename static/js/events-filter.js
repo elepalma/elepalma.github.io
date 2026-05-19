@@ -46,7 +46,11 @@
 
       var badge = '<span class="hidden sm:inline-block text-2xs font-medium text-ink-faint border border-rule px-2 py-0.5 rounded-full">' + esc(d.type) + '</span>';
 
-      row.innerHTML = dateBox + body + badge;
+      var link = d.link
+        ? '<a href="' + esc(d.link) + '" target="_blank" rel="noopener" class="hidden sm:inline-flex shrink-0 text-xs text-ink-faint border border-rule px-3 py-1.5 rounded hover:border-accent hover:text-accent transition-colors whitespace-nowrap">Info →</a>'
+        : '';
+
+      row.innerHTML = dateBox + body + (d.link ? link : badge);
     } else {
       row.className = 'flex items-start gap-4 sm:gap-6 py-5';
 
