@@ -39,18 +39,19 @@
         '</div>';
 
       var body = '<div class="flex-1 min-w-0">' +
+        '<div class="flex flex-wrap items-start gap-2 mb-1">' +
         '<p class="text-sm font-medium">' + esc(d.title) + '</p>' +
-        '<p class="text-xs text-ink-faint">' + (d.location ? esc(d.location) + ' · ' : '') + esc(d.year) + '</p>' +
+        '<span class="text-2xs font-semibold uppercase tracking-wide text-ink-faint bg-rule px-2 py-0.5 rounded-full">' + esc(d.type) + '</span>' +
+        '</div>' +
+        '<p class="text-xs text-ink-faint mb-1">' + (d.location ? esc(d.location) + ' · ' : '') + esc(d.year) + '</p>' +
         (d.detail ? '<p class="text-xs text-ink-light italic mt-0.5">' + esc(d.detail) + '</p>' : '') +
         '</div>';
-
-      var badge = '<span class="hidden sm:inline-block text-2xs font-medium text-ink-faint border border-rule px-2 py-0.5 rounded-full">' + esc(d.type) + '</span>';
 
       var link = d.link
         ? '<a href="' + esc(d.link) + '" target="_blank" rel="noopener" class="hidden sm:inline-flex shrink-0 text-xs text-ink-faint border border-rule px-3 py-1.5 rounded hover:border-accent hover:text-accent transition-colors whitespace-nowrap">Info →</a>'
         : '';
 
-      row.innerHTML = dateBox + body + (d.link ? link : badge);
+      row.innerHTML = dateBox + body + link;
     } else {
       row.className = 'flex items-start gap-4 sm:gap-6 py-5';
 
