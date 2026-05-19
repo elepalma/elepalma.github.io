@@ -28,3 +28,18 @@ groups:
     name: "TITAN Consortium"
     affiliation: "Prof Jesús M. Bañales, Dr Pedro Rodrigues, Prof Fernando Cossío, Dr Iván Rivilla, Prof Jean Charles Nault, Dr Sandra Rebouissou, Prof Ana Lleo, Dr Michela Polidoro"
     description: "Development of novel therapeutic strategies for liver cancer."
+
+  - type: "Clinical"
+    name: "Liver Histopatology Laboratory "
+    affiliation: "King's College Hospital"
+    description: "Characterisation of mitochondrial alterations in patients with alcohol use disorder (AUD) and alcohol related liver disease (ALD)."
+
+  - type: "Academic"
+    name: "Prof Geltrude Mingrone"
+    affiliation: "Fondazione Policlinico Universitario A. Gemelli IRCCS, King's College London"
+    description: "MASLD, mitochondrial function, and lipid contact sites in metabolic liver disease."
+
+  - type: "Academic"
+    name: "Dr Thomas Marjot"
+    affiliation: "Roger Williams Institute of Liver Studies, King’s College London"
+    description: "Steatotic liver disease and experimental medicine."
