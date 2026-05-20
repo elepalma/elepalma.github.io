@@ -11,9 +11,6 @@
           {{ .Site.Params.department }},<br>{{ .Site.Params.institution }}.
         </p>
         <div class="flex gap-2">
-          {{ with .Site.Params.twitter }}
-          <a href="{{ . }}" target="_blank" rel="noopener" class="w-8 h-8 border border-rule rounded flex items-center justify-center text-ink-faint hover:border-accent hover:text-accent hover:bg-accent-light transition-colors" title="X">𝕏</a>
-          {{ end }}
           {{ with .Site.Params.linkedin }}
           <a href="{{ . }}" target="_blank" rel="noopener" class="w-8 h-8 border border-rule rounded flex items-center justify-center text-ink-faint hover:border-accent hover:text-accent hover:bg-accent-light transition-colors" title="LinkedIn">in</a>
           {{ end }}
