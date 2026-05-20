@@ -28,6 +28,7 @@
           {{ with .orcid }}<a href="{{ . }}" target="_blank" rel="noopener" class="text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors">ORCID</a>{{ end }}
           {{ with .gscholar }}<a href="{{ . }}" target="_blank" rel="noopener" class="text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors">Google Scholar</a>{{ end }}
           {{ with .pub_name }}<a href="{{ "/publications/" | relURL }}?author={{ . | urlquery }}" class="text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors">Papers</a>{{ end }}
+          {{ with .profile }}<a href="{{ . }}" target="_blank" rel="noopener" class="text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors">Profile</a>{{ end }}
         </div>
       </div>
     </div>
@@ -57,7 +58,12 @@
           </div>
         </div>
         <p class="text-xs text-ink-light leading-relaxed">{{ .bio }}</p>
-        {{ with .pub_name }}<div class="mt-3"><a href="{{ "/publications/" | relURL }}?author={{ . | urlquery }}" class="text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors">Papers</a></div>{{ end }}
+        {{ if or .profile .pub_name }}
+        <div class="flex gap-2 mt-3">
+          {{ with .pub_name }}<a href="{{ "/publications/" | relURL }}?author={{ . | urlquery }}" class="text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors">Papers</a>{{ end }}
+          {{ with .profile }}<a href="{{ . }}" target="_blank" rel="noopener" class="text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors">Profile</a>{{ end }}
+        </div>
+        {{ end }}
       </div>
       {{ end }}
     </div>

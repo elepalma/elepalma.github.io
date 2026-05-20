@@ -13,6 +13,7 @@ members:
     researchgate: "https://www.researchgate.net/profile/Elena-Palma-2"
     orcid: ""
     gscholar: ""
+    profile: ""
 
   - name: "Dr. Meliz Sahuri-Arisoylu"
     pub_name: "Sahuri-Arisoylu M"
@@ -22,7 +23,7 @@ members:
     role_type: "postdoc"
     area: "Mitochondrial Dynamics · ALD · MetALD"
     bio: "Meliz joined the Palma Lab in 2024 as a Research Fellow in the Mitochondrial Medicine for Liver Disease Lab. She holds an MSc and PhD from Imperial College London and brings experience from both academia and industry. Her current work investigates changes in mitochondrial dynamics and function in Alcohol-Related Liver Disease (ALD) and Metabolic Dysfunction and Alcohol-Related Steatotic Liver Disease (MetALD), with a particular focus on megamitochondria and their role in disease diagnosis and treatment."
-    kcl: "https://www.kcl.ac.uk/people/meliz-sahuri-arisoylu"
+    profile: "https://www.kcl.ac.uk/people/meliz-sahuri-arisoylu"
 
   - name: "Una Rastovic"
     pub_name: "Rastovic U"
@@ -32,7 +33,7 @@ members:
     role_type: "phd"
     area: "Mitochondrial Morphology · ALD · Liver Fibrosis"
     bio: "Una joined the Roger Williams Institute of Liver Studies as a Research Assistant in 2020 and started her PhD in the Palma Lab in 2023. She completed her BSc in Molecular Biology at the University of Zagreb and her MSc in Cancer Immunology and Biotechnology at the University of Nottingham. Her PhD investigates changes in mitochondrial morphology and function in ALD and liver fibrosis, with the aim of targeting mitochondria as a therapeutic strategy. She is a recipient of the Research Society on Alcohol Doctoral Students Small Grant."
-    kcl: "https://www.kcl.ac.uk/people/una-rastovic"
+    profile: "https://www.kcl.ac.uk/people/una-rastovic"
 
   - name: "Moyosoreoluwa Feyide"
     pub_name: "Feyide M"
@@ -41,7 +42,7 @@ members:
     role: "PhD Student"
     role_type: "phd"
     area: "CCA · Tumour Models · Drug Testing"
-    kcl: "https://www.kcl.ac.uk/people/moyosoreoluwa-feyide"
+    profile: "https://www.kcl.ac.uk/people/moyosoreoluwa-feyide"
 
   - name: "Anna Schulz"
     pub_name: "Schulz A"
@@ -51,7 +52,7 @@ members:
     role_type: "Phd"
     area: "CCA · Tumour Models · Drug Testing"
     bio: ""
-    kcl: ""
+    profile: ""
 
   - name: "Sara Russo"
     pub_name: "Russo S"
@@ -61,7 +62,7 @@ members:
     role_type: "phd"
     area: "SLD · Mitochondria"
     bio: "Sara is a visiting PhD student from Biotechnologist at Fondazione Policlinico Universitario A. Gemelli IRCCS"
-    kcl: ""
+    profile: ""
 
 alumni:
   - name: "Sergio Francesco Bozzano"
