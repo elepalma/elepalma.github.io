@@ -13,64 +13,195 @@
 
 
 <!-- ══════════════════════════════════════════
-     OPTION A — PINK ORCHID + NEUTRALS
-     Warm, sophisticated, with colour picker
+     OPTION A — COLOUR EXPLORER
      ══════════════════════════════════════════ -->
 
-<div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 pt-10 pb-4">
+<div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 pt-10 pb-5">
   <div class="flex items-center gap-3 mb-1">
-    <span style="background:#b06090;color:#fff;font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:0.25rem 0.8rem;border-radius:999px;">Option A</span>
-    <h2 class="font-sans text-xl tracking-tight">Pink Orchid — Warm &amp; Sophisticated</h2>
+    <span id="a-label" style="background:#b06090;color:#fff;font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:0.25rem 0.8rem;border-radius:999px;">Option A</span>
+    <h2 class="font-sans text-xl tracking-tight">Colour Explorer — pick a palette</h2>
   </div>
-  <p class="text-sm text-ink-light max-w-2xl mb-4">Warm orchid primary with neutral cream tones and a gold accent. Professional and distinctive — use the palette swatches below to explore colour variations.</p>
+  <p class="text-sm text-ink-light max-w-2xl mb-5">Each swatch shows the primary colour (large) and its contrast accent (small dot). Backgrounds are neutral — grey or cream. Click any to preview live.</p>
 
-  <!-- Colour picker -->
-  <div style="display:flex;align-items:center;gap:0.75rem;padding:0.875rem 1.25rem;background:#faf8f9;border:1px solid #ead8e4;border-radius:0.75rem;width:fit-content;">
-    <span style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#7a6070;">Palette</span>
-    <button onclick="setPalette('#b06090','#f7edf4','#7e4468','#f7f3f0')" title="Pink Orchid"
-      style="width:28px;height:28px;border-radius:50%;background:#b06090;border:2px solid #fff;box-shadow:0 0 0 2px #b06090;cursor:pointer;"></button>
-    <button onclick="setPalette('#8b6daa','#f0eaf7','#63498a','#f5f3f8')" title="Soft Violet"
-      style="width:28px;height:28px;border-radius:50%;background:#8b6daa;border:2px solid #fff;box-shadow:0 0 0 2px #8b6daa;cursor:pointer;"></button>
-    <button onclick="setPalette('#c4788a','#fceef1','#9c5068','#fdf6f7')" title="Dusty Rose"
-      style="width:28px;height:28px;border-radius:50%;background:#c4788a;border:2px solid #fff;box-shadow:0 0 0 2px #c4788a;cursor:pointer;"></button>
-    <button onclick="setPalette('#8b4570','#f5e8f1','#66295a','#f7f2f5')" title="Deep Berry"
-      style="width:28px;height:28px;border-radius:50%;background:#8b4570;border:2px solid #fff;box-shadow:0 0 0 2px #8b4570;cursor:pointer;"></button>
-    <button onclick="setPalette('#b07848','#f7f0e8','#7e5230','#f8f5f1')" title="Warm Amber"
-      style="width:28px;height:28px;border-radius:50%;background:#b07848;border:2px solid #fff;box-shadow:0 0 0 2px #b07848;cursor:pointer;"></button>
-    <span style="font-size:0.7rem;color:#9a8888;margin-left:0.25rem;">← click to switch</span>
-  </div>
+  <!-- ── Palette grid ── -->
+  <div style="display:flex;flex-wrap:wrap;gap:0.6rem;padding:1.25rem;background:#f8f7f6;border:1px solid #e4e0db;border-radius:0.875rem;">
+
+    <!-- group label -->
+    <div style="width:100%;font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#999;margin-bottom:0.1rem;">Warm &amp; Earthy</div>
+
+    <button onclick="setP('Warm Gold','#c49040','#f5f2ec','#7e5a20','#2a5c45','#eaf2ee','#e8dfc8','#2d2010','#7a6040','#b0a080')" title="Warm Gold + Forest"
+      style="display:flex;flex-direction:column;align-items:center;gap:5px;padding:0.6rem 0.75rem;background:#fff;border:1.5px solid #e4e0db;border-radius:0.625rem;cursor:pointer;min-width:80px;">
+      <div style="display:flex;align-items:center;gap:4px;">
+        <div style="width:24px;height:24px;border-radius:50%;background:#c49040;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.15);"></div>
+        <div style="width:14px;height:14px;border-radius:50%;background:#2a5c45;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.15);"></div>
+      </div>
+      <span style="font-size:0.62rem;color:#666;white-space:nowrap;">Gold + Forest</span>
+    </button>
+
+    <button onclick="setP('Amber + Navy','#c07830','#faf5ee','#8a5018','#1e3a5f','#e8eef5','#e8dcc8','#2a1e10','#7a5030','#a09070')" title="Rich Amber + Navy"
+      style="display:flex;flex-direction:column;align-items:center;gap:5px;padding:0.6rem 0.75rem;background:#fff;border:1.5px solid #e4e0db;border-radius:0.625rem;cursor:pointer;min-width:80px;">
+      <div style="display:flex;align-items:center;gap:4px;">
+        <div style="width:24px;height:24px;border-radius:50%;background:#c07830;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.15);"></div>
+        <div style="width:14px;height:14px;border-radius:50%;background:#1e3a5f;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.15);"></div>
+      </div>
+      <span style="font-size:0.62rem;color:#666;white-space:nowrap;">Amber + Navy</span>
+    </button>
+
+    <button onclick="setP('Terracotta + Slate','#b06050','#f7f3f0','#7a3830','#4a6a8a','#eaf0f5','#e8d8d4','#2d1810','#7a5048','#a08878')" title="Terracotta + Slate"
+      style="display:flex;flex-direction:column;align-items:center;gap:5px;padding:0.6rem 0.75rem;background:#fff;border:1.5px solid #e4e0db;border-radius:0.625rem;cursor:pointer;min-width:80px;">
+      <div style="display:flex;align-items:center;gap:4px;">
+        <div style="width:24px;height:24px;border-radius:50%;background:#b06050;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.15);"></div>
+        <div style="width:14px;height:14px;border-radius:50%;background:#4a6a8a;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.15);"></div>
+      </div>
+      <span style="font-size:0.62rem;color:#666;white-space:nowrap;">Terracotta + Slate</span>
+    </button>
+
+    <button onclick="setP('Warm Stone + Berry','#8a7868','#f5f2ef','#5a4838','#8b4570','#f5e8f1','#e0d8d0','#241e18','#7a6858','#a09888')" title="Warm Stone + Berry"
+      style="display:flex;flex-direction:column;align-items:center;gap:5px;padding:0.6rem 0.75rem;background:#fff;border:1.5px solid #e4e0db;border-radius:0.625rem;cursor:pointer;min-width:80px;">
+      <div style="display:flex;align-items:center;gap:4px;">
+        <div style="width:24px;height:24px;border-radius:50%;background:#8a7868;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.15);"></div>
+        <div style="width:14px;height:14px;border-radius:50%;background:#8b4570;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.15);"></div>
+      </div>
+      <span style="font-size:0.62rem;color:#666;white-space:nowrap;">Stone + Berry</span>
+    </button>
+
+    <!-- group label -->
+    <div style="width:100%;font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#999;margin-top:0.5rem;margin-bottom:0.1rem;">Cool &amp; Professional</div>
+
+    <button onclick="setP('Slate Blue + Gold','#4a6a8a','#f0f4f8','#2a4a6a','#c49040','#fdf4e8','#d8e4f0','#101820','#506070','#8090a8')" title="Slate Blue + Gold"
+      style="display:flex;flex-direction:column;align-items:center;gap:5px;padding:0.6rem 0.75rem;background:#fff;border:1.5px solid #e4e0db;border-radius:0.625rem;cursor:pointer;min-width:80px;">
+      <div style="display:flex;align-items:center;gap:4px;">
+        <div style="width:24px;height:24px;border-radius:50%;background:#4a6a8a;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.15);"></div>
+        <div style="width:14px;height:14px;border-radius:50%;background:#c49040;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.15);"></div>
+      </div>
+      <span style="font-size:0.62rem;color:#666;white-space:nowrap;">Slate + Gold</span>
+    </button>
+
+    <button onclick="setP('Steel Teal + Copper','#3a7080','#f0f5f5','#1a5060','#b06840','#fdf0e8','#d0e8ec','#0e1e20','#507080','#80a8b0')" title="Steel Teal + Copper"
+      style="display:flex;flex-direction:column;align-items:center;gap:5px;padding:0.6rem 0.75rem;background:#fff;border:1.5px solid #e4e0db;border-radius:0.625rem;cursor:pointer;min-width:80px;">
+      <div style="display:flex;align-items:center;gap:4px;">
+        <div style="width:24px;height:24px;border-radius:50%;background:#3a7080;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.15);"></div>
+        <div style="width:14px;height:14px;border-radius:50%;background:#b06840;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.15);"></div>
+      </div>
+      <span style="font-size:0.62rem;color:#666;white-space:nowrap;">Teal + Copper</span>
+    </button>
+
+    <button onclick="setP('Sage + Plum','#5a7a6a','#f2f5f2','#3a5a4a','#7a5080','#f2edf5','#d8e8e0','#141e18','#607a68','#90a898')" title="Sage Green + Plum"
+      style="display:flex;flex-direction:column;align-items:center;gap:5px;padding:0.6rem 0.75rem;background:#fff;border:1.5px solid #e4e0db;border-radius:0.625rem;cursor:pointer;min-width:80px;">
+      <div style="display:flex;align-items:center;gap:4px;">
+        <div style="width:24px;height:24px;border-radius:50%;background:#5a7a6a;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.15);"></div>
+        <div style="width:14px;height:14px;border-radius:50%;background:#7a5080;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.15);"></div>
+      </div>
+      <span style="font-size:0.62rem;color:#666;white-space:nowrap;">Sage + Plum</span>
+    </button>
+
+    <!-- group label -->
+    <div style="width:100%;font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#999;margin-top:0.5rem;margin-bottom:0.1rem;">Soft &amp; Muted (low pink)</div>
+
+    <button onclick="setP('Dull Blush + Sage','#c0949c','#f7f3f2','#906068','#5a7a6a','#eef4f0','#ecdee0','#2a1c1e','#907880','#c0aaae')" title="Dull Blush + Sage"
+      style="display:flex;flex-direction:column;align-items:center;gap:5px;padding:0.6rem 0.75rem;background:#fff;border:1.5px solid #e4e0db;border-radius:0.625rem;cursor:pointer;min-width:80px;">
+      <div style="display:flex;align-items:center;gap:4px;">
+        <div style="width:24px;height:24px;border-radius:50%;background:#c0949c;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.15);"></div>
+        <div style="width:14px;height:14px;border-radius:50%;background:#5a7a6a;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.15);"></div>
+      </div>
+      <span style="font-size:0.62rem;color:#666;white-space:nowrap;">Dull Blush + Sage</span>
+    </button>
+
+    <button onclick="setP('Dusty Mauve + Copper','#a88090','#f7f2f3','#785060','#b06840','#fdf0e8','#e8d8dc','#28181c','#806070','#c0a0a8')" title="Dusty Mauve + Copper"
+      style="display:flex;flex-direction:column;align-items:center;gap:5px;padding:0.6rem 0.75rem;background:#fff;border:1.5px solid #e4e0db;border-radius:0.625rem;cursor:pointer;min-width:80px;">
+      <div style="display:flex;align-items:center;gap:4px;">
+        <div style="width:24px;height:24px;border-radius:50%;background:#a88090;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.15);"></div>
+        <div style="width:14px;height:14px;border-radius:50%;background:#b06840;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.15);"></div>
+      </div>
+      <span style="font-size:0.62rem;color:#666;white-space:nowrap;">Mauve + Copper</span>
+    </button>
+
+    <button onclick="setP('Rose Ash + Gold','#b89098','#f7f3f2','#886068','#c49040','#fdf4e8','#ecdee0','#2a1c1e','#907880','#c0aaae')" title="Rose Ash + Gold"
+      style="display:flex;flex-direction:column;align-items:center;gap:5px;padding:0.6rem 0.75rem;background:#fff;border:1.5px solid #e4e0db;border-radius:0.625rem;cursor:pointer;min-width:80px;">
+      <div style="display:flex;align-items:center;gap:4px;">
+        <div style="width:24px;height:24px;border-radius:50%;background:#b89098;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.15);"></div>
+        <div style="width:14px;height:14px;border-radius:50%;background:#c49040;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.15);"></div>
+      </div>
+      <span style="font-size:0.62rem;color:#666;white-space:nowrap;">Rose Ash + Gold</span>
+    </button>
+
+    <!-- group label -->
+    <div style="width:100%;font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#999;margin-top:0.5rem;margin-bottom:0.1rem;">Deep &amp; Rich</div>
+
+    <button onclick="setP('Plum + Amber','#7a5080','#f5f0f7','#5a3060','#c07830','#fdf4e8','#ddd0e4','#1e1024','#6a4070','#a880b0')" title="Plum + Amber"
+      style="display:flex;flex-direction:column;align-items:center;gap:5px;padding:0.6rem 0.75rem;background:#fff;border:1.5px solid #e4e0db;border-radius:0.625rem;cursor:pointer;min-width:80px;">
+      <div style="display:flex;align-items:center;gap:4px;">
+        <div style="width:24px;height:24px;border-radius:50%;background:#7a5080;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.15);"></div>
+        <div style="width:14px;height:14px;border-radius:50%;background:#c07830;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.15);"></div>
+      </div>
+      <span style="font-size:0.62rem;color:#666;white-space:nowrap;">Plum + Amber</span>
+    </button>
+
+    <button onclick="setP('Burgundy + Sage','#8a3050','#f7f0f3','#621830','#5a7a6a','#eef4f0','#e0c8d0','#28101a','#7a3050','#b87090')" title="Burgundy + Sage"
+      style="display:flex;flex-direction:column;align-items:center;gap:5px;padding:0.6rem 0.75rem;background:#fff;border:1.5px solid #e4e0db;border-radius:0.625rem;cursor:pointer;min-width:80px;">
+      <div style="display:flex;align-items:center;gap:4px;">
+        <div style="width:24px;height:24px;border-radius:50%;background:#8a3050;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.15);"></div>
+        <div style="width:14px;height:14px;border-radius:50%;background:#5a7a6a;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.15);"></div>
+      </div>
+      <span style="font-size:0.62rem;color:#666;white-space:nowrap;">Burgundy + Sage</span>
+    </button>
+
+    <button onclick="setP('Violet + Gold','#8b6daa','#f3eef7','#63498a','#c49040','#fdf4e8','#ddd0ec','#1c1228','#706090','#a890c8')" title="Violet + Gold"
+      style="display:flex;flex-direction:column;align-items:center;gap:5px;padding:0.6rem 0.75rem;background:#fff;border:1.5px solid #e4e0db;border-radius:0.625rem;cursor:pointer;min-width:80px;">
+      <div style="display:flex;align-items:center;gap:4px;">
+        <div style="width:24px;height:24px;border-radius:50%;background:#8b6daa;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.15);"></div>
+        <div style="width:14px;height:14px;border-radius:50%;background:#c49040;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.15);"></div>
+      </div>
+      <span style="font-size:0.62rem;color:#666;white-space:nowrap;">Violet + Gold</span>
+    </button>
+
+    <!-- default / original -->
+    <div style="width:100%;font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#999;margin-top:0.5rem;margin-bottom:0.1rem;">Original</div>
+
+    <button onclick="setP('Pink Orchid + Gold','#b06090','#f7edf4','#7e4468','#c4924a','#fdf4e8','#ead8e4','#2d1f28','#7a6070','#a89098')" title="Pink Orchid + Gold"
+      style="display:flex;flex-direction:column;align-items:center;gap:5px;padding:0.6rem 0.75rem;background:#fff;border:1.5px solid #b06090;border-radius:0.625rem;cursor:pointer;min-width:80px;">
+      <div style="display:flex;align-items:center;gap:4px;">
+        <div style="width:24px;height:24px;border-radius:50%;background:#b06090;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.15);"></div>
+        <div style="width:14px;height:14px;border-radius:50%;background:#c4924a;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.15);"></div>
+      </div>
+      <span style="font-size:0.62rem;color:#666;white-space:nowrap;">Orchid + Gold</span>
+    </button>
+
+  </div><!-- end palette grid -->
+
+  <!-- Active palette name -->
+  <p style="font-size:0.72rem;color:#888;margin-top:0.6rem;">Active: <strong id="palette-name" style="color:#444;">Pink Orchid + Gold</strong></p>
 </div>
 
-<!-- Option A frame — uses CSS custom properties updated by picker -->
+<!-- Option A frame -->
 <div id="option-a-frame" style="
-  --orchid: #b06090;
-  --orchid-light: #f7edf4;
-  --orchid-dark: #7e4468;
+  --p: #b06090;
+  --p-light: #f7edf4;
+  --p-dark: #7e4468;
   --bg: #f7f3f0;
-  --gold: #c4924a;
-  --gold-light: #fdf4e8;
+  --a: #c4924a;
+  --a-light: #fdf4e8;
   --border: #ead8e4;
   --text: #2d1f28;
   --text-mid: #7a6070;
   --text-light: #a89098;
-  border-top: 3px solid var(--orchid);
-  border-bottom: 3px solid var(--orchid);
+  border-top: 3px solid var(--p);
+  border-bottom: 3px solid var(--p);
   overflow: hidden;
 ">
-
   <!-- A · Nav -->
   <nav style="background:#fff;border-bottom:1px solid var(--border);">
     <div style="max-width:1400px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:58px;">
       <div style="display:flex;align-items:baseline;gap:0.6rem;">
-        <span style="font-size:1rem;font-weight:700;color:var(--orchid);letter-spacing:-0.02em;">Palma Lab</span>
-        <span style="font-size:0.72rem;color:var(--text-light);font-weight:400;">· King's College London</span>
+        <span style="font-size:1rem;font-weight:700;color:var(--p);letter-spacing:-0.02em;">Palma Lab</span>
+        <span style="font-size:0.72rem;color:var(--text-light);">· King's College London</span>
       </div>
       <div style="display:flex;align-items:center;gap:1.75rem;">
         <a style="font-size:0.8rem;color:var(--text);font-weight:500;text-decoration:none;">Research</a>
         <a style="font-size:0.8rem;color:var(--text);font-weight:500;text-decoration:none;">People</a>
         <a style="font-size:0.8rem;color:var(--text);font-weight:500;text-decoration:none;">Publications</a>
         <a style="font-size:0.8rem;color:var(--text);font-weight:500;text-decoration:none;">Events</a>
-        <a style="background:var(--orchid);color:#fff;font-size:0.75rem;font-weight:700;padding:0.4rem 1.1rem;border-radius:999px;text-decoration:none;">Contact →</a>
+        <a style="background:var(--p);color:#fff;font-size:0.75rem;font-weight:700;padding:0.4rem 1.1rem;border-radius:999px;text-decoration:none;">Contact →</a>
       </div>
     </div>
   </nav>
@@ -79,35 +210,34 @@
   <div style="background:var(--bg);padding:4rem 2rem;">
     <div style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;">
       <div>
-        <p style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--orchid);margin-bottom:0.75rem;">Welcome to Palma Lab</p>
+        <p style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--p);margin-bottom:0.75rem;">Welcome to Palma Lab</p>
         <h1 style="font-size:2.8rem;font-weight:700;line-height:1.12;color:var(--text);margin-bottom:1.25rem;letter-spacing:-0.03em;">
-          Exploring <em style="color:var(--orchid);font-style:italic;">mitochondria</em><br>to advance<br>liver research
+          Exploring <em style="color:var(--p);font-style:italic;">mitochondria</em><br>to advance<br>liver research
         </h1>
         <p style="font-size:0.88rem;color:var(--text-mid);line-height:1.75;max-width:420px;margin-bottom:1.75rem;">A translational research group investigating how mitochondrial plasticity shapes cellular adaptation in liver health and disease.</p>
         <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-          <a style="background:var(--orchid);color:#fff;font-size:0.82rem;font-weight:600;padding:0.65rem 1.4rem;border-radius:999px;text-decoration:none;">Our Research</a>
-          <a style="border:2px solid var(--orchid);color:var(--orchid);font-size:0.82rem;font-weight:600;padding:0.65rem 1.4rem;border-radius:999px;text-decoration:none;">Join the Lab</a>
+          <a style="background:var(--p);color:#fff;font-size:0.82rem;font-weight:600;padding:0.65rem 1.4rem;border-radius:999px;text-decoration:none;">Our Research</a>
+          <a style="border:2px solid var(--p);color:var(--p);font-size:0.82rem;font-weight:600;padding:0.65rem 1.4rem;border-radius:999px;text-decoration:none;">Join the Lab</a>
         </div>
       </div>
-      <!-- right: info grid -->
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border-radius:1rem;overflow:hidden;border:1px solid var(--border);">
         <div style="background:#fff;padding:1.4rem;">
-          <p style="font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold);margin-bottom:0.4rem;">What</p>
+          <p style="font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--a);margin-bottom:0.4rem;">What</p>
           <p style="font-size:0.88rem;font-weight:600;color:var(--text);margin-bottom:0.35rem;line-height:1.3;">Mitochondrial Morphology</p>
           <p style="font-size:0.74rem;color:var(--text-light);line-height:1.55;">Mapping organelle remodelling in SLD, ALD, and cholangiocarcinoma.</p>
         </div>
         <div style="background:#fff;padding:1.4rem;">
-          <p style="font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold);margin-bottom:0.4rem;">How</p>
+          <p style="font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--a);margin-bottom:0.4rem;">How</p>
           <p style="font-size:0.88rem;font-weight:600;color:var(--text);margin-bottom:0.35rem;line-height:1.3;">Human ex vivo Models</p>
-          <p style="font-size:0.74rem;color:var(--text-light);line-height:1.55;">Patient-derived tissue models and advanced imaging approaches.</p>
+          <p style="font-size:0.74rem;color:var(--text-light);line-height:1.55;">Patient-derived tissue models and advanced imaging.</p>
         </div>
         <div style="background:#fff;padding:1.4rem;">
-          <p style="font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold);margin-bottom:0.4rem;">Why</p>
+          <p style="font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--a);margin-bottom:0.4rem;">Why</p>
           <p style="font-size:0.88rem;font-weight:600;color:var(--text);margin-bottom:0.35rem;line-height:1.3;">Translational Impact</p>
           <p style="font-size:0.74rem;color:var(--text-light);line-height:1.55;">Bridging organelle biology with clinical liver therapies.</p>
         </div>
         <div style="background:#fff;padding:1.4rem;">
-          <p style="font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold);margin-bottom:0.4rem;">Who</p>
+          <p style="font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--a);margin-bottom:0.4rem;">Who</p>
           <p style="font-size:0.88rem;font-weight:600;color:var(--text);margin-bottom:0.35rem;line-height:1.3;">Collaborative Team</p>
           <p style="font-size:0.74rem;color:var(--text-light);line-height:1.55;">Scientists and clinicians across all career stages.</p>
         </div>
@@ -118,194 +248,226 @@
   <!-- A · Cards -->
   <div style="background:#fff;padding:3rem 2rem;">
     <div style="max-width:1400px;margin:0 auto;">
-      <p style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--orchid);margin-bottom:0.3rem;">Research</p>
+      <p style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--p);margin-bottom:0.3rem;">Research</p>
       <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:1.5rem;">
         <h2 style="font-size:1.75rem;font-weight:700;color:var(--text);letter-spacing:-0.02em;">Our Projects</h2>
-        <a style="font-size:0.78rem;color:var(--orchid);font-weight:600;text-decoration:none;">View all →</a>
+        <a style="font-size:0.78rem;color:var(--a);font-weight:600;text-decoration:none;">View all →</a>
       </div>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;">
         <div style="border:1.5px solid var(--border);border-radius:0.875rem;padding:1.5rem;background:#fff;">
-          <span style="background:var(--orchid-light);color:var(--orchid);font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:0.22rem 0.65rem;border-radius:999px;display:inline-block;margin-bottom:0.9rem;">ALD · Mitochondria</span>
+          <span style="background:var(--p-light);color:var(--p);font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:0.22rem 0.65rem;border-radius:999px;display:inline-block;margin-bottom:0.9rem;">ALD · Mitochondria</span>
           <h3 style="font-size:1rem;font-weight:600;color:var(--text);margin-bottom:0.5rem;line-height:1.3;">Alcohol &amp; Mitochondrial Architecture</h3>
-          <p style="font-size:0.78rem;color:var(--text-light);line-height:1.65;margin-bottom:0.75rem;">How ethanol reshapes mitochondrial dynamics and drives megamitochondria formation in steatotic liver disease.</p>
-          <p style="font-size:0.78rem;color:var(--gold);font-weight:700;">Read more →</p>
+          <p style="font-size:0.78rem;color:var(--text-light);line-height:1.65;margin-bottom:0.75rem;">How ethanol reshapes mitochondrial dynamics and drives megamitochondria in steatotic liver disease.</p>
+          <p style="font-size:0.78rem;color:var(--a);font-weight:700;">Read more →</p>
         </div>
         <div style="border:1.5px solid var(--border);border-radius:0.875rem;padding:1.5rem;background:#fff;">
-          <span style="background:var(--gold-light);color:var(--gold);font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:0.22rem 0.65rem;border-radius:999px;display:inline-block;margin-bottom:0.9rem;">CCA · Tumour Models</span>
+          <span style="background:var(--a-light);color:var(--a);font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:0.22rem 0.65rem;border-radius:999px;display:inline-block;margin-bottom:0.9rem;">CCA · Tumour Models</span>
           <h3 style="font-size:1rem;font-weight:600;color:var(--text);margin-bottom:0.5rem;line-height:1.3;">Patient-Derived Models of Cholangiocarcinoma</h3>
-          <p style="font-size:0.78rem;color:var(--text-light);line-height:1.65;margin-bottom:0.75rem;">Human tumour slice models and co-cultures to investigate mitochondrial dynamics in liver cancer.</p>
-          <p style="font-size:0.78rem;color:var(--gold);font-weight:700;">Read more →</p>
+          <p style="font-size:0.78rem;color:var(--text-light);line-height:1.65;margin-bottom:0.75rem;">Human tumour slice models to investigate mitochondrial dynamics in liver cancer.</p>
+          <p style="font-size:0.78rem;color:var(--a);font-weight:700;">Read more →</p>
         </div>
         <div style="border:1.5px solid var(--border);border-radius:0.875rem;padding:1.5rem;background:#fff;">
-          <span style="background:var(--orchid-light);color:var(--orchid);font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:0.22rem 0.65rem;border-radius:999px;display:inline-block;margin-bottom:0.9rem;">Mito Plasticity</span>
+          <span style="background:var(--p-light);color:var(--p);font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:0.22rem 0.65rem;border-radius:999px;display:inline-block;margin-bottom:0.9rem;">Mito Plasticity</span>
           <h3 style="font-size:1rem;font-weight:600;color:var(--text);margin-bottom:0.5rem;line-height:1.3;">Mitochondrial Plasticity &amp; Organelle Biology</h3>
-          <p style="font-size:0.78rem;color:var(--text-light);line-height:1.65;margin-bottom:0.75rem;">Deciphering fundamental principles of mitochondrial plasticity in response to metabolic stress.</p>
-          <p style="font-size:0.78rem;color:var(--gold);font-weight:700;">Read more →</p>
+          <p style="font-size:0.78rem;color:var(--text-light);line-height:1.65;margin-bottom:0.75rem;">Fundamental principles of mitochondrial plasticity in response to metabolic stress.</p>
+          <p style="font-size:0.78rem;color:var(--a);font-weight:700;">Read more →</p>
         </div>
       </div>
     </div>
   </div>
 
   <!-- A · Footer -->
-  <div style="background:var(--orchid);padding:2.75rem 2rem;">
+  <div style="background:var(--p);padding:2.75rem 2rem;">
     <div style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:2.5rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,0.18);margin-bottom:1.25rem;">
       <div>
         <p style="font-size:1rem;font-weight:700;color:#fff;margin-bottom:0.5rem;">Palma Lab</p>
-        <p style="font-size:0.78rem;color:rgba(255,255,255,0.7);line-height:1.7;max-width:320px;margin-bottom:1.25rem;">A translational research group at the Roger Williams Institute of Liver Studies, King's College London.</p>
+        <p style="font-size:0.78rem;color:rgba(255,255,255,0.68);line-height:1.7;max-width:320px;margin-bottom:1.25rem;">A translational research group at the Roger Williams Institute of Liver Studies, King's College London.</p>
         <div style="display:flex;gap:0.5rem;">
-          <a style="background:rgba(255,255,255,0.18);color:#fff;font-size:0.72rem;font-weight:500;padding:0.35rem 0.9rem;border-radius:999px;text-decoration:none;">LinkedIn</a>
-          <a style="background:var(--gold);color:#fff;font-size:0.72rem;font-weight:700;padding:0.35rem 0.9rem;border-radius:999px;text-decoration:none;">Contact Us</a>
+          <a style="background:rgba(255,255,255,0.18);color:#fff;font-size:0.72rem;padding:0.35rem 0.9rem;border-radius:999px;text-decoration:none;">LinkedIn</a>
+          <a style="background:var(--a);color:#fff;font-size:0.72rem;font-weight:700;padding:0.35rem 0.9rem;border-radius:999px;text-decoration:none;">Contact Us</a>
         </div>
       </div>
       <div>
-        <p style="font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.5);margin-bottom:0.75rem;">Quick Links</p>
+        <p style="font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.45);margin-bottom:0.75rem;">Quick Links</p>
         <div style="display:flex;flex-direction:column;gap:0.45rem;">
-          <a style="font-size:0.8rem;color:rgba(255,255,255,0.85);text-decoration:none;">Research</a>
-          <a style="font-size:0.8rem;color:rgba(255,255,255,0.85);text-decoration:none;">People</a>
-          <a style="font-size:0.8rem;color:rgba(255,255,255,0.85);text-decoration:none;">Publications</a>
-          <a style="font-size:0.8rem;color:rgba(255,255,255,0.85);text-decoration:none;">Events</a>
+          <a style="font-size:0.8rem;color:rgba(255,255,255,0.82);text-decoration:none;">Research</a>
+          <a style="font-size:0.8rem;color:rgba(255,255,255,0.82);text-decoration:none;">People</a>
+          <a style="font-size:0.8rem;color:rgba(255,255,255,0.82);text-decoration:none;">Publications</a>
+          <a style="font-size:0.8rem;color:rgba(255,255,255,0.82);text-decoration:none;">Events</a>
         </div>
       </div>
       <div>
-        <p style="font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.5);margin-bottom:0.75rem;">Where We Are</p>
-        <p style="font-size:0.8rem;color:rgba(255,255,255,0.85);line-height:1.7;">Roger Williams Institute of Liver Studies<br>King's College London<br>111 Coldharbour Ln<br>London SE5 9NT</p>
+        <p style="font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.45);margin-bottom:0.75rem;">Where We Are</p>
+        <p style="font-size:0.8rem;color:rgba(255,255,255,0.82);line-height:1.7;">Roger Williams Institute<br>King's College London<br>111 Coldharbour Ln, London SE5 9NT</p>
       </div>
     </div>
-    <p style="font-size:0.68rem;color:rgba(255,255,255,0.35);letter-spacing:0.05em;">© 2026 Palma Lab · King's College London</p>
+    <p style="font-size:0.68rem;color:rgba(255,255,255,0.3);letter-spacing:0.05em;">© 2026 Palma Lab · King's College London</p>
   </div>
 
 </div><!-- end Option A -->
 
 
 <!-- ══════════════════════════════════════════
-     OPTION B — WARM EDITORIAL
-     Generous whitespace, serif type, premium
-     scientific publication feel
+     OPTION B — DARK NAVY / ACADEMIC FLAGSHIP
+     Instant authority. Scannable at a glance.
      ══════════════════════════════════════════ -->
 
 <div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 pt-12 pb-4">
   <div class="flex items-center gap-3 mb-1">
-    <span style="background:#3d2b1a;color:#f5ede0;font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:0.25rem 0.8rem;border-radius:999px;">Option B</span>
-    <h2 class="font-sans text-xl tracking-tight">Warm Editorial — Premium Scientific</h2>
+    <span style="background:#1a2d4a;color:#fff;font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:0.25rem 0.8rem;border-radius:999px;">Option B</span>
+    <h2 class="font-sans text-xl tracking-tight">Dark Navy — Academic Flagship</h2>
   </div>
-  <p class="text-sm text-ink-light max-w-2xl">Warm cream tones, generous whitespace, and a strong serif typographic voice. Reads like a premium scientific publication — prestigious, confident, and image-ready for microscopy photography.</p>
+  <p class="text-sm text-ink-light max-w-2xl">Deep navy authority with a gold accent. Every key fact is visible within 3 seconds — the lab name, the focus, the location, and the call to action. Feels like a top-tier research institution.</p>
 </div>
 
-<div style="border-top:3px solid #3d2b1a;border-bottom:3px solid #3d2b1a;overflow:hidden;margin-bottom:4rem;">
+<div style="border-top:3px solid #1a2d4a;border-bottom:3px solid #1a2d4a;overflow:hidden;margin-bottom:4rem;">
 
   <!-- B · Nav -->
-  <nav style="background:#f5ede0;border-bottom:1px solid #d9cbbf;">
-    <div style="max-width:1400px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;">
-      <div style="display:flex;align-items:center;gap:1rem;">
-        <span style="font-family:'Instrument Serif',Georgia,serif;font-size:1.2rem;font-style:italic;color:#3d2b1a;letter-spacing:-0.01em;">Palma Lab</span>
-        <span style="width:1px;height:18px;background:#c4b09a;"></span>
-        <span style="font-size:0.7rem;color:#9a8070;letter-spacing:0.02em;">King's College London</span>
+  <nav style="background:#1a2d4a;">
+    <div style="max-width:1400px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:58px;">
+      <div style="display:flex;align-items:center;gap:0.875rem;">
+        <div style="width:3px;height:24px;background:#d4a843;flex-shrink:0;"></div>
+        <span style="font-size:1rem;font-weight:700;color:#fff;letter-spacing:-0.01em;">Palma Lab</span>
+        <span style="font-size:0.7rem;color:rgba(255,255,255,0.4);border-left:1px solid rgba(255,255,255,0.15);padding-left:0.75rem;">King's College London</span>
       </div>
-      <div style="display:flex;align-items:center;gap:2rem;">
-        <a style="font-size:0.72rem;font-weight:500;letter-spacing:0.04em;color:#5a4030;text-decoration:none;text-transform:uppercase;font-size:0.68rem;">Research</a>
-        <a style="font-size:0.68rem;font-weight:500;letter-spacing:0.04em;color:#5a4030;text-decoration:none;text-transform:uppercase;">People</a>
-        <a style="font-size:0.68rem;font-weight:500;letter-spacing:0.04em;color:#5a4030;text-decoration:none;text-transform:uppercase;">Publications</a>
-        <a style="font-size:0.68rem;font-weight:500;letter-spacing:0.04em;color:#5a4030;text-decoration:none;text-transform:uppercase;">Events</a>
-        <a style="font-size:0.68rem;font-weight:600;letter-spacing:0.04em;color:#2a5c45;border:1.5px solid #2a5c45;padding:0.35rem 1rem;text-decoration:none;text-transform:uppercase;">Contact</a>
+      <div style="display:flex;align-items:center;gap:1.75rem;">
+        <a style="font-size:0.78rem;color:rgba(255,255,255,0.75);font-weight:500;text-decoration:none;">Research</a>
+        <a style="font-size:0.78rem;color:rgba(255,255,255,0.75);font-weight:500;text-decoration:none;">People</a>
+        <a style="font-size:0.78rem;color:rgba(255,255,255,0.75);font-weight:500;text-decoration:none;">Publications</a>
+        <a style="font-size:0.78rem;color:rgba(255,255,255,0.75);font-weight:500;text-decoration:none;">Events</a>
+        <a style="background:#d4a843;color:#1a2d4a;font-size:0.75rem;font-weight:700;padding:0.4rem 1.1rem;border-radius:4px;text-decoration:none;letter-spacing:0.02em;">Contact →</a>
       </div>
     </div>
   </nav>
 
-  <!-- B · Hero -->
-  <div style="background:#f5ede0;padding:0;border-bottom:1px solid #d9cbbf;">
-    <div style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:5fr 4fr;min-height:420px;">
-      <!-- left: text -->
-      <div style="padding:4rem 3rem 4rem 2rem;border-right:1px solid #d9cbbf;display:flex;flex-direction:column;justify-content:center;">
-        <p style="font-size:0.66rem;font-weight:600;text-transform:uppercase;letter-spacing:0.14em;color:#9a8070;margin-bottom:1.25rem;">Welcome to Palma Lab</p>
-        <h1 style="font-family:'Instrument Serif',Georgia,serif;font-size:3.5rem;font-style:italic;font-weight:400;line-height:1.1;color:#3d2b1a;margin-bottom:1.5rem;letter-spacing:-0.01em;">
-          Exploring<br><span style="color:#2a5c45;">mitochondria</span><br>to advance<br>liver research
-        </h1>
-        <div style="width:40px;height:2px;background:#2a5c45;margin-bottom:1.25rem;"></div>
-        <p style="font-size:0.9rem;color:#7a6050;line-height:1.8;max-width:400px;margin-bottom:2rem;">A translational research group investigating how mitochondrial plasticity shapes cellular adaptation in liver health and disease.</p>
-        <div style="display:flex;gap:1rem;align-items:center;">
-          <a style="background:#2a5c45;color:#fff;font-size:0.78rem;font-weight:600;padding:0.7rem 1.5rem;border-radius:4px;text-decoration:none;letter-spacing:0.02em;">Our Research</a>
-          <a style="font-size:0.78rem;font-weight:600;color:#2a5c45;text-decoration:none;letter-spacing:0.02em;">Join the Lab →</a>
+  <!-- B · Hero: split navy left / white right -->
+  <div style="display:grid;grid-template-columns:5fr 7fr;min-height:400px;">
+
+    <!-- left: navy panel — instant key facts -->
+    <div style="background:#1a2d4a;padding:3.5rem 2.5rem;display:flex;flex-direction:column;justify-content:space-between;">
+      <div>
+        <p style="font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:#d4a843;margin-bottom:1.5rem;">Roger Williams Institute of Liver Studies</p>
+        <div style="display:flex;flex-direction:column;gap:1.25rem;">
+          <div style="display:flex;align-items:flex-start;gap:0.875rem;padding-bottom:1.25rem;border-bottom:1px solid rgba(255,255,255,0.1);">
+            <div style="width:3px;min-height:36px;background:#d4a843;flex-shrink:0;margin-top:3px;"></div>
+            <div>
+              <p style="font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.4);margin-bottom:0.2rem;">Focus</p>
+              <p style="font-size:0.88rem;color:#fff;font-weight:500;line-height:1.4;">Mitochondrial plasticity in liver disease &amp; cancer</p>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:0.875rem;padding-bottom:1.25rem;border-bottom:1px solid rgba(255,255,255,0.1);">
+            <div style="width:3px;min-height:36px;background:#d4a843;flex-shrink:0;margin-top:3px;"></div>
+            <div>
+              <p style="font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.4);margin-bottom:0.2rem;">Approach</p>
+              <p style="font-size:0.88rem;color:#fff;font-weight:500;line-height:1.4;">Human ex vivo models · Advanced imaging · Translational</p>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:0.875rem;">
+            <div style="width:3px;min-height:36px;background:#d4a843;flex-shrink:0;margin-top:3px;"></div>
+            <div>
+              <p style="font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.4);margin-bottom:0.2rem;">Location</p>
+              <p style="font-size:0.88rem;color:#fff;font-weight:500;line-height:1.4;">King's College London · London, UK</p>
+            </div>
+          </div>
         </div>
       </div>
-      <!-- right: image placeholder + info -->
-      <div style="display:flex;flex-direction:column;">
-        <!-- image placeholder — replace with a lab/microscopy photo -->
-        <div style="flex:1;background:linear-gradient(160deg,#e8dbc8 0%,#d4c4a8 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;border-bottom:1px solid #d9cbbf;min-height:240px;">
-          <p style="font-size:0.68rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#9a8070;text-align:center;margin-bottom:0.5rem;">[ Lab or microscopy photo ]</p>
-          <p style="font-size:0.7rem;color:#b8a898;text-align:center;">Replace with a striking confocal or team image</p>
+      <!-- stat strip -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,0.1);margin-top:2.5rem;border:1px solid rgba(255,255,255,0.1);">
+        <div style="background:#142238;padding:1rem 1.25rem;">
+          <p style="font-size:1.75rem;font-weight:800;color:#d4a843;line-height:1;margin-bottom:0.2rem;">15+</p>
+          <p style="font-size:0.68rem;color:rgba(255,255,255,0.5);">Years in hepatology</p>
         </div>
-        <!-- stat strip -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;background:#fff;">
-          <div style="padding:1.25rem 1.5rem;border-right:1px solid #e8ddd4;">
-            <p style="font-family:'Instrument Serif',Georgia,serif;font-size:2rem;font-style:italic;color:#2a5c45;line-height:1;margin-bottom:0.25rem;">15+</p>
-            <p style="font-size:0.72rem;color:#9a8070;font-weight:500;">Years of hepatology research</p>
-          </div>
-          <div style="padding:1.25rem 1.5rem;">
-            <p style="font-family:'Instrument Serif',Georgia,serif;font-size:2rem;font-style:italic;color:#2a5c45;line-height:1;margin-bottom:0.25rem;">6</p>
-            <p style="font-size:0.72rem;color:#9a8070;font-weight:500;">Active research projects</p>
-          </div>
+        <div style="background:#142238;padding:1rem 1.25rem;">
+          <p style="font-size:1.75rem;font-weight:800;color:#d4a843;line-height:1;margin-bottom:0.2rem;">6</p>
+          <p style="font-size:0.68rem;color:rgba(255,255,255,0.5);">Active projects</p>
         </div>
       </div>
     </div>
-  </div>
+
+    <!-- right: white panel — headline and CTA -->
+    <div style="background:#fff;padding:3.5rem 3rem;display:flex;flex-direction:column;justify-content:center;border-left:1px solid #e2e8f0;">
+      <h1 style="font-size:2.75rem;font-weight:800;line-height:1.1;color:#1a2d4a;margin-bottom:1.25rem;letter-spacing:-0.03em;">
+        Exploring <span style="color:#d4a843;">mitochondria</span> to advance liver research
+      </h1>
+      <p style="font-size:0.9rem;color:#4a6070;line-height:1.75;max-width:480px;margin-bottom:2rem;">A translational research group investigating how mitochondrial plasticity shapes cellular adaptation in liver health and disease — from bench to bedside.</p>
+      <div style="display:flex;gap:0.875rem;align-items:center;flex-wrap:wrap;">
+        <a style="background:#1a2d4a;color:#fff;font-size:0.82rem;font-weight:700;padding:0.7rem 1.5rem;border-radius:4px;text-decoration:none;letter-spacing:0.02em;">Our Research →</a>
+        <a style="border:2px solid #1a2d4a;color:#1a2d4a;font-size:0.82rem;font-weight:700;padding:0.7rem 1.5rem;border-radius:4px;text-decoration:none;letter-spacing:0.02em;">Join the Lab</a>
+      </div>
+      <!-- quick-scan tags -->
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:2rem;">
+        <span style="background:#f0f4f8;color:#4a6070;font-size:0.68rem;font-weight:600;padding:0.3rem 0.75rem;border-radius:999px;">ALD</span>
+        <span style="background:#f0f4f8;color:#4a6070;font-size:0.68rem;font-weight:600;padding:0.3rem 0.75rem;border-radius:999px;">Liver Cancer</span>
+        <span style="background:#f0f4f8;color:#4a6070;font-size:0.68rem;font-weight:600;padding:0.3rem 0.75rem;border-radius:999px;">Mitochondria</span>
+        <span style="background:#f0f4f8;color:#4a6070;font-size:0.68rem;font-weight:600;padding:0.3rem 0.75rem;border-radius:999px;">PCLS Models</span>
+        <span style="background:#f0f4f8;color:#4a6070;font-size:0.68rem;font-weight:600;padding:0.3rem 0.75rem;border-radius:999px;">Translational</span>
+      </div>
+    </div>
+
+  </div><!-- end hero split -->
 
   <!-- B · Cards -->
-  <div style="background:#fff;padding:3.5rem 2rem;border-bottom:1px solid #d9cbbf;">
+  <div style="background:#f8fafc;padding:3rem 2rem;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;">
     <div style="max-width:1400px;margin:0 auto;">
-      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:0.5rem;">
-        <p style="font-size:0.66rem;font-weight:600;text-transform:uppercase;letter-spacing:0.14em;color:#9a8070;">Research</p>
-        <a style="font-family:'Instrument Serif',Georgia,serif;font-size:0.92rem;font-style:italic;color:#2a5c45;text-decoration:none;">View all projects →</a>
+      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:1.5rem;">
+        <div>
+          <p style="font-size:0.66rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#d4a843;margin-bottom:0.2rem;">Research</p>
+          <h2 style="font-size:1.6rem;font-weight:800;color:#1a2d4a;letter-spacing:-0.02em;">Our Projects</h2>
+        </div>
+        <a style="font-size:0.78rem;color:#1a2d4a;font-weight:600;text-decoration:none;border-bottom:2px solid #d4a843;padding-bottom:1px;">View all →</a>
       </div>
-      <h2 style="font-family:'Instrument Serif',Georgia,serif;font-size:2rem;font-style:italic;color:#3d2b1a;margin-bottom:2rem;letter-spacing:-0.01em;">Our Projects</h2>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid #3d2b1a;border-left:2px solid #3d2b1a;">
-        <div style="padding:1.75rem;border-right:1px solid #e8ddd4;border-bottom:2px solid #3d2b1a;background:#fff;">
-          <p style="font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#9a8070;margin-bottom:0.6rem;">ALD · Mitochondria</p>
-          <h3 style="font-family:'Instrument Serif',Georgia,serif;font-size:1.1rem;font-style:italic;color:#3d2b1a;margin-bottom:0.6rem;line-height:1.35;">Alcohol &amp; Mitochondrial Architecture</h3>
-          <p style="font-size:0.78rem;color:#7a6050;line-height:1.65;margin-bottom:1rem;">How ethanol reshapes mitochondrial dynamics and drives megamitochondria formation in steatotic liver disease.</p>
-          <a style="font-size:0.72rem;color:#2a5c45;font-weight:600;text-decoration:none;">Read more →</a>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;">
+        <div style="border:1.5px solid #e2e8f0;border-top:3px solid #1a2d4a;border-radius:0 0 0.75rem 0.75rem;padding:1.5rem;background:#fff;">
+          <span style="background:#f0f4f8;color:#1a2d4a;font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:0.22rem 0.65rem;border-radius:999px;display:inline-block;margin-bottom:0.9rem;">ALD · Mitochondria</span>
+          <h3 style="font-size:1rem;font-weight:700;color:#1a2d4a;margin-bottom:0.5rem;line-height:1.3;">Alcohol &amp; Mitochondrial Architecture</h3>
+          <p style="font-size:0.78rem;color:#6a8090;line-height:1.65;margin-bottom:0.75rem;">How ethanol reshapes mitochondrial dynamics and drives megamitochondria in steatotic liver disease.</p>
+          <p style="font-size:0.78rem;color:#d4a843;font-weight:700;">Read more →</p>
         </div>
-        <div style="padding:1.75rem;border-right:1px solid #e8ddd4;border-bottom:2px solid #3d2b1a;background:#f5ede0;">
-          <p style="font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#9a8070;margin-bottom:0.6rem;">CCA · Tumour Models</p>
-          <h3 style="font-family:'Instrument Serif',Georgia,serif;font-size:1.1rem;font-style:italic;color:#3d2b1a;margin-bottom:0.6rem;line-height:1.35;">Patient-Derived Models of Cholangiocarcinoma</h3>
-          <p style="font-size:0.78rem;color:#7a6050;line-height:1.65;margin-bottom:1rem;">Human tumour slice models and co-cultures to investigate mitochondrial dynamics in liver cancer.</p>
-          <a style="font-size:0.72rem;color:#2a5c45;font-weight:600;text-decoration:none;">Read more →</a>
+        <div style="border:1.5px solid #e2e8f0;border-top:3px solid #d4a843;border-radius:0 0 0.75rem 0.75rem;padding:1.5rem;background:#fff;">
+          <span style="background:#fdf8ec;color:#b88020;font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:0.22rem 0.65rem;border-radius:999px;display:inline-block;margin-bottom:0.9rem;">CCA · Tumour Models</span>
+          <h3 style="font-size:1rem;font-weight:700;color:#1a2d4a;margin-bottom:0.5rem;line-height:1.3;">Patient-Derived Models of Cholangiocarcinoma</h3>
+          <p style="font-size:0.78rem;color:#6a8090;line-height:1.65;margin-bottom:0.75rem;">Human tumour slice models to investigate mitochondrial dynamics in liver cancer.</p>
+          <p style="font-size:0.78rem;color:#d4a843;font-weight:700;">Read more →</p>
         </div>
-        <div style="padding:1.75rem;border-right:2px solid #3d2b1a;border-bottom:2px solid #3d2b1a;background:#fff;">
-          <p style="font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#9a8070;margin-bottom:0.6rem;">Mito Plasticity</p>
-          <h3 style="font-family:'Instrument Serif',Georgia,serif;font-size:1.1rem;font-style:italic;color:#3d2b1a;margin-bottom:0.6rem;line-height:1.35;">Mitochondrial Plasticity &amp; Organelle Biology</h3>
-          <p style="font-size:0.78rem;color:#7a6050;line-height:1.65;margin-bottom:1rem;">Deciphering fundamental principles of mitochondrial plasticity in response to metabolic stress.</p>
-          <a style="font-size:0.72rem;color:#2a5c45;font-weight:600;text-decoration:none;">Read more →</a>
+        <div style="border:1.5px solid #e2e8f0;border-top:3px solid #1a2d4a;border-radius:0 0 0.75rem 0.75rem;padding:1.5rem;background:#fff;">
+          <span style="background:#f0f4f8;color:#1a2d4a;font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:0.22rem 0.65rem;border-radius:999px;display:inline-block;margin-bottom:0.9rem;">Mito Plasticity</span>
+          <h3 style="font-size:1rem;font-weight:700;color:#1a2d4a;margin-bottom:0.5rem;line-height:1.3;">Mitochondrial Plasticity &amp; Organelle Biology</h3>
+          <p style="font-size:0.78rem;color:#6a8090;line-height:1.65;margin-bottom:0.75rem;">Fundamental principles of mitochondrial plasticity in response to metabolic stress.</p>
+          <p style="font-size:0.78rem;color:#d4a843;font-weight:700;">Read more →</p>
         </div>
       </div>
     </div>
   </div>
 
   <!-- B · Footer -->
-  <div style="background:#3d2b1a;padding:3rem 2rem;">
-    <div style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:2.5rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,0.12);margin-bottom:1.5rem;">
+  <div style="background:#142238;padding:2.75rem 2rem;">
+    <div style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:2.5rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,0.1);margin-bottom:1.25rem;">
       <div>
-        <p style="font-family:'Instrument Serif',Georgia,serif;font-size:1.3rem;font-style:italic;color:#f5ede0;margin-bottom:0.5rem;">Palma Lab</p>
-        <p style="font-size:0.78rem;color:rgba(245,237,224,0.6);line-height:1.75;max-width:320px;margin-bottom:1.25rem;">A translational research group at the Roger Williams Institute of Liver Studies, King's College London.</p>
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.625rem;">
+          <div style="width:3px;height:20px;background:#d4a843;"></div>
+          <p style="font-size:0.95rem;font-weight:700;color:#fff;">Palma Lab</p>
+        </div>
+        <p style="font-size:0.78rem;color:rgba(255,255,255,0.55);line-height:1.7;max-width:300px;margin-bottom:1.25rem;">A translational research group at the Roger Williams Institute of Liver Studies, King's College London.</p>
         <div style="display:flex;gap:0.5rem;">
-          <a style="border:1px solid rgba(255,255,255,0.25);color:rgba(245,237,224,0.85);font-size:0.72rem;font-weight:500;padding:0.35rem 0.9rem;border-radius:4px;text-decoration:none;">LinkedIn</a>
-          <a style="background:#2a5c45;color:#fff;font-size:0.72rem;font-weight:600;padding:0.35rem 0.9rem;border-radius:4px;text-decoration:none;">Contact Us</a>
+          <a style="border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.8);font-size:0.72rem;padding:0.35rem 0.9rem;border-radius:4px;text-decoration:none;">LinkedIn</a>
+          <a style="background:#d4a843;color:#142238;font-size:0.72rem;font-weight:700;padding:0.35rem 0.9rem;border-radius:4px;text-decoration:none;">Contact Us</a>
         </div>
       </div>
       <div>
-        <p style="font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:rgba(245,237,224,0.4);margin-bottom:0.85rem;">Quick Links</p>
+        <p style="font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.35);margin-bottom:0.85rem;">Quick Links</p>
         <div style="display:flex;flex-direction:column;gap:0.45rem;">
-          <a style="font-size:0.8rem;color:rgba(245,237,224,0.75);text-decoration:none;">Research</a>
-          <a style="font-size:0.8rem;color:rgba(245,237,224,0.75);text-decoration:none;">People</a>
-          <a style="font-size:0.8rem;color:rgba(245,237,224,0.75);text-decoration:none;">Publications</a>
-          <a style="font-size:0.8rem;color:rgba(245,237,224,0.75);text-decoration:none;">Events</a>
+          <a style="font-size:0.8rem;color:rgba(255,255,255,0.7);text-decoration:none;">Research</a>
+          <a style="font-size:0.8rem;color:rgba(255,255,255,0.7);text-decoration:none;">People</a>
+          <a style="font-size:0.8rem;color:rgba(255,255,255,0.7);text-decoration:none;">Publications</a>
+          <a style="font-size:0.8rem;color:rgba(255,255,255,0.7);text-decoration:none;">Events</a>
         </div>
       </div>
       <div>
-        <p style="font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:rgba(245,237,224,0.4);margin-bottom:0.85rem;">Where We Are</p>
-        <p style="font-size:0.8rem;color:rgba(245,237,224,0.75);line-height:1.7;">Roger Williams Institute of Liver Studies<br>King's College London<br>111 Coldharbour Ln<br>London SE5 9NT</p>
+        <p style="font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.35);margin-bottom:0.85rem;">Where We Are</p>
+        <p style="font-size:0.8rem;color:rgba(255,255,255,0.7);line-height:1.7;">Roger Williams Institute<br>King's College London<br>111 Coldharbour Ln<br>London SE5 9NT</p>
       </div>
     </div>
-    <p style="font-size:0.68rem;color:rgba(245,237,224,0.25);letter-spacing:0.05em;">© 2026 Palma Lab · King's College London</p>
+    <p style="font-size:0.68rem;color:rgba(255,255,255,0.2);letter-spacing:0.05em;">© 2026 Palma Lab · King's College London</p>
   </div>
 
 </div><!-- end Option B -->
@@ -313,14 +475,31 @@
 </div><!-- end font wrapper -->
 
 <script>
-function setPalette(orchid, orchidLight, orchidDark, bg) {
-  var frame = document.getElementById('option-a-frame');
-  frame.style.setProperty('--orchid', orchid);
-  frame.style.setProperty('--orchid-light', orchidLight);
-  frame.style.setProperty('--orchid-dark', orchidDark);
-  frame.style.setProperty('--bg', bg);
-  frame.style.setProperty('border-top-color', orchid);
-  frame.style.setProperty('border-bottom-color', orchid);
+function setP(name, p, bg, pDark, a, aLight, border, text, textMid, textLight) {
+  var f = document.getElementById('option-a-frame');
+  f.style.setProperty('--p', p);
+  f.style.setProperty('--p-light', bg === f.style.getPropertyValue('--bg') ? bg : mixHex(p, '#ffffff', 0.88));
+  f.style.setProperty('--p-dark', pDark);
+  f.style.setProperty('--bg', bg);
+  f.style.setProperty('--a', a);
+  f.style.setProperty('--a-light', aLight);
+  f.style.setProperty('--border', border);
+  f.style.setProperty('--text', text);
+  f.style.setProperty('--text-mid', textMid);
+  f.style.setProperty('--text-light', textLight);
+  f.style.borderTopColor = p;
+  f.style.borderBottomColor = p;
+  document.getElementById('palette-name').textContent = name;
+  document.getElementById('a-label').style.background = p;
+}
+
+function mixHex(hex, white, ratio) {
+  var r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
+  var wr = 255, wg = 255, wb = 255;
+  var nr = Math.round(r + (wr - r) * ratio);
+  var ng = Math.round(g + (wg - g) * ratio);
+  var nb = Math.round(b + (wb - b) * ratio);
+  return '#' + [nr,ng,nb].map(function(x){ return x.toString(16).padStart(2,'0'); }).join('');
 }
 </script>
 
