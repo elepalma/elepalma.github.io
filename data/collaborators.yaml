@@ -12,12 +12,12 @@ groups:
   - type: "Academic"
     name: "Dr Luca Urbani"
     affiliation: "King’s College London, Roger Williams Institute of Liver Studies"
-    description: "Extracellular matrix biology and organotypic liver models."
+    description: "Role of mitochondria in HSC and organotypic liver models."
 
   - type: "Academic"
     name: "Prof Maddy Parsons"
     affiliation: "King’s College London, Randall Centre for Cell & Molecular Biophysics"
-    description: "Advanced bioimaging and microscopy approaches."
+    description: "Advanced bioimaging and microscopy approaches applied to patient derived tissue models."
 
   - type: "Academic"
     name: "Prof Peter Starkel"
@@ -37,7 +37,7 @@ groups:
   - type: "Academic"
     name: "Prof Geltrude Mingrone"
     affiliation: "Fondazione Policlinico Universitario A. Gemelli IRCCS, King's College London"
-    description: "MASLD, mitochondrial function, and lipid contact sites in metabolic liver disease."
+    description: "Perilipins and mitochondria in SLD."
 
   - type: "Academic"
     name: "Dr Thomas Marjot"
@@ -48,3 +48,8 @@ groups:
     name: "Prof Pedro Baptista"
     affiliation: "Center for Biomedical Research Network Liver and Digestive Diseases (CIBERehd), Zaragoza"
     description: "Translational validation of gut microbiota-derived peptides in liver regeneration and fibrosis using Precision-Cut Liver Slices."
+  
+  - type: "Academic"
+    name: "Prof Filip Braet"
+    affiliation: "University of Sidney"
+    description: "Characterisation of megamitochondria by electron microscopy in human tissue derived models."

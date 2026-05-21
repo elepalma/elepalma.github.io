@@ -4,7 +4,7 @@ tag: "Mito Plasticty"
 summary: "Deciphering the fundamental principles governing mitochondrial plasticity in response to cellular signalling and metabolic stress."
 funders: []
 team: ["Una Rastovic", "Dr. Meliz Sahuri-Arisoylu"]
-weight: 2
+weight: 4
 ---
 
 # **Overview**

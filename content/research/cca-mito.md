@@ -3,7 +3,7 @@ title: "Patient derived models of cholangiocarcinoma"
 tag: "CCA "
 summary: "Understanding how mitochondrial dynamics contribute to tumour progression in intrahepatic cholangiocarcinoma."
 funders: []
-team: ["Una Rastovic", "Dr. Meliz Sahuri-Arisoylu"]
+team: ["Moyosoreoluwa Feyide"]
 weight: 5
 ---
 
