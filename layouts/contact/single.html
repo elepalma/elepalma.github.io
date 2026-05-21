@@ -110,35 +110,43 @@
 
 <script>
 (function () {
-  // Form submission
   var form    = document.getElementById('contact-form');
   var success = document.getElementById('form-success');
-  var error   = document.getElementById('form-error');
+  var errorEl = document.getElementById('form-error');
+  var errorMsg = errorEl ? errorEl.querySelector('p') : null;
   var btn     = document.getElementById('form-submit');
 
   if (!form || !form.getAttribute('action')) return;
 
   form.addEventListener('submit', async function (e) {
     e.preventDefault();
-    error.classList.add('hidden');
+    errorEl.classList.add('hidden');
     btn.disabled = true;
     btn.textContent = 'Sending…';
 
     try {
-      var res = await fetch(form.action, {
+      var res = await fetch(form.getAttribute('action'), {
         method: 'POST',
         body: new FormData(form),
         headers: { 'Accept': 'application/json' }
       });
 
-      if (res.ok) {
+      var data = await res.json();
+
+      if (res.ok && !data.errors) {
         form.classList.add('hidden');
         success.classList.remove('hidden');
       } else {
-        throw new Error('server error');
+        var msg = (data.errors && data.errors.map(function(e){ return e.message; }).join(', '))
+                  || 'Something went wrong — please try again in a moment.';
+        if (errorMsg) errorMsg.textContent = msg;
+        errorEl.classList.remove('hidden');
+        btn.disabled = false;
+        btn.textContent = 'Send message';
       }
     } catch (_) {
-      error.classList.remove('hidden');
+      if (errorMsg) errorMsg.textContent = 'Something went wrong — please try again in a moment.';
+      errorEl.classList.remove('hidden');
       btn.disabled = false;
       btn.textContent = 'Send message';
     }
