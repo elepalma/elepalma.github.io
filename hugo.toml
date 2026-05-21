@@ -15,7 +15,7 @@ title = "Palma Lab · King's College London"
   linkedin       = "https://www.linkedin.com/in/elena-palma-4400a52a/"
   researchgate   = "https://www.researchgate.net/profile/Elena-Palma-2"
   github         = ""
-  contactForm    = ""  # Formspree endpoint e.g. https://formspree.io/f/xxxxxxxx
+  contactForm    = "https://formspree.io/f/mgoqkdqe"
 
 [menu]
   [[menu.main]]
