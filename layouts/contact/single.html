@@ -26,13 +26,6 @@
           </div>
         </div>
         <div class="flex gap-4 items-start">
-          <div class="w-10 h-10 bg-accent-light rounded-lg flex items-center justify-center text-lg shrink-0">✉</div>
-          <div>
-            <p class="text-xs font-semibold uppercase tracking-widest text-ink mb-1">Email</p>
-            <span id="lab-email-display"></span>
-          </div>
-        </div>
-        <div class="flex gap-4 items-start">
           <div class="w-10 h-10 bg-accent-light rounded-lg flex items-center justify-center text-lg shrink-0">🔗</div>
           <div>
             <p class="text-xs font-semibold uppercase tracking-widest text-ink mb-1">Social</p>
@@ -111,24 +104,6 @@
 
 <script>
 (function () {
-  // Assemble email at runtime — never appears as a plain string in source
-  var u = 'elena.palma';
-  var d = 'kcl.ac.uk';
-  var addr = u + '@' + d;
-
-  var display = document.getElementById('lab-email-display');
-  if (display) {
-    display.innerHTML =
-      '<a href="mailto:' + addr + '" class="text-sm text-accent hover:underline">' +
-      addr + '</a>';
-  }
-
-  var errLink = document.getElementById('error-email-link');
-  if (errLink) {
-    errLink.outerHTML =
-      '<a href="mailto:' + addr + '" class="underline">email us directly</a>';
-  }
-
   // Form submission
   var form    = document.getElementById('contact-form');
   var success = document.getElementById('form-success');
