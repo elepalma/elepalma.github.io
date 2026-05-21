@@ -9,12 +9,13 @@ title = "Palma Lab · King's College London"
   department     = "The Roger Williams Institute of Liver Studies"
   institution    = "King's College London · Faculty of Life Sciences & Medicine"
   address        = "111 Coldharbour Ln, London SE5 9NT"
-  email          = "elena.palma@kcl.ac.uk"
   phone          = "(+44) 020 7255 9844"
+  contactPage    = "/contact/"
   twitter        = "https://x.com/DrElePalma"
   linkedin       = "https://www.linkedin.com/in/elena-palma-4400a52a/"
   researchgate   = "https://www.researchgate.net/profile/Elena-Palma-2"
   github         = ""
+  contactForm    = ""  # Formspree endpoint e.g. https://formspree.io/f/xxxxxxxx
 
 [menu]
   [[menu.main]]

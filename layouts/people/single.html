@@ -31,7 +31,7 @@
         </div>
         {{ end }}
         <div class="flex gap-2 mt-4">
-          {{ with .email }}<a href="mailto:{{ . }}" class="text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors">Email</a>{{ end }}
+          <a href="{{ "/contact/" | relURL }}" class="text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors">Contact</a>
           {{ with .orcid }}<a href="{{ . }}" target="_blank" rel="noopener" class="text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors">ORCID</a>{{ end }}
           {{ with .gscholar }}<a href="{{ . }}" target="_blank" rel="noopener" class="text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors">Google Scholar</a>{{ end }}
           {{ with .pub_name }}<a href="{{ "/publications/" | relURL }}?author={{ . | urlquery }}" class="text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors">Papers</a>{{ end }}
