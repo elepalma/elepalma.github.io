@@ -58,11 +58,17 @@
 
       <!-- Error state -->
       <div id="form-error" class="hidden rounded-lg border border-red-200 bg-red-50 p-4 mb-4">
-        <p class="text-xs text-red-700">Something went wrong. Please try again or <span id="error-email-link">contact us directly</span>.</p>
+        <p class="text-xs text-red-700">Something went wrong — please try again in a moment.</p>
       </div>
 
+      {{ if not .Site.Params.contactForm }}
+      <div class="rounded-lg border border-amber-200 bg-amber-50 p-4 mb-4">
+        <p class="text-xs text-amber-800">Form not yet configured. Add a Formspree endpoint to <code>contactForm</code> in <code>hugo.toml</code>.</p>
+      </div>
+      {{ end }}
+
       <form id="contact-form"
-            action="{{ .Site.Params.contactForm }}"
+            {{ with .Site.Params.contactForm }}action="{{ . }}"{{ end }}
             method="POST"
             class="flex flex-col gap-4">
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
@@ -110,7 +116,7 @@
   var error   = document.getElementById('form-error');
   var btn     = document.getElementById('form-submit');
 
-  if (!form || !form.action) return;
+  if (!form || !form.getAttribute('action')) return;
 
   form.addEventListener('submit', async function (e) {
     e.preventDefault();
