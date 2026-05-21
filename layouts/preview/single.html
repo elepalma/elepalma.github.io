@@ -1,0 +1,343 @@
+{{ define "main" }}
+
+<style>
+  /* ── Simulated microscopy backgrounds ──
+     These CSS gradients approximate the colour palette of each real image.
+     Replace background-image values with url('/images/microscopy/img1.jpg') etc.
+     once files are saved to static/images/microscopy/                          */
+
+  .sim-fluoro {
+    /* Image 1: fluorescence mitochondria — magenta / gold / blue on near-black */
+    background:
+      radial-gradient(ellipse 55% 45% at 25% 35%, rgba(190,20,120,0.75) 0%, transparent 60%),
+      radial-gradient(ellipse 35% 55% at 75% 55%, rgba(210,90,20,0.65) 0%, transparent 55%),
+      radial-gradient(ellipse 28% 28% at 58% 28%, rgba(30,50,200,0.6) 0%, transparent 45%),
+      radial-gradient(ellipse 45% 35% at 80% 78%, rgba(180,30,100,0.55) 0%, transparent 55%),
+      radial-gradient(ellipse 60% 30% at 10% 75%, rgba(160,110,10,0.5) 0%, transparent 60%),
+      radial-gradient(ellipse 20% 20% at 45% 62%, rgba(220,50,140,0.7) 0%, transparent 35%),
+      #060409;
+  }
+  .sim-tissue {
+    /* Image 2: tissue architecture — yellow / blue / magenta on black */
+    background:
+      radial-gradient(ellipse 50% 65% at 38% 48%, rgba(20,40,170,0.75) 0%, transparent 55%),
+      radial-gradient(ellipse 65% 45% at 62% 42%, rgba(210,180,15,0.6) 0%, transparent 60%),
+      radial-gradient(ellipse 70% 50% at 50% 65%, rgba(150,15,90,0.6) 0%, transparent 65%),
+      radial-gradient(ellipse 30% 30% at 78% 25%, rgba(200,170,10,0.5) 0%, transparent 45%),
+      #000003;
+  }
+  .sim-he {
+    /* Image 3: H&E liver slice — soft rose / lavender / pale pink */
+    background:
+      radial-gradient(ellipse 80% 80% at 50% 50%, rgba(210,160,185,0.9) 0%, rgba(185,140,200,0.7) 40%, rgba(160,120,175,0.4) 70%, transparent 100%),
+      radial-gradient(ellipse 60% 60% at 40% 45%, rgba(220,170,195,0.5) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 40% at 65% 55%, rgba(195,150,185,0.4) 0%, transparent 50%),
+      #e8d8e8;
+  }
+  .overlay-green {
+    background: rgba(20, 42, 30, 0.72);
+  }
+  .overlay-green-light {
+    background: rgba(20, 42, 30, 0.45);
+  }
+  .overlay-dark {
+    background: rgba(4, 6, 10, 0.65);
+  }
+
+  /* Note banners */
+  .impl-note {
+    font-size: 0.68rem;
+    color: #888;
+    font-style: italic;
+    padding: 0.35rem 0.75rem;
+    background: #f5f5f2;
+    border-left: 3px solid #ccc;
+    margin-bottom: 0;
+  }
+</style>
+
+<!-- Page header -->
+<div class="bg-bg border-b border-rule">
+  <div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-8 sm:py-10">
+    <p class="text-2xs font-semibold uppercase tracking-widest text-accent mb-2">Internal · Image Integration Preview</p>
+    <h1 class="font-sans text-3xl sm:text-4xl tracking-tight text-ink mb-2">How your microscopy images fit the site</h1>
+    <p class="text-sm text-ink-light max-w-2xl">Four proposals, in order of impact. Colour gradients simulate the real image palettes — swap with actual files once saved to <code>static/images/microscopy/</code>.</p>
+  </div>
+</div>
+
+<div style="font-family:'DM Sans',system-ui,sans-serif;">
+
+
+<!-- ══════════════════════════════════════════
+     PROPOSAL 1
+     Fluorescence image as home hero background
+     ══════════════════════════════════════════ -->
+
+<div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 pt-10 pb-3">
+  <div class="flex items-center gap-3 mb-1">
+    <span style="background:#2a5c45;color:#fff;font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:0.25rem 0.8rem;border-radius:999px;">Proposal 1</span>
+    <h2 class="font-sans text-xl tracking-tight">Fluorescence image as hero background</h2>
+  </div>
+  <p class="text-sm text-ink-light max-w-2xl mb-1">Image 1 (magenta/gold mitochondria) behind the home hero. A dark forest-green overlay preserves the brand colour while the science glows through. High impact, zero layout change.</p>
+</div>
+<p class="impl-note max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20">To implement: <code>background-image: url('/images/microscopy/fluoro.jpg')</code> + <code>background-size: cover</code> on the hero section, then an <code>rgba(20,42,30,0.72)</code> overlay div on top.</p>
+
+<!-- Hero mockup -->
+<div class="sim-fluoro" style="border-top:3px solid #2a5c45;border-bottom:3px solid #2a5c45;">
+  <div class="overlay-green">
+    <div style="max-width:1400px;margin:0 auto;padding:4rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;">
+      <!-- left -->
+      <div>
+        <p style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#7ec8a0;margin-bottom:0.75rem;">Welcome to Palma Lab</p>
+        <h1 style="font-size:2.8rem;font-weight:700;line-height:1.12;color:#fff;margin-bottom:1.25rem;letter-spacing:-0.03em;">
+          Exploring <em style="color:#a8e8c0;font-style:italic;">mitochondria</em><br>to advance<br>liver research
+        </h1>
+        <p style="font-size:0.88rem;color:rgba(255,255,255,0.72);line-height:1.75;max-width:420px;margin-bottom:1.75rem;">A translational research group investigating how mitochondrial plasticity shapes cellular adaptation in liver health and disease.</p>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+          <a style="background:#2a5c45;color:#fff;font-size:0.82rem;font-weight:600;padding:0.65rem 1.4rem;border-radius:999px;text-decoration:none;border:1.5px solid rgba(255,255,255,0.2);">Our Research</a>
+          <a style="border:1.5px solid rgba(255,255,255,0.4);color:#fff;font-size:0.82rem;font-weight:600;padding:0.65rem 1.4rem;border-radius:999px;text-decoration:none;">Join the Lab</a>
+        </div>
+      </div>
+      <!-- right: info grid -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,0.12);border-radius:1rem;overflow:hidden;border:1px solid rgba(255,255,255,0.15);">
+        <div style="background:rgba(255,255,255,0.08);backdrop-filter:blur(8px);padding:1.4rem;">
+          <p style="font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#7ec8a0;margin-bottom:0.4rem;">What</p>
+          <p style="font-size:0.88rem;font-weight:600;color:#fff;margin-bottom:0.35rem;line-height:1.3;">Mitochondrial Morphology</p>
+          <p style="font-size:0.74rem;color:rgba(255,255,255,0.55);line-height:1.55;">Mapping organelle remodelling in SLD, ALD, and cholangiocarcinoma.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.08);backdrop-filter:blur(8px);padding:1.4rem;">
+          <p style="font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#7ec8a0;margin-bottom:0.4rem;">How</p>
+          <p style="font-size:0.88rem;font-weight:600;color:#fff;margin-bottom:0.35rem;line-height:1.3;">Human ex vivo Models</p>
+          <p style="font-size:0.74rem;color:rgba(255,255,255,0.55);line-height:1.55;">Patient-derived tissue models and advanced imaging.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.08);backdrop-filter:blur(8px);padding:1.4rem;">
+          <p style="font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#7ec8a0;margin-bottom:0.4rem;">Why</p>
+          <p style="font-size:0.88rem;font-weight:600;color:#fff;margin-bottom:0.35rem;line-height:1.3;">Translational Impact</p>
+          <p style="font-size:0.74rem;color:rgba(255,255,255,0.55);line-height:1.55;">Bridging organelle biology with clinical liver therapies.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.08);backdrop-filter:blur(8px);padding:1.4rem;">
+          <p style="font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#7ec8a0;margin-bottom:0.4rem;">Who</p>
+          <p style="font-size:0.88rem;font-weight:600;color:#fff;margin-bottom:0.35rem;line-height:1.3;">Collaborative Team</p>
+          <p style="font-size:0.74rem;color:rgba(255,255,255,0.55);line-height:1.55;">Scientists and clinicians across all career stages.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     PROPOSAL 2
+     H&E circle as decorative hero element
+     ══════════════════════════════════════════ -->
+
+<div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 pt-10 pb-3">
+  <div class="flex items-center gap-3 mb-1">
+    <span style="background:#2a5c45;color:#fff;font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:0.25rem 0.8rem;border-radius:999px;">Proposal 2</span>
+    <h2 class="font-sans text-xl tracking-tight">H&amp;E circle as a floating decorative element</h2>
+  </div>
+  <p class="text-sm text-ink-light max-w-2xl mb-1">The circular H&amp;E liver slice (image 3) used as a large decorative element in the hero — soft opacity, clipped to a circle. No text obscured. Acts like a scientific emblem. Works on light backgrounds.</p>
+</div>
+<p class="impl-note max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20">To implement: <code>&lt;img&gt;</code> with <code>border-radius: 50%</code>, <code>opacity: 0.12</code>, positioned absolute top-right of the hero section.</p>
+
+<div style="border-top:3px solid #2a5c45;border-bottom:3px solid #2a5c45;background:#fafaf8;overflow:hidden;">
+  <div style="max-width:1400px;margin:0 auto;padding:4rem 2rem;position:relative;display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;min-height:380px;">
+
+    <!-- floating H&E circle (simulated) -->
+    <div class="sim-he" style="
+      position:absolute;
+      right:-60px; top:50%; transform:translateY(-50%);
+      width:520px; height:520px;
+      border-radius:50%;
+      opacity:0.13;
+      pointer-events:none;
+    "></div>
+
+    <!-- left: text (current site style) -->
+    <div style="position:relative;z-index:1;">
+      <p style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#2a5c45;margin-bottom:0.75rem;">Welcome to Palma Lab</p>
+      <h1 style="font-size:2.8rem;font-weight:700;line-height:1.12;color:#1a1a1a;margin-bottom:1.25rem;letter-spacing:-0.03em;">
+        Exploring <em style="color:#2a5c45;font-style:italic;">mitochondria</em><br>to advance<br>liver research
+      </h1>
+      <p style="font-size:0.88rem;color:#555;line-height:1.75;max-width:420px;margin-bottom:1.75rem;">A translational research group investigating how mitochondrial plasticity shapes cellular adaptation in liver health and disease.</p>
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+        <a style="background:#2a5c45;color:#fff;font-size:0.82rem;font-weight:600;padding:0.65rem 1.4rem;border-radius:999px;text-decoration:none;">Our Research</a>
+        <a style="border:2px solid #2a5c45;color:#2a5c45;font-size:0.82rem;font-weight:600;padding:0.65rem 1.4rem;border-radius:999px;text-decoration:none;">Join the Lab</a>
+      </div>
+    </div>
+
+    <!-- right: info grid -->
+    <div style="position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e2e2de;border-radius:1rem;overflow:hidden;border:1px solid #e2e2de;">
+      <div style="background:#fff;padding:1.4rem;">
+        <p style="font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#2a5c45;margin-bottom:0.4rem;">What</p>
+        <p style="font-size:0.88rem;font-weight:600;color:#1a1a1a;margin-bottom:0.35rem;line-height:1.3;">Mitochondrial Morphology</p>
+        <p style="font-size:0.74rem;color:#999;line-height:1.55;">Mapping organelle remodelling in SLD, ALD, and cholangiocarcinoma.</p>
+      </div>
+      <div style="background:#fff;padding:1.4rem;">
+        <p style="font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#2a5c45;margin-bottom:0.4rem;">How</p>
+        <p style="font-size:0.88rem;font-weight:600;color:#1a1a1a;margin-bottom:0.35rem;line-height:1.3;">Human ex vivo Models</p>
+        <p style="font-size:0.74rem;color:#999;line-height:1.55;">Patient-derived tissue models and advanced imaging.</p>
+      </div>
+      <div style="background:#fff;padding:1.4rem;">
+        <p style="font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#2a5c45;margin-bottom:0.4rem;">Why</p>
+        <p style="font-size:0.88rem;font-weight:600;color:#1a1a1a;margin-bottom:0.35rem;line-height:1.3;">Translational Impact</p>
+        <p style="font-size:0.74rem;color:#999;line-height:1.55;">Bridging organelle biology with clinical liver therapies.</p>
+      </div>
+      <div style="background:#fff;padding:1.4rem;">
+        <p style="font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#2a5c45;margin-bottom:0.4rem;">Who</p>
+        <p style="font-size:0.88rem;font-weight:600;color:#1a1a1a;margin-bottom:0.35rem;line-height:1.3;">Collaborative Team</p>
+        <p style="font-size:0.74rem;color:#999;line-height:1.55;">Scientists and clinicians across all career stages.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     PROPOSAL 3
+     Proposals 1 + 2 combined (best of both)
+     ══════════════════════════════════════════ -->
+
+<div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 pt-10 pb-3">
+  <div class="flex items-center gap-3 mb-1">
+    <span style="background:#2a5c45;color:#fff;font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:0.25rem 0.8rem;border-radius:999px;">Proposal 3</span>
+    <h2 class="font-sans text-xl tracking-tight">Combined — fluorescence bg + H&amp;E circle</h2>
+  </div>
+  <p class="text-sm text-ink-light max-w-2xl mb-1">Both images working together: Image 1 fills the background, the H&amp;E circle sits right as a glowing scientific emblem. The overlay knits them to the brand colour. Highest visual impact.</p>
+</div>
+<p class="impl-note max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20">To implement: combine both techniques above — background image on the section, absolutely positioned circle image at reduced opacity on the right.</p>
+
+<div class="sim-fluoro" style="border-top:3px solid #2a5c45;border-bottom:3px solid #2a5c45;overflow:hidden;">
+  <div class="overlay-green" style="position:relative;">
+    <div style="max-width:1400px;margin:0 auto;padding:4rem 2rem;position:relative;display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;min-height:400px;">
+
+      <!-- H&E circle overlay -->
+      <div class="sim-he" style="
+        position:absolute;
+        right:-20px; top:50%; transform:translateY(-50%);
+        width:480px; height:480px;
+        border-radius:50%;
+        opacity:0.18;
+        pointer-events:none;
+        mix-blend-mode:screen;
+      "></div>
+
+      <!-- left -->
+      <div style="position:relative;z-index:1;">
+        <p style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#7ec8a0;margin-bottom:0.75rem;">Welcome to Palma Lab</p>
+        <h1 style="font-size:2.8rem;font-weight:700;line-height:1.12;color:#fff;margin-bottom:1.25rem;letter-spacing:-0.03em;">
+          Exploring <em style="color:#a8e8c0;font-style:italic;">mitochondria</em><br>to advance<br>liver research
+        </h1>
+        <p style="font-size:0.88rem;color:rgba(255,255,255,0.72);line-height:1.75;max-width:420px;margin-bottom:1.75rem;">A translational research group investigating how mitochondrial plasticity shapes cellular adaptation in liver health and disease.</p>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+          <a style="background:#2a5c45;color:#fff;font-size:0.82rem;font-weight:600;padding:0.65rem 1.4rem;border-radius:999px;text-decoration:none;border:1.5px solid rgba(255,255,255,0.2);">Our Research</a>
+          <a style="border:1.5px solid rgba(255,255,255,0.45);color:#fff;font-size:0.82rem;font-weight:600;padding:0.65rem 1.4rem;border-radius:999px;text-decoration:none;">Join the Lab</a>
+        </div>
+      </div>
+
+      <!-- right: info grid -->
+      <div style="position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,0.12);border-radius:1rem;overflow:hidden;border:1px solid rgba(255,255,255,0.15);">
+        <div style="background:rgba(255,255,255,0.08);backdrop-filter:blur(8px);padding:1.4rem;">
+          <p style="font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#7ec8a0;margin-bottom:0.4rem;">What</p>
+          <p style="font-size:0.88rem;font-weight:600;color:#fff;margin-bottom:0.35rem;line-height:1.3;">Mitochondrial Morphology</p>
+          <p style="font-size:0.74rem;color:rgba(255,255,255,0.55);line-height:1.55;">Mapping organelle remodelling in SLD, ALD, and cholangiocarcinoma.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.08);backdrop-filter:blur(8px);padding:1.4rem;">
+          <p style="font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#7ec8a0;margin-bottom:0.4rem;">How</p>
+          <p style="font-size:0.88rem;font-weight:600;color:#fff;margin-bottom:0.35rem;line-height:1.3;">Human ex vivo Models</p>
+          <p style="font-size:0.74rem;color:rgba(255,255,255,0.55);line-height:1.55;">Patient-derived tissue models and advanced imaging.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.08);backdrop-filter:blur(8px);padding:1.4rem;">
+          <p style="font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#7ec8a0;margin-bottom:0.4rem;">Why</p>
+          <p style="font-size:0.88rem;font-weight:600;color:#fff;margin-bottom:0.35rem;line-height:1.3;">Translational Impact</p>
+          <p style="font-size:0.74rem;color:rgba(255,255,255,0.55);line-height:1.55;">Bridging organelle biology with clinical liver therapies.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.08);backdrop-filter:blur(8px);padding:1.4rem;">
+          <p style="font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#7ec8a0;margin-bottom:0.4rem;">Who</p>
+          <p style="font-size:0.88rem;font-weight:600;color:#fff;margin-bottom:0.35rem;line-height:1.3;">Collaborative Team</p>
+          <p style="font-size:0.74rem;color:rgba(255,255,255,0.55);line-height:1.55;">Scientists and clinicians across all career stages.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     PROPOSAL 4
+     Tissue image as research page header
+     ══════════════════════════════════════════ -->
+
+<div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 pt-10 pb-3">
+  <div class="flex items-center gap-3 mb-1">
+    <span style="background:#2a5c45;color:#fff;font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:0.25rem 0.8rem;border-radius:999px;">Proposal 4</span>
+    <h2 class="font-sans text-xl tracking-tight">Tissue architecture image on research project pages</h2>
+  </div>
+  <p class="text-sm text-ink-light max-w-2xl mb-1">Image 2 (yellow cell outlines, blue nuclei) as the hero background on individual research project detail pages. Each page can use a different crop. Makes every project feel distinct and visually rooted in the real science.</p>
+</div>
+<p class="impl-note max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20">To implement: add <code>hero_image: "/images/microscopy/tissue.jpg"</code> to the research page front matter, reference it in <code>layouts/research/single.html</code>.</p>
+
+<!-- Research page hero mockup -->
+<div class="sim-tissue" style="border-top:3px solid #2a5c45;border-bottom:3px solid #2a5c45;">
+  <div class="overlay-dark">
+    <div style="max-width:1400px;margin:0 auto;padding:3rem 2rem;">
+      <a style="font-size:0.75rem;color:#7ec8a0;text-decoration:none;display:inline-block;margin-bottom:0.75rem;">← All Projects</a>
+      <span style="display:inline-block;font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#fff;background:rgba(42,92,69,0.8);padding:0.2rem 0.7rem;border-radius:999px;margin-bottom:0.75rem;margin-left:0.5rem;">ALD · Mitochondria</span>
+      <h1 style="font-size:2.5rem;font-weight:700;line-height:1.15;color:#fff;letter-spacing:-0.02em;max-width:680px;margin-bottom:0.75rem;">Alcohol &amp; Mitochondrial Architecture</h1>
+      <p style="font-size:0.9rem;color:rgba(255,255,255,0.65);max-width:560px;line-height:1.65;">How ethanol reshapes mitochondrial structure in hepatocytes and drives the formation of megamitochondria in steatotic liver disease.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Research page body (normal) -->
+<div style="background:#fff;border-bottom:3px solid #2a5c45;padding:2.5rem 2rem;">
+  <div style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr;gap:3rem;">
+    <div>
+      <p style="font-size:0.88rem;color:#444;line-height:1.8;margin-bottom:1rem;">Chronic alcohol consumption profoundly disrupts mitochondrial morphology in hepatocytes. Our research investigates the molecular mechanisms underlying these structural changes, with a particular focus on megamitochondria — enlarged, dysfunctional mitochondria that serve as both biomarkers and potential therapeutic targets.</p>
+      <p style="font-size:0.88rem;color:#444;line-height:1.8;">Using precision-cut liver slices from patients with alcohol-related liver disease, we characterise the dynamics of mitochondrial fusion, fission, and biogenesis in a physiologically relevant human model.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:1rem;">
+      <div style="background:#fafaf8;border:1px solid #e2e2de;border-radius:0.75rem;padding:1.25rem;">
+        <p style="font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#555;margin-bottom:0.6rem;">Team</p>
+        <p style="font-size:0.82rem;color:#333;">Dr. Elena Palma<br>Una Rastovic</p>
+      </div>
+      <a style="background:#eaf2ee;border:1px solid rgba(42,92,69,0.2);border-radius:0.75rem;padding:1.25rem;text-decoration:none;display:block;">
+        <p style="font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#2a5c45;margin-bottom:0.25rem;">Related</p>
+        <p style="font-size:0.85rem;font-weight:500;color:#1a1a1a;">View Publications →</p>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     NEXT STEPS
+     ══════════════════════════════════════════ -->
+
+<div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-10">
+  <h2 class="font-sans text-2xl tracking-tight mb-4">Ready to implement?</h2>
+  <p class="text-sm text-ink-light max-w-2xl mb-6">Save your images to <code>static/images/microscopy/</code> using these filenames — then tell me which proposal(s) to implement and I'll wire them up.</p>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;">
+    <div style="border:1.5px solid #e2e2de;border-radius:0.75rem;padding:1.25rem;">
+      <p style="font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#2a5c45;margin-bottom:0.4rem;">Image 1</p>
+      <p style="font-size:0.88rem;font-weight:500;color:#1a1a1a;margin-bottom:0.25rem;">Fluorescence mitochondria</p>
+      <p style="font-size:0.78rem;color:#777;margin-bottom:0.5rem;">Magenta · gold · blue on black</p>
+      <code style="font-size:0.72rem;color:#555;background:#f5f5f2;padding:0.2rem 0.5rem;border-radius:4px;">fluoro.jpg</code>
+    </div>
+    <div style="border:1.5px solid #e2e2de;border-radius:0.75rem;padding:1.25rem;">
+      <p style="font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#2a5c45;margin-bottom:0.4rem;">Image 2</p>
+      <p style="font-size:0.88rem;font-weight:500;color:#1a1a1a;margin-bottom:0.25rem;">Tissue architecture</p>
+      <p style="font-size:0.78rem;color:#777;margin-bottom:0.5rem;">Yellow · blue · magenta on black</p>
+      <code style="font-size:0.72rem;color:#555;background:#f5f5f2;padding:0.2rem 0.5rem;border-radius:4px;">tissue.jpg</code>
+    </div>
+    <div style="border:1.5px solid #e2e2de;border-radius:0.75rem;padding:1.25rem;">
+      <p style="font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#2a5c45;margin-bottom:0.4rem;">Image 3</p>
+      <p style="font-size:0.88rem;font-weight:500;color:#1a1a1a;margin-bottom:0.25rem;">H&amp;E liver slice</p>
+      <p style="font-size:0.78rem;color:#777;margin-bottom:0.5rem;">Soft rose · lavender · pink</p>
+      <code style="font-size:0.72rem;color:#555;background:#f5f5f2;padding:0.2rem 0.5rem;border-radius:4px;">he-slice.jpg</code>
+    </div>
+  </div>
+</div>
+
+</div>
+{{ end }}
