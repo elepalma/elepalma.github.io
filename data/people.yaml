@@ -6,7 +6,7 @@ members:
     role: "Principal Investigator and Lecturer (Adj/Hon)"
     role_type: "pi"
     area: "Mitochondrial Medicine · ALD · Liver Cancer · Translational Research"
-    bio: "Ele leads the Palma Lab at the Roger Williams Institute of Liver Studies, King's College London. With nearly 15 years of experience in hepatology research, her work focuses on developing novel multi-pronged treatments for alcohol-related liver disease and liver cancers. The lab uses translational experimental models to dissect fibrosis, inflammation, hepatotoxicity, liver regeneration, and mitochondrial dysfunction — bridging basic science and preclinical drug discovery. She holds a PhD in Cellular Biology and a degree in Pharmaceutical Chemistry and Technology from the University of Padova, Italy."
+    bio: "Ele leads the Palma Lab at the Roger Williams Institute of Liver Studies, King's College London. With nearly 15 years of experience in hepatology research, her work focuses on developing novel multi-pronged treatments for alcohol-related liver disease and liver cancers. The lab uses translational experimental models to dissect fibrosis, inflammation, hepatotoxicity, liver regeneration, and mitochondrial dysfunction, bridging basic science and preclinical drug discovery. She holds a PhD in Cellular Biology and a degree in Pharmaceutical Chemistry and Technology from the University of Padova, Italy."
     email: "elena.palma@kcl.ac.uk"
     twitter: "https://x.com/DrElePalma"
     linkedin: "https://www.linkedin.com/in/elena-palma-4400a52a/"
@@ -34,6 +34,11 @@ members:
     area: "Mitochondrial Morphology · ALD · Liver Fibrosis"
     bio: "Una joined the Roger Williams Institute of Liver Studies as a Research Assistant in 2020 and started her PhD in the Palma Lab in 2023. She completed her BSc in Molecular Biology at the University of Zagreb and her MSc in Cancer Immunology and Biotechnology at the University of Nottingham. Her PhD investigates changes in mitochondrial morphology and function in ALD and liver fibrosis, with the aim of targeting mitochondria as a therapeutic strategy. She is a recipient of the Research Society on Alcohol Doctoral Students Small Grant."
     profile: "https://www.kcl.ac.uk/people/una-rastovic"
+    awards:
+      - "RSA Doctoral Student Small Grant - 2025"
+      - "EASL Conference, Young Investigator travel award - 2023, 2024"
+      - "ESBRA, Young Investigator award - 2023"
+      - "BASL Basic Science Retreat, Best Science Abstract - 2023"
 
   - name: "Moyosoreoluwa Feyide"
     pub_name: "Feyide M"
@@ -43,6 +48,9 @@ members:
     role_type: "phd"
     area: "CCA · Tumour Models · Drug Testing"
     profile: "https://www.kcl.ac.uk/people/moyosoreoluwa-feyide"
+    awards:
+      - "Precision-BTC-Network, Short-term scientific mission grant (STSM) - 2025"
+      - "DMM Conference Travel Grant - 2025"
 
   - name: "Anna Schulz"
     pub_name: "Schulz A"
@@ -51,8 +59,10 @@ members:
     role: "MRes Student"
     role_type: "Phd"
     area: "CCA · Tumour Models · Drug Testing"
-    bio: ""
+    bio: "Anna is a Biomedical & Molecular Sciences Research MRes student working on the project 'Decoding the Cholangiocarcinoma Tumour Microenvironment to develop novel therapies. As part of her dissertation project she was awarded the 'Matt Wilson Scholarship'."
     profile: ""
+    awards:
+      - "Matt Wilson Scholarship - 2024/2025"
 
   - name: "Sara Russo"
     pub_name: "Russo S"
@@ -72,12 +82,24 @@ alumni:
     now: "Currently working at Imperial College London."
     thesis: ""
 
+  - name: "Bhavanaa Arunakumar"
+    pub_name: "Arunakumar B"
+    role: "MSc Student"
+    years: "2023–2024"
+    now: "Currently MRC iCASE a PhD at University of Leicester"
+    thesis: "Enhancing the success rate of human precisioncut liver slice cultures to advance patientderived models of Alcohol-related liver disease and explore megamitochondria formation"
+    awards:
+      - "Matt Wilson Scholarship - 2023/2024"
+
   - name: "Ravi Jagatia"
     pub_name: "Jagatia R"
     role: "PhD Student"
     years: "2020–2024"
     now: "Currently working in the industry."
     thesis: "Novel therapeutic strategies for primary and secondary liver cancers."
+    awards:
+      - "Neil Blenkinsop Research Grant - 2023"
+      - "EASL - Liver Cancer Summit, Young Investigator travel award - 2022, 2023, 2024"
 
   - name: "Ewald Jan Doornebal"
     pub_name: "Doornebal EJ"
@@ -85,3 +107,5 @@ alumni:
     years: "2018–2021"
     now: "Currently working in the industry."
     thesis: "Personalised human immunocompetent ex vivo models for primary and secondary liver cancer."
+    awards:
+      - "UKI NETS, 1st prize for best oral presentation - 2019, 2020"
