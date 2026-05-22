@@ -75,7 +75,23 @@
     <div class="px-4 sm:px-8 py-3 flex flex-col divide-y divide-rule">
       {{ range .Site.Menus.main }}
         {{ if not .Parent }}
-        <a href="{{ .URL | relURL }}" class="py-3 text-sm text-ink-light hover:text-accent transition-colors mobile-nav-link">{{ .Name }}</a>
+          {{ if .Children }}
+          <div>
+            <button class="mobile-accordion-btn w-full flex items-center justify-between py-3 text-sm text-ink-light hover:text-accent transition-colors">
+              <span>{{ .Name }}</span>
+              <svg class="mobile-accordion-icon w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="mobile-accordion-panel hidden pb-2 pl-3 flex flex-col">
+              {{ range .Children }}
+              <a href="{{ .URL | relURL }}" class="py-2 text-sm text-ink-faint hover:text-accent transition-colors mobile-nav-link">{{ .Name }}</a>
+              {{ end }}
+            </div>
+          </div>
+          {{ else }}
+          <a href="{{ .URL | relURL }}" class="py-3 text-sm text-ink-light hover:text-accent transition-colors mobile-nav-link">{{ .Name }}</a>
+          {{ end }}
         {{ end }}
       {{ end }}
     </div>

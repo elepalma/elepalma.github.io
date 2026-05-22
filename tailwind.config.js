@@ -19,6 +19,6 @@ export default {
       fontSize: { '2xs': ['0.68rem', { lineHeight: '1rem' }] },
     }
   },
-  safelist: ['min-w-[160px]', 'min-w-[180px]'],
+  safelist: ['min-w-[160px]', 'min-w-[180px]', 'rotate-180'],
   plugins: [],
 }
