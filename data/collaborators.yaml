@@ -1,6 +1,6 @@
 groups:
   - type: "Academic"
-    name: "Prof Michele Vacca"
+    name: "Dr Michele Vacca"
     affiliation: "University of Bari Aldo Moro, Roger Williams Institute of Liver Studies"
     description: "MASLD models, nutritional interventions and the therapeutic potential of polyphenols in liver disease models."
 
@@ -53,3 +53,8 @@ groups:
     name: "Prof Filip Braet"
     affiliation: "University of Sidney"
     description: "Characterisation of megamitochondria by electron microscopy in human tissue derived models."
+
+  - type: "Academic"
+    name: "Marta Giacomello"
+    affiliation: "University of Padova"
+    description: "Imaging analysis to study mitochondrial morphometrics."
