@@ -13,7 +13,7 @@
   <!-- PI -->
   <div class="mb-8">
     <h2 class="font-sans text-2xl tracking-tight mb-6 pb-3 border-b border-rule">Principal Investigator</h2>
-    {{ range where $.Site.Data.people.members "role_type" "pi" }}
+    {{ range where hugo.Data.people.members "role_type" "pi" }}
     <div class="flex flex-col sm:flex-row gap-6 bg-white border border-rule rounded-lg p-6">
       <div style="width:220px;height:280px;border-radius:0.5rem;background:#eaf2ee;flex-shrink:0;overflow:hidden;">
         {{ if .photo }}<img src="{{ .photo }}" alt="{{ .name }}" class="w-full h-full object-cover">{{ else }}<div class="w-full h-full flex items-center justify-center font-sans text-5xl text-accent">{{ .initials }}</div>{{ end }}
@@ -43,7 +43,7 @@
   </div>
 
   <!-- Lab Members -->
-  {{ $members := where $.Site.Data.people.members "role_type" "ne" "pi" }}
+  {{ $members := where hugo.Data.people.members "role_type" "ne" "pi" }}
   {{ if $members }}
   <div class="mb-8">
     <h2 class="font-sans text-2xl tracking-tight mb-6 pb-3 border-b border-rule">Lab Members</h2>
@@ -88,7 +88,7 @@
   <div id="alumni" class="border-t border-rule pt-6">
     <h2 class="font-sans text-2xl tracking-tight mb-6">Alumni</h2>
     <div class="divide-y divide-rule">
-      {{ range $.Site.Data.people.alumni }}
+      {{ range hugo.Data.people.alumni }}
       {{- $parts := split .name " " }}
       {{- $initials := printf "%s%s" (substr (index $parts 0) 0 1) (substr (index $parts (sub (len $parts) 1)) 0 1) }}
       <div class="py-4 flex gap-4 items-start">

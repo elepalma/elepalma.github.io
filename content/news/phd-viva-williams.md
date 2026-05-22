@@ -6,7 +6,7 @@ category: "Team"
 summary: ""
 sitemap:
   disable: true
-_build:
+build:
   list: never
   render: never
 ---

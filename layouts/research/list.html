@@ -35,7 +35,7 @@
   <div class="border-t border-rule pt-6">
     <h2 class="font-sans text-2xl tracking-tight mb-6">Key Collaborations</h2>
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-      {{ range $.Site.Data.collaborators.groups }}
+      {{ range hugo.Data.collaborators.groups }}
       <div class="bg-white border border-rule rounded-lg p-5">
         <p class="text-2xs font-semibold uppercase tracking-widest text-accent mb-1">{{ .type }}</p>
         <h3 class="text-sm font-medium mb-0.5">{{ .name }}</h3>

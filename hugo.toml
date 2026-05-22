@@ -1,7 +1,9 @@
 baseURL = "https://elepalma.github.io/"
-languageCode = "en-gb"
 title = "Palma Lab · King's College London"
 disableKinds = ["taxonomy", "term"]
+
+[languages.en]
+  locale = "en-GB"
 
 [params]
   labName        = "Palma Lab"

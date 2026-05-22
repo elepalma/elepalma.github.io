@@ -28,7 +28,7 @@
 
 <!-- Hidden data source: Hugo emits all events as data attributes -->
 <div id="event-data" class="hidden" aria-hidden="true">
-  {{ range $.Site.Data.events.events }}
+  {{ range hugo.Data.events.events }}
   <div class="event-item"
     data-date="{{ .date }}"
     data-month="{{ .month }}"

@@ -76,7 +76,7 @@
       <a href="{{ "/people/" | relURL }}" class="text-xs font-medium text-accent hover:underline whitespace-nowrap shrink-0">All people →</a>
     </div>
     <div class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-4 sm:gap-5">
-      {{ range first 6 $.Site.Data.people.members }}
+      {{ range first 6 hugo.Data.people.members }}
       <a href="{{ "/people/" | relURL }}" class="bg-white border border-rule rounded-lg overflow-hidden hover:border-accent transition-colors group block">
         <div class="aspect-square bg-accent-light overflow-hidden">
           {{ if .photo }}
@@ -106,7 +106,7 @@
       <a href="{{ "/publications/" | relURL }}" class="text-xs font-medium text-accent hover:underline whitespace-nowrap shrink-0">Full list →</a>
     </div>
     <div class="divide-y divide-rule">
-      {{ range first 4 ($.Site.Data.publications.papers) }}
+      {{ range first 4 (hugo.Data.publications.papers) }}
       <div class="flex gap-4 sm:gap-6 py-4 items-start">
         <div class="font-sans text-sm italic text-accent shrink-0 w-10 pt-0.5">{{ .year }}</div>
         <div class="flex-1 min-w-0">
@@ -161,7 +161,7 @@
     </div>
     <div class="divide-y divide-rule">
       {{ $today := now.Format "2006-01-02" }}
-      {{ range first 3 (sort (where $.Site.Data.events.events "date" "ge" $today) "date" "asc") }}
+      {{ range first 3 (sort (where hugo.Data.events.events "date" "ge" $today) "date" "asc") }}
       <div class="flex items-center gap-4 sm:gap-5 py-4">
         <div class="shrink-0 w-12 bg-accent text-white rounded-md text-center py-1.5">
           {{ if .day }}
@@ -192,7 +192,7 @@
         <a href="{{ "/join/" | relURL }}" class="inline-flex items-center px-5 py-2.5 rounded bg-accent text-white text-sm font-medium hover:bg-accent-dark transition-colors">See opportunities →</a>
       </div>
       <div class="grid grid-cols-2 gap-3">
-        {{ range $.Site.Data.opportunities.roles }}
+        {{ range hugo.Data.opportunities.roles }}
         <a href="{{ "/join/" | relURL }}" class="flex items-center gap-3 p-4 bg-white border border-rule rounded-lg hover:border-accent hover:bg-accent-light transition-colors group">
           <span class="text-xl shrink-0">{{ .emoji }}</span>
           <div class="min-w-0">

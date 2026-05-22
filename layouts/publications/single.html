@@ -18,7 +18,7 @@
       <span class="text-2xs font-semibold uppercase tracking-widest text-ink-faint w-14 shrink-0">Year</span>
       <button onclick="filterPubs('all', 'year')" class="pub-filter active px-3 py-1.5 rounded-full text-xs font-medium border border-accent bg-accent text-white transition-colors">All</button>
       {{ $years := slice }}
-      {{ range $.Site.Data.publications.papers }}
+      {{ range hugo.Data.publications.papers }}
         {{ $years = $years | append .year }}
       {{ end }}
       {{ range ($years | uniq) }}
@@ -29,13 +29,13 @@
     <!-- Author filters -->
     <div class="flex flex-wrap items-center gap-2">
       <span class="text-2xs font-semibold uppercase tracking-widest text-ink-faint w-14 shrink-0">Author</span>
-      {{ range $.Site.Data.people.members }}{{ with .pub_name }}
+      {{ range hugo.Data.people.members }}{{ with .pub_name }}
       <button onclick="filterPubs('{{ . }}', 'author')" data-pubname="{{ . }}"
               class="pub-filter px-3 py-1.5 rounded-full text-xs font-medium border border-rule text-ink-light hover:border-accent hover:text-accent transition-colors">
         {{ index (split . " ") 0 }}
       </button>
       {{ end }}{{ end }}
-      {{ range $.Site.Data.people.alumni }}{{ with .pub_name }}
+      {{ range hugo.Data.people.alumni }}{{ with .pub_name }}
       <button onclick="filterPubs('{{ . }}', 'author')" data-pubname="{{ . }}"
               class="pub-filter px-3 py-1.5 rounded-full text-xs font-medium border border-rule text-ink-light hover:border-accent hover:text-accent transition-colors">
         {{ index (split . " ") 0 }}
@@ -47,7 +47,7 @@
 
   <!-- Publications list -->
   <div class="divide-y divide-rule" id="pub-list">
-    {{ range $.Site.Data.publications.papers }}
+    {{ range hugo.Data.publications.papers }}
     <div class="pub-item flex gap-4 sm:gap-6 py-5 items-start" data-year="{{ .year }}" data-authors="{{ .authors }}">
       <div class="font-sans text-sm italic text-accent shrink-0 w-10 pt-0.5">{{ .year }}</div>
       <div class="flex-1 min-w-0">

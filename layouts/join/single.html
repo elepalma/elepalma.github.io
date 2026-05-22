@@ -14,7 +14,7 @@
   <div class="mb-8">
     <h2 class="font-sans text-2xl tracking-tight mb-6 pb-3 border-b border-rule">Open Positions</h2>
     <div class="flex flex-col gap-4">
-      {{ range $.Site.Data.opportunities.roles }}
+      {{ range hugo.Data.opportunities.roles }}
       <div class="bg-white border border-rule rounded-lg p-5 sm:p-6 flex flex-col sm:flex-row gap-4 sm:items-center hover:border-accent transition-colors">
         <div class="w-12 h-12 rounded-lg bg-accent-light flex items-center justify-center text-2xl shrink-0">{{ .emoji }}</div>
         <div class="flex-1 min-w-0">
