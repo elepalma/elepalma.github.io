@@ -1,5 +1,6 @@
 ---
 title: "Techniques & Platforms"
+description: "Overview of the experimental platforms and techniques used in the Palma Lab — from precision-cut liver and tumour slices to super-resolution microscopy, mitochondrial morphometrics, and omics approaches."
 tag: "Methods"
 summary: "An overview of the key experimental and computational platforms used in the lab."
 weight: 6
