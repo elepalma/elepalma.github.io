@@ -1,4 +1,6 @@
-body { background-color: #fafaf8; color: #1a1a1a; font-family: 'DM Sans', system-ui, sans-serif; }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* Nav dropdowns */
 .nav-item:hover .dropdown { display: block; }

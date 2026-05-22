@@ -2,10 +2,13 @@
   "name": "elepalma-site",
   "type": "module",
   "scripts": {
+    "build:css": "tailwindcss -i assets/css/input.css -o static/css/main.css --minify",
+    "watch:css": "tailwindcss -i assets/css/input.css -o static/css/main.css --watch",
     "test": "vitest run",
     "test:watch": "vitest"
   },
   "devDependencies": {
+    "tailwindcss": "^3.4.0",
     "vitest": "^3.0.0"
   }
 }
