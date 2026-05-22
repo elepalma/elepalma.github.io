@@ -1,5 +1,6 @@
 ---
 title: "Human hepatic models to study mitochondria"
+description: "We develop precision-cut liver slice (PCLS) platforms and other organotypic human hepatic models to investigate mitochondrial morphology, megamitochondria formation, and structural changes in liver disease."
 tag: "Mito Models"
 summary: "Developing complex human models to investigate mitochondrial morphology and megamitochondria in the liver."
 funders: []

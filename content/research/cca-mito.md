@@ -1,5 +1,6 @@
 ---
 title: "Patient derived models of cholangiocarcinoma"
+description: "We develop and apply human organotypic cholangiocarcinoma models, including tumour slice cultures with intact immune microenvironment, to study mitochondrial dynamics and evaluate novel therapeutic strategies."
 tag: "CCA "
 summary: "Understanding how mitochondrial dynamics contribute to tumour progression in intrahepatic cholangiocarcinoma."
 funders: []

@@ -1,5 +1,6 @@
 ---
 title: "Ethanol driven mitochondrial remodelling"
+description: "We investigate how chronic ethanol exposure alters mitochondrial morphology, size and structural organisation in hepatocytes, and how these changes contribute to alcohol-related liver disease (ALD)."
 tag: "Alcohol & Mitochondria"
 summary: "How ethanol reshapes mitochondrial architecture in hepatocytes in steatotic liver disease."
 funders: []

@@ -1,5 +1,6 @@
 ---
 title: "Organotypic platforms for preclinical drug testing"
+description: "We advance precision-cut liver and tumour slice platforms as physiologically relevant systems for evaluating novel therapeutic strategies for steatotic liver disease (SLD) and liver cancers including cholangiocarcinoma."
 tag: "Drug Testing"
 summary: "Advancing organotypic liver models to evaluate novel therapeutic strategies for steatotic liver disease and liver cancer."
 funders: []

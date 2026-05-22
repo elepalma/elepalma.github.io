@@ -1,5 +1,6 @@
 ---
 title: "Mitochondrial plasticity and organelle biology"
+description: "We study the fundamental principles governing mitochondrial plasticity — how signalling pathways and metabolic stressors drive structural remodelling of mitochondria, and what these changes mean for cellular function in liver disease."
 tag: "Mito Plasticty"
 summary: "Deciphering the fundamental principles governing mitochondrial plasticity in response to cellular signalling and metabolic stress."
 funders: []

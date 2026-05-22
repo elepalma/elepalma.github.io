@@ -201,13 +201,10 @@ Defined in `hugo.toml` `[menu]` blocks. The nav partial reads `$.Site.Menus.main
 - Footer also links to `/collaborators/`
 
 ## Content still placeholder / to be filled
-- Research pages (`content/research/flr.md`, `mitochondria.md`, `omics.md`, `techniques.md`)
-- News posts (`content/news/`) — currently 3 placeholder posts
-- Events (`data/events.yaml`) — placeholder data
-- ORCID + Google Scholar for Dr. Elena Palma (empty strings in people.yaml)
-- Bio for Moyosoreoluwa Feyide
-- Real "now" positions for alumni Ravi Jagatia and Ewald Jan Doornebal
-- Collaborators: `apply_url` for "Collaborators" role in opportunities.yaml is empty
+- News posts (`content/news/`) — placeholder; section is hidden in nav until real content is ready
+- ORCID + Google Scholar for Dr. Elena Palma (empty strings in `data/people.yaml`)
+- Bio for Moyosoreoluwa Feyide (`data/people.yaml`)
+- Real "now" positions for alumni Ravi Jagatia and Ewald Jan Doornebal (`data/people.yaml`)
 
 ## Deployment
 Push to `main` → GitHub Actions auto-builds and deploys to GitHub Pages.
@@ -234,12 +231,12 @@ The News section is fully built but intentionally hidden. All files are preserve
 - [ ] `static/images/og-image.jpg` — 1200×630px image for social share previews (use a lab photo or branded banner); referenced in all Open Graph + Twitter Card `<meta>` tags
 - [ ] `static/images/favicon-96x96.png` — PNG favicon for older browsers; referenced in `baseof.html`
 - [ ] `static/images/apple-touch-icon.png` — 180×180px icon for iOS home screen bookmarks; referenced in `baseof.html`
+- [ ] Merge `seo-improvements` branch into `main` to deploy: `disableKinds` (removes empty taxonomy pages from sitemap), per-page meta descriptions on all research pages, Person JSON-LD schema for Elena, news pages excluded from sitemap
+- [ ] Google Search Console — add site, verify ownership, submit `https://elepalma.github.io/sitemap.xml`
+- [ ] ORCID and Google Scholar URLs for Elena in `data/people.yaml` — will populate the Person schema `sameAs` links once added
 
 ### Content still placeholder / to be filled
-- [ ] Research pages (`content/research/techniques.md`) — still placeholder
-- [ ] News posts (`content/news/`) — currently 3 placeholder posts
-- [ ] Events (`data/events.yaml`) — placeholder data
+- [ ] News posts (`content/news/`) — currently placeholder; section is hidden in nav until real content is ready
 - [ ] ORCID + Google Scholar for Dr. Elena Palma (empty strings in `data/people.yaml`)
 - [ ] Bio for Moyosoreoluwa Feyide (`data/people.yaml`)
-- [ ] Real "now" positions for alumni Ravi Jagatia and Ewald Jan Doornebal
-- [ ] `apply_url` for "Collaborators" role in `data/opportunities.yaml` is empty
+- [ ] Real "now" positions for alumni Ravi Jagatia and Ewald Jan Doornebal (`data/people.yaml`)
