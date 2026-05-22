@@ -21,20 +21,12 @@
     <h2 class="font-sans text-2xl tracking-tight mb-6 pb-3 border-b border-rule">{{ $type }}</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
       {{ range where hugo.Data.collaborators.groups "type" $type }}
-      <div class="bg-white border border-rule rounded-lg p-5 flex flex-col gap-3 hover:border-accent transition-colors">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-lg bg-accent-light flex items-center justify-center shrink-0">
-            {{ if eq $type "Academic" }}<span class="text-lg">🎓</span>
-            {{ else if eq $type "Clinical" }}<span class="text-lg">🏥</span>
-            {{ else if eq $type "Industry" }}<span class="text-lg">🏭</span>
-            {{ else if eq $type "Consortium" }}<span class="text-lg">🌐</span>
-            {{ else }}<span class="text-lg">🤝</span>{{ end }}
-          </div>
-          <h3 class="text-sm font-medium leading-snug">{{ .name }}</h3>
-        </div>
-        <p class="text-xs text-ink-light leading-relaxed">{{ .description }}</p>
+      <div class="bg-white border border-rule rounded-lg p-5 flex flex-col gap-2 hover:border-accent transition-colors">
+        <h3 class="text-sm font-medium leading-snug">{{ .name }}</h3>
+        {{ with .affiliation }}<p class="text-2xs text-ink-faint italic">{{ . }}</p>{{ end }}
+        <p class="text-xs text-ink-faint leading-relaxed">{{ .description }}</p>
         {{ with .url }}
-        <a href="{{ . }}" target="_blank" rel="noopener" class="self-start text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors">Visit →</a>
+        <a href="{{ . }}" target="_blank" rel="noopener" class="self-start mt-1 text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors">Visit →</a>
         {{ end }}
       </div>
       {{ end }}
