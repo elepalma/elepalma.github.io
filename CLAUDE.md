@@ -231,8 +231,8 @@ The News section is fully built but intentionally hidden. All files are preserve
 - [ ] `static/images/og-image.jpg` — 1200×630px image for social share previews (use a lab photo or branded banner); referenced in all Open Graph + Twitter Card `<meta>` tags
 - [ ] `static/images/favicon-96x96.png` — PNG favicon for older browsers; referenced in `baseof.html`
 - [ ] `static/images/apple-touch-icon.png` — 180×180px icon for iOS home screen bookmarks; referenced in `baseof.html`
-- [ ] Merge `seo-improvements` branch into `main` to deploy: `disableKinds` (removes empty taxonomy pages from sitemap), per-page meta descriptions on all research pages, Person JSON-LD schema for Elena, news pages excluded from sitemap
-- [ ] Google Search Console — add site, verify ownership, submit `https://elepalma.github.io/sitemap.xml`
+- [x] Merge `seo-improvements` branch into `main` — done
+- [x] Google Search Console — verified, sitemap `https://palmalab.co.uk/sitemap.xml` submitted
 - [ ] ORCID and Google Scholar URLs for Elena in `data/people.yaml` — will populate the Person schema `sameAs` links once added
 
 ### Content still placeholder / to be filled
