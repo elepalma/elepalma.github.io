@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://elepalma.github.io/sitemap.xml
+Sitemap: https://palmalab.co.uk/sitemap.xml
