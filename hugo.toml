@@ -1,5 +1,5 @@
 baseURL = "https://palmalab.co.uk/"
-title = "Palma Lab · King's College London"
+title = "Elena Palma's Mitochondrial Medicine Lab · King's College London"
 disableKinds = ["taxonomy", "term"]
 
 [languages.en]

@@ -20,13 +20,13 @@ groups:
   - type: "Academic"
     name: "Michele Vacca"
     affiliation: "University of Bari Aldo Moro, Roger Williams Institute of Liver Studies"
-    description: "Nutritional interventions and therapeutic potential of polyphenols in Metabolic Dysfunction-Associated Steatotic Liver Disease (SLD), ex vivo models of MASLD"
+    description: "Nutritional interventions and therapeutic potential of polyphenols in Metabolic Dysfunction-Associated Steatotic Liver Disease (MASLD), ex vivo models of MASLD."
     url: "https://www.uniba.it/it/docenti/vacca-michele/laboratory-lipid-metabolism-masld-hcc-lab/michele-vacca-short-bio"
 
   - type: "Academic"
     name: "Shilpa Chokshi"
     affiliation: "University of Plymouth"
-    description: "Organotypic models of liver disease and liver cancer, role of mitochondria morphology in alcohol-related liver disease"
+    description: "Organotypic models of liver disease and liver cancer, role of mitochondria morphology in Alcohol-related Liver Disease (ALD)."
     url: "https://www.plymouth.ac.uk/research/centre-of-environmental-hepatology"
 
   - type: "Academic"
@@ -64,7 +64,12 @@ groups:
     affiliation: "King's College Hospital"
     description: "Characterisation of mitochondrial alterations in patients with alcohol use disorder (AUD) and alcohol related liver disease (ALD)."
 
-  - type: " Consortium"
+  - type: "Academic"
     name: "TITAN Consortium"
     affiliation: "Prof Jesús M. Bañales, Dr Pedro Rodrigues, Prof Fernando Cossío, Dr Iván Rivilla, Prof Jean Charles Nault, Dr Sandra Rebouissou, Prof Ana Lleo, Dr Michela Polidoro"
     description: "Development of novel therapeutic strategies for liver cancer. Testing efficacy of cisplatin derivatives in cholangiocarcinoma preclinical models. "
+
+  - type: "Societies and Committees"
+    name: "ESBRA"
+    affiliation: ""
+    description: ""
