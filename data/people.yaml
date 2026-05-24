@@ -21,7 +21,7 @@ members:
     role: "Research Fellow"
     role_type: "postdoc"
     area: "Mitochondrial Dynamics · ALD · MetALD"
-    bio: "Meliz joined the Palma Lab in 2024 as a Research Fellow in the Mitochondrial Medicine for Liver Disease Lab. She holds an MSc and PhD from Imperial College London and brings experience from both academia and industry. Her current work investigates changes in mitochondrial dynamics and function in Alcohol-Related Liver Disease (ALD) and Metabolic Dysfunction and Alcohol-Related Steatotic Liver Disease (MetALD), with a particular focus on megamitochondria and their role in disease diagnosis and treatment."
+    bio: "Meliz joined the Palma Lab in 2024 as a Postdoc Research Assistant. She holds an MSc and PhD from Imperial College London and brings experience from both academia and industry. Her current work investigates changes in mitochondrial dynamics and function in Alcohol-Related Liver Disease (ALD) and Metabolic Dysfunction and Alcohol-Related Steatotic Liver Disease (MetALD), with a particular focus on megamitochondria and their role in disease diagnosis and treatment."
     profile: "https://www.kcl.ac.uk/people/meliz-sahuri-arisoylu"
 
   - name: "Una Rastovic"
@@ -47,6 +47,7 @@ members:
     role_type: "phd"
     area: "CCA · Tumour Models · Drug Testing"
     profile: "https://www.kcl.ac.uk/people/moyosoreoluwa-feyide"
+    bio: "Moyo joined the Palma Lab in 2022 for his MRes research project focused on liver cancer precision cut tumour slice models and returned in 2023 to start his PhD. His research has focused on advancing and characterising human cholangiocarcinoma organotypic models for drug testing and the study of mitochondrial dynamics in CCA."
     awards:
       - "Precision-BTC-Network, Short-term scientific mission grant (STSM) - 2025"
       - "DMM Conference Travel Grant - 2025"
@@ -70,7 +71,7 @@ members:
     role: "Visiting PhD Student"
     role_type: "phd"
     area: "SLD · Mitochondria"
-    bio: "Sara is a visiting PhD student from Biotechnologist at Fondazione Policlinico Universitario A. Gemelli IRCCS"
+    bio: "Sara is a visiting PhD student from the group of Prof Geltrude Mingrone, Fondazione Policlinico Universitario A. Gemelli IRCCS."
     profile: ""
 
 alumni:
@@ -86,7 +87,7 @@ alumni:
     role: "MSc Student"
     years: "2023–2024"
     now: "Currently MRC iCASE a PhD at University of Leicester"
-    thesis: "Enhancing the success rate of human precisioncut liver slice cultures to advance patientderived models of Alcohol-related liver disease and explore megamitochondria formation"
+    thesis: "Enhancing the success rate of human Precision Cut Liver Slice (PCLS) cultures to advance patientderived models of Alcohol-related liver disease and explore megamitochondria formation"
     awards:
       - "Matt Wilson Scholarship - 2023/2024"
 
