@@ -1,5 +1,12 @@
 # CLAUDE.md — Palma Lab Website
 
+## Commit checklist
+Before every commit, scan all changed text content (data YAML files, layout HTML, content markdown) for:
+- Spelling mistakes (names, scientific terms, institutions)
+- Duplicate punctuation (e.g. `""`, `..`)
+- Missing closing quotes in YAML strings
+- Trailing spaces in names/affiliations
+
 ## Project overview
 Static lab website for **Dr Elena Palma's research group** at the Roger Williams Institute of Liver Studies, King's College London. Focused on ALD, liver cancer, mitochondrial dysfunction, and fibrosis.
 
