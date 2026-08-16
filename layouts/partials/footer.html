@@ -64,11 +64,9 @@
           {{ .Site.Params.department | replaceRE ", " "<br>" | safeHTML }}<br>
           {{ .Site.Params.address | replaceRE ", " "<br>" | safeHTML }}
         </address>
-        <a href="{{ "/contact/" | relURL }}" class="inline-block mt-3 text-xs text-accent hover:underline">Contact us →</a>
+        <a href="{{ "/contact/" | relURL }}" class="block mt-3 text-xs text-accent hover:underline">Contact us →</a>
         <a href="https://maps.google.com/?q=The+Roger+Williams+Building,+King%27s+College+London/" target="_blank" rel="noopener"
-           class="mt-3 h-16 bg-accent-light border border-rule rounded flex items-center justify-center text-xs text-accent hover:bg-green-100 transition-colors cursor-pointer">
-          📍 View on map
-        </a>
+           class="block mt-2 text-xs text-accent hover:underline">View on map →</a>
       </div>
 
     </div>
