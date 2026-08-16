@@ -49,7 +49,9 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Build
-        run: hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+        # Use the https baseURL from hugo.toml — configure-pages reports the
+        # custom domain as http://, which poisons canonicals and the sitemap
+        run: hugo --minify
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
