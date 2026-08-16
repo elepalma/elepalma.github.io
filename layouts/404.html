@@ -1,0 +1,14 @@
+{{ define "main" }}
+
+<div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-16 sm:py-24 text-center">
+  <p class="text-2xs font-semibold uppercase tracking-widest text-accent mb-2">404</p>
+  <h1 class="font-sans text-3xl sm:text-4xl xl:text-5xl tracking-tight text-ink">Page not found</h1>
+  <p class="mt-4 text-sm sm:text-base text-ink-light max-w-xl mx-auto leading-relaxed">The page you're looking for doesn't exist or may have moved.</p>
+  <div class="mt-8 flex flex-wrap justify-center gap-3">
+    <a href="{{ "/" | relURL }}" class="inline-block px-5 py-2.5 bg-accent text-white text-sm font-medium rounded-md hover:bg-accent-dark transition-colors">Back to home</a>
+    <a href="{{ "/research/" | relURL }}" class="inline-block px-5 py-2.5 border border-rule text-ink text-sm font-medium rounded-md hover:bg-accent-light transition-colors">Our research</a>
+    <a href="{{ "/contact/" | relURL }}" class="inline-block px-5 py-2.5 border border-rule text-ink text-sm font-medium rounded-md hover:bg-accent-light transition-colors">Contact us</a>
+  </div>
+</div>
+
+{{ end }}

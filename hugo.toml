@@ -1,6 +1,7 @@
 baseURL = "https://palmalab.co.uk/"
 title = "Elena Palma's Mitochondrial Medicine Lab · King's College London"
 disableKinds = ["taxonomy", "term"]
+enableGitInfo = true
 
 [languages.en]
   locale = "en-GB"

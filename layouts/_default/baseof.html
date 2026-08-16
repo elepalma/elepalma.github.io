@@ -14,7 +14,7 @@
 <link rel="canonical" href="{{ $url }}">
 
 <!-- Open Graph -->
-<meta property="og:type"        content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+<meta property="og:type"        content="website">
 <meta property="og:title"       content="{{ $title }}">
 <meta property="og:description" content="{{ $desc }}">
 <meta property="og:url"         content="{{ $url }}">
@@ -34,6 +34,7 @@
 
 {{ partial "structured-data.html" . }}
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
 </head>

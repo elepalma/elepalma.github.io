@@ -14,7 +14,7 @@ Static lab website for **Dr Elena Palma's research group** at the Roger Williams
 - **Repo**: https://github.com/elepalma/elepalma.github.io (main branch)
 - **Generator**: Hugo v0.157.0+extended (Homebrew, `hugo` on PATH)
 - **Hosting**: GitHub Pages via GitHub Actions (`.github/workflows/deploy.yml`)
-- **CSS**: Tailwind CSS via CDN (configured inline in `baseof.html`) — no build step needed
+- **CSS**: Tailwind CSS compiled locally — `npm run build:css` builds `assets/css/input.css` → `static/css/main.css` (config in `tailwind.config.js`); CI runs this before Hugo
 - **Fonts**: Instrument Serif + DM Sans (Google Fonts)
 
 ## Key commands
@@ -23,10 +23,11 @@ Static lab website for **Dr Elena Palma's research group** at the Roger Williams
 # Local development server
 hugo server
 
-# Production build (used by CI)
-hugo --minify
+# Rebuild CSS after changing Tailwind classes in layouts
+npm run build:css
 
-# Build is always fast (~15ms). No npm/node needed.
+# Production build (used by CI, after build:css)
+hugo --minify
 ```
 
 ## Directory structure
@@ -68,9 +69,7 @@ static/
   images/         # Photos etc.
 ```
 
-## Tailwind design system (defined in baseof.html)
-
-All configured inline in the `<script>tailwind.config = {...}</script>` block.
+## Tailwind design system (defined in tailwind.config.js)
 
 | Token | Value |
 |---|---|
@@ -209,7 +208,6 @@ Defined in `hugo.toml` `[menu]` blocks. The nav partial reads `$.Site.Menus.main
 
 ## Content still placeholder / to be filled
 - News posts (`content/news/`) — placeholder; section is hidden in nav until real content is ready
-- ORCID + Google Scholar for Dr. Elena Palma (empty strings in `data/people.yaml`)
 - Bio for Moyosoreoluwa Feyide (`data/people.yaml`)
 - Real "now" positions for alumni Ravi Jagatia and Ewald Jan Doornebal (`data/people.yaml`)
 
@@ -234,16 +232,17 @@ The News section is fully built but intentionally hidden. All files are preserve
 
 ## TODO
 
-### SEO assets still needed
-- [ ] `static/images/og-image.jpg` — 1200×630px image for social share previews (use a lab photo or branded banner); referenced in all Open Graph + Twitter Card `<meta>` tags
-- [ ] `static/images/favicon-96x96.png` — PNG favicon for older browsers; referenced in `baseof.html`
-- [ ] `static/images/apple-touch-icon.png` — 180×180px icon for iOS home screen bookmarks; referenced in `baseof.html`
+### SEO assets
+- [x] `static/images/og-image.jpg` — 1200×630px branded banner (generated from design tokens); referenced in all Open Graph + Twitter Card `<meta>` tags
+- [x] `static/images/favicon-96x96.png` — PNG favicon for older browsers; referenced in `baseof.html`
+- [x] `static/images/apple-touch-icon.png` — 180×180px icon for iOS home screen bookmarks; referenced in `baseof.html`
 - [x] Merge `seo-improvements` branch into `main` — done
 - [x] Google Search Console — verified, sitemap `https://palmalab.co.uk/sitemap.xml` submitted
-- [ ] ORCID and Google Scholar URLs for Elena in `data/people.yaml` — will populate the Person schema `sameAs` links once added
+- [x] ORCID (`https://orcid.org/0000-0001-6294-6676`) and Google Scholar (`https://scholar.google.com/citations?user=AfvXV0EAAAAJ`) for Elena — in `data/people.yaml` and Person schema `sameAs`
+- [x] Custom 404 page (`layouts/404.html`)
+- [x] Sitemap `lastmod` via `enableGitInfo` (deploy.yml checks out full history with `fetch-depth: 0`)
 
 ### Content still placeholder / to be filled
 - [ ] News posts (`content/news/`) — currently placeholder; section is hidden in nav until real content is ready
-- [ ] ORCID + Google Scholar for Dr. Elena Palma (empty strings in `data/people.yaml`)
 - [ ] Bio for Moyosoreoluwa Feyide (`data/people.yaml`)
 - [ ] Real "now" positions for alumni Ravi Jagatia and Ewald Jan Doornebal (`data/people.yaml`)
