@@ -86,3 +86,40 @@ describe('accordion icon rotation', () => {
     expect(document.querySelector('.mobile-accordion-icon').classList.contains('rotate-180')).toBe(false);
   });
 });
+
+// ---------------------------------------------------------------------------
+// Accessibility state
+// ---------------------------------------------------------------------------
+
+describe('hamburger aria state', () => {
+  it('starts collapsed and points at the menu it controls', () => {
+    const btn = document.getElementById('hamburger');
+    expect(btn.getAttribute('aria-expanded')).toBe('false');
+    expect(btn.getAttribute('aria-controls')).toBe('mobile-menu');
+  });
+
+  it('reports expanded when open and collapsed when closed', () => {
+    const btn = document.getElementById('hamburger');
+    btn.click();
+    expect(btn.getAttribute('aria-expanded')).toBe('true');
+    btn.click();
+    expect(btn.getAttribute('aria-expanded')).toBe('false');
+  });
+
+  it('closes on Escape and returns focus to the toggle', () => {
+    const btn = document.getElementById('hamburger');
+    btn.click();
+    document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+    expect(document.getElementById('mobile-menu').classList.contains('hidden')).toBe(true);
+    expect(btn.getAttribute('aria-expanded')).toBe('false');
+    expect(document.activeElement).toBe(btn);
+  });
+
+  it('accordion button reports its expanded state', () => {
+    const acc = document.querySelector('.mobile-accordion-btn');
+    acc.click();
+    expect(acc.getAttribute('aria-expanded')).toBe('true');
+    acc.click();
+    expect(acc.getAttribute('aria-expanded')).toBe('false');
+  });
+});

@@ -40,7 +40,7 @@ groups:
     affiliation: "Fondazione Policlinico Universitario A. Gemelli IRCCS, King's College London"
     description: "Perilipins and mitochondria in Steatotic Liver Disease (SLD)."
     url: "https://www.kcl.ac.uk/people/geltrude-mingrone"
-  
+
   - type: "Academic"
     name: "Peter Starkel"
     affiliation: "Université Catholique de Louvain and Cliniques Universitaires Saint Luc, Brussels"
@@ -60,14 +60,14 @@ groups:
     url: "https://giacomellolab.org/"
 
   - type: "Clinical"
-    name: "Liver Histopatology Laboratory "
+    name: "Liver Histopathology Laboratory"
     affiliation: "King's College Hospital"
     description: "Characterisation of mitochondrial alterations in patients with alcohol use disorder (AUD) and alcohol related liver disease (ALD)."
 
   - type: "Academic"
     name: "TITAN Consortium"
     affiliation: "Prof Jesús M. Bañales, Dr Pedro Rodrigues, Prof Fernando Cossío, Dr Iván Rivilla, Prof Jean Charles Nault, Dr Sandra Rebouissou, Prof Ana Lleo, Dr Michela Polidoro"
-    description: "Development of novel therapeutic strategies for liver cancer. Testing efficacy of cisplatin derivatives in cholangiocarcinoma preclinical models. "
+    description: "Development of novel therapeutic strategies for liver cancer. Testing efficacy of cisplatin derivatives in cholangiocarcinoma preclinical models."
 
   - type: "Societies and Committees"
     name: "ESBRA - European Society for Biomedical Research on Alcohol"
@@ -76,7 +76,7 @@ groups:
     url: "https://www.esbra.com/"
 
   - type: "Societies and Committees"
-    name: "EASL - European Association for the Study of the Liver "
+    name: "EASL - European Association for the Study of the Liver"
     affiliation: "The Palma Lab actively participates in initiatives organised by EASL, contributing to education, translational hepatology, and basic liver research."
     description: "Dr Elena Palma served as Course Director of the EASL Basic Science School “Precision Cut Liver Slices and Liver Organoids: versatile ex vivo models of liver disease” in 2022 and 2024. She was also part of the faculty at the EASL Congress in 2025 and 2026 and is among the organisers of the EASL Steatotic Liver Disease (SLD) Summit 2027."
     url: "https://easl.eu/event/easl-sld-summit-2027/"

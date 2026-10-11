@@ -91,3 +91,42 @@ describe('isActiveButton — author buttons', () => {
     expect(isActiveButton('E', 'Palma E', 'Palma E', 'author')).toBe(true);
   });
 });
+
+// ---------------------------------------------------------------------------
+// DOM wiring (static/js/publications-filter.js) — empty state
+// ---------------------------------------------------------------------------
+
+import { beforeEach, vi } from 'vitest';
+
+describe('filterPubs DOM wiring — empty state', () => {
+  beforeEach(async () => {
+    document.body.innerHTML = `
+      <button class="pub-filter" data-pubname="Palma E">Palma</button>
+      <button class="pub-filter" data-pubname="Schulz A">Schulz</button>
+      <p id="pub-empty" class="hidden">No publications match this filter.</p>
+      <div id="pub-list">
+        <div class="pub-item" data-year="2023" data-authors="Rastovic U, Palma E"></div>
+        <div class="pub-item" data-year="2019" data-authors="Palma E, Chokshi S"></div>
+      </div>`;
+    vi.resetModules();
+    await import('../static/js/publications-filter.js');
+  });
+
+  it('shows the empty message when an author matches no paper', () => {
+    window.filterPubs('Schulz A', 'author');
+    expect(document.getElementById('pub-empty').classList.contains('hidden')).toBe(false);
+    document.querySelectorAll('.pub-item').forEach(el => expect(el.style.display).toBe('none'));
+  });
+
+  it('hides the empty message again when a filter matches', () => {
+    window.filterPubs('Schulz A', 'author');
+    window.filterPubs('Palma E', 'author');
+    expect(document.getElementById('pub-empty').classList.contains('hidden')).toBe(true);
+  });
+
+  it('hides the empty message for the year filter with matches', () => {
+    window.filterPubs('2019', 'year');
+    expect(document.getElementById('pub-empty').classList.contains('hidden')).toBe(true);
+    expect(document.querySelectorAll('.pub-item')[0].style.display).toBe('none');
+  });
+});

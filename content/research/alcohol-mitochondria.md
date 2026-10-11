@@ -6,15 +6,15 @@ summary: "How ethanol reshapes mitochondrial architecture in hepatocytes in stea
 funders: []
 team: ["Una Rastovic", "Dr. Meliz Sahuri-Arisoylu"]
 weight: 1
+keywords: ["ALD", "alcoholic liver disease", "alcoholic hepatitis", "mitochondrial dynamics", "megamitochondria", "DRP1", "hepatotoxicity"]
 ---
 
-# Overview
-
+## Overview
 Alcohol is a major metabolic stressor for the liver and a key driver of alcohol related liver disease (ALD), which forms part of the broader spectrum of steatotic liver disease (SLD). Chronic ethanol exposure disrupts cellular metabolism and profoundly affects mitochondrial structure and function.
 Our research investigates how ethanol alters mitochondrial morphology, size and structural organisation in hepatocytes. 
 By studying how ethanol reshapes mitochondrial architecture, we aim to understand how mitochondrial adaptations contribute to hepatocyte stress responses and disease progression in ALD.
 
-# **Objectives**
+## Objectives
 - Characterise how ethanol exposure alters mitochondrial size and morphology
 - Define the mechanisms driving megamitochondria formation in hepatocytes
 - Determine how mitochondrial remodelling contributes to hepatocyte adaptation and injury

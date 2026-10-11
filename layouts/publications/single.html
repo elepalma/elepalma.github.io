@@ -29,29 +29,31 @@
     <!-- Author filters -->
     <div class="flex flex-wrap items-center gap-2">
       <span class="text-2xs font-semibold uppercase tracking-widest text-ink-faint w-14 shrink-0">Author</span>
-      {{ range hugo.Data.people.members }}{{ with .pub_name }}
+      {{/* Only people who actually appear on at least one paper get a filter button */}}
+      {{ $papers := hugo.Data.publications.papers }}
+      {{ range (hugo.Data.people.members | append hugo.Data.people.alumni) }}{{ with .pub_name }}
+      {{ $name := . }}
+      {{ $has := false }}
+      {{ range $papers }}{{ if in .authors $name }}{{ $has = true }}{{ end }}{{ end }}
+      {{ if $has }}
       <button onclick="filterPubs('{{ . }}', 'author')" data-pubname="{{ . }}"
               class="pub-filter px-3 py-1.5 rounded-full text-xs font-medium border border-rule text-ink-light hover:border-accent hover:text-accent transition-colors">
         {{ index (split . " ") 0 }}
       </button>
-      {{ end }}{{ end }}
-      {{ range hugo.Data.people.alumni }}{{ with .pub_name }}
-      <button onclick="filterPubs('{{ . }}', 'author')" data-pubname="{{ . }}"
-              class="pub-filter px-3 py-1.5 rounded-full text-xs font-medium border border-rule text-ink-light hover:border-accent hover:text-accent transition-colors">
-        {{ index (split . " ") 0 }}
-      </button>
+      {{ end }}
       {{ end }}{{ end }}
     </div>
 
   </div>
 
   <!-- Publications list -->
+  <p id="pub-empty" class="hidden text-sm text-ink-light py-4">No publications match this filter.</p>
   <div class="divide-y divide-rule" id="pub-list">
     {{ range hugo.Data.publications.papers }}
     <div class="pub-item flex gap-4 sm:gap-6 py-5 items-start" data-year="{{ .year }}" data-authors="{{ .authors }}">
       <div class="font-sans text-sm italic text-accent shrink-0 w-10 pt-0.5">{{ .year }}</div>
       <div class="flex-1 min-w-0">
-        <p class="text-sm font-medium leading-snug mb-1">{{ .title }}</p>
+        <p class="text-sm font-medium leading-snug mb-1">{{ if .doi }}<a href="{{ .doi }}" target="_blank" rel="noopener" class="hover:text-accent transition-colors">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}</p>
         <p class="text-xs text-ink-faint mb-0.5">{{ .authors }}</p>
         <p class="text-xs text-ink-light italic mb-2">{{ .journal }}</p>
         {{ with .keywords }}

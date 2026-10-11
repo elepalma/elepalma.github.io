@@ -10,13 +10,13 @@ export default {
         sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
       },
       colors: {
-        ink:    { DEFAULT: '#1a1a1a', light: '#555', faint: '#999' },
+        ink:    { DEFAULT: '#1a1a1a', light: '#555', faint: '#6b6b6b' },  // faint passes 4.5:1 on bg and white (see js/tokens.test.js)
         rule:   '#e2e2de',
         bg:     { DEFAULT: '#fafaf8', card: '#ffffff' },
         accent: { DEFAULT: '#2a5c45', mid: '#4a8c6a', light: '#eaf2ee', dark: '#1e4533' },
       },
       maxWidth: { wide: '1400px' },
-      fontSize: { '2xs': ['0.68rem', { lineHeight: '1rem' }] },
+      fontSize: { '2xs': ['0.72rem', { lineHeight: '1rem' }] },
     }
   },
   safelist: ['min-w-[160px]', 'min-w-[180px]', 'rotate-180'],

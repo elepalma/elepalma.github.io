@@ -4,7 +4,7 @@
   <div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-6 sm:py-10">
     <p class="text-2xs font-semibold uppercase tracking-widest text-accent mb-2">Research</p>
     <h1 class="font-sans text-3xl sm:text-4xl xl:text-5xl tracking-tight text-ink">Our Research</h1>
-    <p class="mt-3 text-sm sm:text-base text-ink-light max-w-xl leading-relaxed">We investigate the cellular and molecular mechanisms underpinning metabolic liver disease, from basic biology to clinical translation.</p>
+    <p class="mt-3 text-sm sm:text-base text-ink-light max-w-xl leading-relaxed">We investigate how mitochondrial plasticity, morphology, and dynamics shape liver health and disease — from fundamental organelle biology to patient-derived human liver models and preclinical drug testing.</p>
     <div class="flex flex-wrap gap-3 mt-6">
       <a href="{{ "/publications/" | relURL }}" class="inline-flex items-center px-4 py-2 rounded bg-accent text-white text-xs font-medium hover:bg-accent-dark transition-colors">Publications</a>
       <a href="{{ "/research/techniques/" | relURL }}" class="inline-flex items-center px-4 py-2 rounded border border-accent text-accent text-xs font-medium hover:bg-accent-light transition-colors">Techniques & Platforms</a>
@@ -20,7 +20,7 @@
       <h2 class="font-sans text-2xl tracking-tight">Projects</h2>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
-      {{ range .Pages }}
+      {{ range where .Pages "Params.kind" "ne" "methods" }}
       <a href="{{ .RelPermalink }}" class="card-hover bg-white border border-rule rounded-lg p-5 sm:p-6 block hover:border-accent transition-colors group">
         {{ with .Params.tag }}<span class="inline-block text-2xs font-semibold uppercase tracking-widest text-accent bg-accent-light px-2.5 py-0.5 rounded-full mb-3">{{ . }}</span>{{ end }}
         <h3 class="font-sans text-lg leading-snug mb-2 group-hover:text-accent transition-colors">{{ .Title }}</h3>

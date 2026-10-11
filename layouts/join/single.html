@@ -13,29 +13,25 @@
   <!-- Open positions -->
   <div class="mb-8">
     <h2 class="font-sans text-2xl tracking-tight mb-6 pb-3 border-b border-rule">Open Positions</h2>
-    <div class="flex flex-col gap-4">
+    <div id="open-positions" class="flex flex-col gap-4">
       {{ range hugo.Data.opportunities.roles }}
       <div class="bg-white border border-rule rounded-lg p-5 sm:p-6 flex flex-col sm:flex-row gap-4 sm:items-center hover:border-accent transition-colors">
         <div class="w-12 h-12 rounded-lg bg-accent-light flex items-center justify-center text-2xl shrink-0">{{ .emoji }}</div>
         <div class="flex-1 min-w-0">
           <div class="flex flex-wrap items-center gap-2 mb-1">
             <h3 class="text-base font-medium">{{ .title }}</h3>
-            {{ with .status }}<span class="text-2xs font-semibold uppercase tracking-wide {{ if strings.Contains (. | lower) "open" }}text-green-700 bg-green-100{{ else }}text-ink-faint bg-rule{{ end }} px-2 py-0.5 rounded-full">{{ . }}</span>{{ end }}
+            {{ partial "opportunity-status.html" (dict "role" . "today" (now.Format "2006-01-02")) }}
           </div>
           <p class="text-xs text-ink-faint mb-2">{{ .subtitle }}</p>
           <p class="text-sm text-ink-light leading-relaxed">{{ .description }}</p>
         </div>
-        {{ if .apply_url }}
-        <a href="{{ .apply_url }}" target="_blank" rel="noopener"
+        {{ $url := .apply_url | default "/contact/" }}
+        {{ $external := hasPrefix $url "http" }}
+        {{ $label := cond (strings.Contains (.status | default "" | lower) "enquire") "Enquire →" "Apply →" }}
+        <a href="{{ if $external }}{{ $url }}{{ else }}{{ $url | relURL }}{{ end }}"{{ if $external }} target="_blank" rel="noopener"{{ end }}
            class="shrink-0 inline-flex items-center px-4 py-2 rounded border border-accent text-accent text-xs font-medium hover:bg-accent hover:text-white transition-colors whitespace-nowrap self-start sm:self-center">
-          Apply →
+          {{ $label }}
         </a>
-        {{ else }}
-        <a href="{{ "/contact/" | relURL }}"
-           class="shrink-0 inline-flex items-center px-4 py-2 rounded border border-accent text-accent text-xs font-medium hover:bg-accent hover:text-white transition-colors whitespace-nowrap self-start sm:self-center">
-          Apply →
-        </a>
-        {{ end }}
       </div>
       {{ end }}
     </div>
@@ -57,7 +53,7 @@
         <cite class="block mt-3 text-xs text-white/60 not-italic uppercase tracking-widest">— Elena Palma</cite>
       </div>
       <div class="bg-white border border-rule rounded-lg p-5">
-        <h4 class="text-2xs font-semibold uppercase tracking-widest text-ink mb-3">What we offer</h4>
+        <h3 class="text-2xs font-semibold uppercase tracking-widest text-ink mb-3">What we offer</h3>
         <ul class="flex flex-col gap-2">
           <li class="flex items-start gap-2 text-xs text-ink-light"><span class="text-accent mt-0.5">✓</span> Regular one-to-one supervision</li>
           <li class="flex items-start gap-2 text-xs text-ink-light"><span class="text-accent mt-0.5">✓</span> Conference travel funding</li>

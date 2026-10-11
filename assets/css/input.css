@@ -2,8 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Nav dropdowns */
-.nav-item:hover .dropdown { display: block; }
+/* Nav dropdowns — open on hover and on keyboard focus */
+.nav-item:hover .dropdown,
+.nav-item:focus-within .dropdown { display: block; }
+
+/* Skip link — visually hidden until focused */
+.skip-link {
+  position: absolute; left: 1rem; top: -100px; z-index: 100;
+  padding: 0.5rem 0.75rem; border-radius: 0.25rem;
+  background: #2a5c45; color: #fff; font-size: 0.8rem;
+}
+.skip-link:focus { top: 0.5rem; outline: 2px solid #1e4533; outline-offset: 2px; }
+
+/* Visible focus for keyboard users on anything interactive */
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible {
+  outline: 2px solid #2a5c45; outline-offset: 2px;
+}
 
 /* Animations */
 @keyframes fadeUp {
@@ -26,6 +41,8 @@
 
 /* Prose content */
 .prose-lab p   { margin-bottom: 1rem; font-size: 0.9rem; line-height: 1.75; color: #555; }
+.prose-lab h2  { font-family: 'DM Sans', system-ui, sans-serif; font-size: 1.25rem; font-weight: 600; margin: 1.75rem 0 0.6rem; letter-spacing: -0.01em; }
+.prose-lab h2:first-child { margin-top: 0; }
 .prose-lab h3  { font-family: 'DM Sans', system-ui, sans-serif; font-size: 1.1rem; font-weight: 600; margin: 1.5rem 0 0.5rem; }
 .prose-lab ul  { list-style: disc; padding-left: 1.4rem; margin-bottom: 1rem; }
 .prose-lab li  { font-size: 0.88rem; color: #555; line-height: 1.7; margin-bottom: 0.25rem; }

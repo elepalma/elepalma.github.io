@@ -4,6 +4,10 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    # Weekly rebuild (Monday 06:00 UTC) so build-time dates stay fresh:
+    # opportunity badges (deadline/opens) are computed by Hugo at build time.
+    - cron: '0 6 * * 1'
 
 permissions:
   contents: read
@@ -35,14 +39,16 @@ jobs:
       - name: Build CSS
         run: npm run build:css
 
-      - name: Lint and test
-        run: npm test && npm run lint:html && npm run lint:safelist
-
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: latest
+          # Pinned to the version documented in CLAUDE.md so CI and local builds match
+          hugo-version: '0.157.0'
           extended: true
+
+      - name: Lint and test
+        # js/site-build.test.js builds the site with Hugo, so Hugo must be set up first
+        run: npm test && npm run lint:html && npm run lint:safelist
 
       - name: Setup Pages
         id: pages
