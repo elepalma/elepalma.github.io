@@ -1,0 +1,24 @@
+{{- /*
+  Opportunity status badge, derived from dates when present.
+  Input: dict "role" <opportunity> "today" "2006-01-02"
+  Rules (in order):
+    deadline in the past            -> Closed (grey)
+    opens in the future             -> Opens <Month Year> (grey)
+    status text containing "open"   -> status (green), "Open until <date>" when a deadline exists
+    anything else                   -> status text (grey)
+*/ -}}
+{{- $role := .role -}}
+{{- $today := .today -}}
+{{- $label := $role.status | default "" -}}
+{{- $open := false -}}
+{{- if and $role.deadline (gt $today $role.deadline) -}}
+  {{- $label = "Closed" -}}
+{{- else if and $role.opens (lt $today $role.opens) -}}
+  {{- $label = printf "Opens %s" ((time.AsTime $role.opens).Format "January 2006") -}}
+{{- else if strings.Contains ($label | lower) "open" -}}
+  {{- $open = true -}}
+  {{- with $role.deadline -}}{{- $label = printf "Open until %s" ((time.AsTime .).Format "2 January 2006") -}}{{- end -}}
+{{- end -}}
+{{- if $label -}}
+<span class="text-2xs font-semibold uppercase tracking-wide {{ if $open }}text-green-800 bg-green-100{{ else }}text-ink-light bg-rule{{ end }} px-2 py-0.5 rounded-full" data-status-state="{{ if $open }}open{{ else }}closed{{ end }}">{{ $label }}</span>
+{{- end -}}

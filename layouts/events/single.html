@@ -26,22 +26,7 @@
 
 </div>
 
-<!-- Hidden data source: Hugo emits all events as data attributes -->
-<div id="event-data" class="hidden" aria-hidden="true">
-  {{ range hugo.Data.events.events }}
-  <div class="event-item"
-    data-date="{{ .date }}"
-    data-month="{{ .month }}"
-    data-day="{{ .day }}"
-    data-year="{{ .year }}"
-    data-title="{{ .title }}"
-    data-type="{{ .type }}"
-    data-location="{{ .location }}"
-    data-detail="{{ .detail }}"
-    data-link="{{ .link }}">
-  </div>
-  {{ end }}
-</div>
+{{ partial "event-data.html" . }}
 
 <script src="{{ "js/events-filter.js" | relURL }}"></script>
 {{ end }}

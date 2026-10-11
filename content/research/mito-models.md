@@ -6,17 +6,17 @@ summary: "Developing complex human models to investigate mitochondrial morpholog
 funders: []
 team: ["Dr. Elena Palma"]
 weight: 2
+keywords: ["precision-cut liver slices", "ex vivo model", "ex vivo", "megamitochondria", "liver research"]
 ---
 
-# Overview
-
+## Overview
 Understanding mitochondrial organisation in the liver requires experimental systems that preserve the structural and cellular complexity of human tissue. **Precision Cut Liver Slices (PCLS)** maintain the architecture of the liver and the interactions between hepatocytes, immune cells and stromal components, providing a physiologically relevant environment for studying mitochondrial structure in situ.
 
 Our research focuses on developing and applying PCLS models to investigate **mitochondrial morphology within intact human liver tissue,** with particular attention to the formation of **megamitochondria containing paracrystalline inclusions**, structural features observed in several liver diseases.
 
 These models allow us to study mitochondrial architecture directly in human tissue and to link structural mitochondrial changes with functional consequences for hepatocyte physiology.
 
-Objectives
+## Objectives
 - Characterise the formation of **megamitochondria with paracrystalline inclusions** in liver disease
 - Investigate the functional consequences of these mitochondrial structural adaptations
 - Apply advanced imaging techniques to tissue models to investigate mitochondrial morphology and plasticity

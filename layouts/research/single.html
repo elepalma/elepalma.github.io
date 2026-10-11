@@ -21,7 +21,7 @@
     <aside class="flex flex-col gap-5">
       {{ with .Params.funders }}
       <div class="bg-white border border-rule rounded-lg p-5">
-        <h4 class="text-2xs font-semibold uppercase tracking-widest text-ink mb-3">Funders</h4>
+        <h2 class="text-2xs font-semibold uppercase tracking-widest text-ink mb-3">Funders</h2>
         <ul class="flex flex-col gap-1.5">
           {{ range . }}<li class="text-xs text-ink-faint">{{ . }}</li>{{ end }}
         </ul>
@@ -29,15 +29,37 @@
       {{ end }}
       {{ with .Params.team }}
       <div class="bg-white border border-rule rounded-lg p-5">
-        <h4 class="text-2xs font-semibold uppercase tracking-widest text-ink mb-3">Team</h4>
+        <h2 class="text-2xs font-semibold uppercase tracking-widest text-ink mb-3">Team</h2>
         <ul class="flex flex-col gap-1.5">
           {{ range . }}<li class="text-xs text-ink-faint">{{ . }}</li>{{ end }}
         </ul>
       </div>
       {{ end }}
+      {{/* Related publications: papers sharing at least one keyword with this project (front matter `keywords`) */}}
+      {{ $kw := .Params.keywords | default slice }}
+      {{ $related := slice }}
+      {{ range hugo.Data.publications.papers }}
+        {{ $paper := . }}
+        {{ $hit := false }}
+        {{ range .keywords }}{{ if in $kw . }}{{ $hit = true }}{{ end }}{{ end }}
+        {{ if $hit }}{{ $related = $related | append $paper }}{{ end }}
+      {{ end }}
+      {{ with first 5 $related }}
+      <div class="bg-white border border-rule rounded-lg p-5" id="related-publications">
+        <h2 class="text-2xs font-semibold uppercase tracking-widest text-ink mb-3">Related publications</h2>
+        <ul class="flex flex-col gap-3">
+          {{ range . }}
+          <li class="text-xs leading-snug">
+            {{ if .doi }}<a href="{{ .doi }}" target="_blank" rel="noopener" class="text-ink font-medium hover:text-accent transition-colors">{{ .title }}</a>{{ else }}<span class="text-ink font-medium">{{ .title }}</span>{{ end }}
+            <span class="block text-ink-light mt-0.5">{{ .journal }} · {{ .year }}</span>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
       <a href="{{ "/publications/" | relURL }}" class="bg-accent-light border border-accent/20 rounded-lg p-5 block hover:bg-accent hover:text-white transition-colors group">
-        <p class="text-2xs font-semibold uppercase tracking-widest text-accent group-hover:text-white/70 mb-1">Related</p>
-        <p class="text-sm font-medium text-ink group-hover:text-white">View Publications →</p>
+        <p class="text-2xs font-semibold uppercase tracking-widest text-accent group-hover:text-white/70 mb-1">Publications</p>
+        <p class="text-sm font-medium text-ink group-hover:text-white">View all publications →</p>
       </a>
     </aside>
 

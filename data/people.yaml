@@ -1,3 +1,4 @@
+# role_type must be one of: pi, postdoc, phd, msc, ra, visiting (validated by js/data.test.js)
 members:
   - name: "Dr. Elena Palma"
     pub_name: "Palma E"
@@ -6,7 +7,7 @@ members:
     role: "Principal Investigator and Lecturer (Adj/Hon)"
     role_type: "pi"
     area: "Mitochondrial Medicine · ALD · Liver Cancer · Translational Research"
-    bio: "Ele leads the Palma Lab at the Roger Williams Institute of Liver Studies, King's College London. With nearly 15 years of experience in hepatology research, her work focuses on developing novel multi-pronged treatments for alcohol-related liver disease and liver cancers. The lab uses translational experimental models to dissect fibrosis, inflammation, hepatotoxicity, liver regeneration, and mitochondrial dysfunction, bridging basic science and preclinical drug discovery. She holds a PhD in Cellular Biology and a degree in Pharmaceutical Chemistry and Technology from the University of Padova, Italy."
+    bio: "Ele leads the Palma Lab at the Roger Williams Institute of Liver Studies, King's College London. With nearly 15 years of experience in hepatology research, her work investigates how mitochondrial plasticity, morphology, and dynamics shape hepatocyte adaptation and injury in liver disease, with a focus on alcohol-related and steatotic liver disease and liver cancer. The lab develops patient-derived organotypic models, including precision-cut liver and tumour slices, to study mitochondria directly in human tissue and to test new multi-pronged therapies, bridging fundamental organelle biology and preclinical drug discovery. She holds a PhD in Cellular Biology and a degree in Pharmaceutical Chemistry and Technology from the University of Padova, Italy."
     twitter: "https://x.com/DrElePalma"
     linkedin: "https://www.linkedin.com/in/elena-palma-4400a52a/"
     researchgate: "https://www.researchgate.net/profile/Elena-Palma-2"
@@ -57,9 +58,9 @@ members:
     photo: ""
     initials: "AS"
     role: "MRes Student"
-    role_type: "Phd"
+    role_type: "msc"
     area: "CCA · Tumour Models · Drug Testing"
-    bio: "Anna is a Biomedical & Molecular Sciences Research MRes student working on the project 'Decoding the Cholangiocarcinoma Tumour Microenvironment to develop novel therapies. As part of her dissertation project she was awarded the 'Matt Wilson Scholarship'."
+    bio: "Anna is a Biomedical & Molecular Sciences Research MRes student working on the project 'Decoding the Cholangiocarcinoma Tumour Microenvironment to develop novel therapies'. As part of her dissertation project she was awarded the Matt Wilson Scholarship."
     profile: ""
     awards:
       - "Matt Wilson Scholarship - 2024/2025"
@@ -86,7 +87,7 @@ alumni:
     pub_name: "Arunakumar B"
     role: "MSc Student"
     years: "2023–2024"
-    now: "Currently MRC iCASE a PhD at University of Leicester"
+    now: "Currently an MRC iCASE PhD student at the University of Leicester."
     thesis: "Enhancing the success rate of human Precision Cut Liver Slice (PCLS) cultures to advance patient derived models of Alcohol-related liver disease and explore megamitochondria formation"
     awards:
       - "Matt Wilson Scholarship - 2023/2024"
@@ -95,7 +96,7 @@ alumni:
     pub_name: "Jagatia R"
     role: "PhD Student"
     years: "2020–2024"
-    now: "Currently working in the industry."
+    now: "Currently working in industry."
     thesis: "Novel therapeutic strategies for primary and secondary liver cancers."
     awards:
       - "Neil Blenkinsop Research Grant - 2023"
@@ -105,7 +106,7 @@ alumni:
     pub_name: "Doornebal EJ"
     role: "PhD Student"
     years: "2018–2021"
-    now: "Currently working in the industry."
+    now: "Currently working in industry."
     thesis: "Personalised human immunocompetent ex vivo models for primary and secondary liver cancer."
     awards:
       - "UKI NETS, 1st prize for best oral presentation - 2019, 2020"

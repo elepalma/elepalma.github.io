@@ -4,20 +4,21 @@ description: "Overview of the experimental platforms and techniques used in the 
 tag: "Methods"
 summary: "An overview of the key experimental and computational platforms used in the lab."
 weight: 6
+keywords: ["precision-cut liver slices", "precision-cut slices", "ex vivo model"]
+kind: "methods"
 ---
 
-### Experimental Platforms
-
+## Experimental Platforms
 We combine cutting-edge experimental approaches across scales from organelles to tissues.
 
-### Models
+## Models
 - Human precision cut liver slices
 - Human precision cut tumour slices
 - Primary human hepatocytes
 - Human liver organoids
 - Co culture models with immune cells
 
-### Techniques
+## Techniques
 - Mitochondrial morphology analysis
 - Mitochondrial size and shape quantification
 - Megamitochondria characterisation
