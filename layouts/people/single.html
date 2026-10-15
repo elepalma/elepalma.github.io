@@ -21,7 +21,7 @@
       </div>
       <div>
         <h3 class="font-sans text-2xl mb-0.5">{{ .name }}</h3>
-        <p class="text-sm text-accent mb-1">{{ .role }}</p>
+        <p class="text-sm text-accent mb-1">{{ with .appointments }}{{ range . }}<span class="block">{{ . }}</span>{{ end }}{{ else }}{{ .role }}{{ end }}</p>
         <p class="text-xs text-ink-faint mb-3">{{ .area }}</p>
         <p class="text-sm text-ink-light leading-relaxed max-w-2xl">{{ .bio }}</p>
         {{ with .awards }}

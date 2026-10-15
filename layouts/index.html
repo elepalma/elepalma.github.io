@@ -14,7 +14,7 @@
         </p>
         <div class="flex flex-wrap gap-3">
           <a href="{{ "/research/" | relURL }}" class="inline-flex items-center px-5 py-2.5 rounded bg-accent text-white text-sm font-medium hover:bg-accent-dark transition-colors">Our Research</a>
-          <a href="{{ "/join/" | relURL }}"     class="inline-flex items-center px-5 py-2.5 rounded border border-accent text-accent text-sm font-medium hover:bg-accent-light transition-colors">Join the Lab</a>
+          <a href="{{ "/contact/" | relURL }}"  class="inline-flex items-center px-5 py-2.5 rounded border border-accent text-accent text-sm font-medium hover:bg-accent-light transition-colors">Work with me</a>
         </div>
       </div>
       <div class="fade-up-2 grid grid-cols-1 sm:grid-cols-2 gap-px bg-rule rounded-lg overflow-hidden border border-rule">
@@ -154,19 +154,30 @@
   <div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-8 sm:py-10">
     <div class="flex items-end justify-between mb-5 gap-4 flex-wrap">
       <div>
-        <p class="text-2xs font-semibold uppercase tracking-widest text-accent mb-1">Upcoming</p>
+        <p class="text-2xs font-semibold uppercase tracking-widest text-accent mb-1">Talks &amp; conferences</p>
         <h2 class="font-sans text-2xl sm:text-3xl tracking-tight">Events</h2>
       </div>
       <a href="{{ "/events/" | relURL }}" class="text-xs font-medium text-accent hover:underline whitespace-nowrap shrink-0">Full calendar →</a>
     </div>
-    <div id="home-upcoming" class="divide-y divide-rule"></div>
-    <p id="home-upcoming-empty" class="text-sm text-ink-light py-4 hidden">No upcoming events at the moment — see the <a href="{{ "/events/" | relURL }}" class="text-accent hover:underline">full calendar</a> for past talks.</p>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+      <div>
+        <h3 class="text-2xs font-semibold uppercase tracking-widest text-ink pb-2 border-b border-rule">Upcoming</h3>
+        <div id="home-upcoming" class="divide-y divide-rule"></div>
+        <p id="home-upcoming-empty" class="text-sm text-ink-light py-4 hidden">No upcoming events at the moment.</p>
+      </div>
+      <div>
+        <h3 class="text-2xs font-semibold uppercase tracking-widest text-ink pb-2 border-b border-rule">Recent</h3>
+        <div id="home-recent" class="divide-y divide-rule"></div>
+        <p id="home-recent-empty" class="text-sm text-ink-light py-4 hidden">No past events yet.</p>
+      </div>
+    </div>
   </div>
 </section>
 
 {{ partial "event-data.html" . }}
-<script src="{{ "js/events-filter.js" | relURL }}"></script>
+<script src="{{ partial "asset-url.html" "js/events-filter.js" }}"></script>
 
+{{/* JOIN CTA — hidden, preserved for future use. Re-enable by uncommenting, restoring the Opportunities menu entry in hugo.toml and the build options in content/join.md.
 <!-- ══ JOIN CTA ══ -->
 <section class="border-t border-rule">
   <div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-8 sm:py-10">
@@ -191,5 +202,6 @@
     </div>
   </div>
 </section>
+*/}}
 
 {{ end }}

@@ -45,7 +45,7 @@ hugo --minify
 | `js/events-filter.test.js` | `static/js/events-filter.js` — upcoming/past partition, sorting, linked titles, home-page limit, empty states |
 | `js/data.test.js` | Validates every `data/*.yaml` file and research front matter: trailing spaces in quotes, unbalanced quotes, duplicate punctuation, `role_type` enum, ISO dates, DOI/URL format, journal not a bare year, clean `tag`, `keywords` present |
 | `js/tokens.test.js` | WCAG AA contrast (≥ 4.5:1) for every text/background token pair in `tailwind.config.js`; minimum `2xs` size |
-| `js/site-build.test.js` | Builds the site with Hugo into a temp dir and checks the HTML: one `h1` per page, sequential heading levels, skip link + `main#main`, no internal link with `target=_blank`, hamburger aria, focus CSS present, hero without `<br>`, all projects (not Techniques) on home and research grids, client-side events block, mitochondria framing in intros/bio, square portrait boxes, DOI-linked paper titles, author buttons only for people with papers, date-derived opportunity badges, Enquire/Apply labels, related publications on every project page, news not built |
+| `js/site-build.test.js` | Builds the site with Hugo into a temp dir and checks the HTML: one `h1` per page, sequential heading levels, skip link + `main#main`, no internal link with `target=_blank`, hamburger aria, focus CSS present, hero without `<br>`, all projects (not Techniques) on home and research grids, client-side events block, mitochondria framing in intros/bio, square portrait boxes, DOI-linked paper titles, author buttons only for people with papers, date-derived opportunity badges, Enquire/Apply labels, related publications on every project page, news and the join page not built, no `/join/` links, flat footer |
 
 `js/yaml-lite.js` is a tiny dependency-free reader for the flat YAML in `data/` (no `yaml` package is installed). Keep data files in the simple `key: "value"` / inline-array / block-list shape it supports.
 
@@ -58,7 +58,8 @@ layouts/          # All HTML templates (Hugo)
   _default/       # baseof.html (shell), single.html (fallback)
   index.html      # Home page
   partials/       # nav.html, footer.html, section-header.html, structured-data.html,
-                  # event-data.html (hidden events data block), opportunity-status.html (date-aware badge), icon-x.html
+                  # event-data.html (hidden events data block), opportunity-status.html (date-aware badge), icon-x.html,
+                  # asset-url.html (content-hash cache busting for static CSS/JS)
   people/         # single.html — People page
   publications/   # single.html — Publications (with JS filtering)
   research/       # list.html (projects grid), single.html (project detail)
@@ -137,7 +138,9 @@ members:
     pub_name: "Surname X"      # Abbreviated form as it appears in publication authors strings
     photo: "/images/people/file.jpg"
     initials: "AB"
-    role: "Job Title"
+    role: "Job Title"          # Short form, used on the home grid
+    appointments:              # Optional; full titles shown one per line on the People page card instead of `role`
+      - "Full appointment, Institution"
     role_type: "pi" | "postdoc" | "phd" | "msc" | ...
     area: "Research area tags"
     bio: "Bio text"
@@ -243,7 +246,7 @@ See `layouts/partials/opportunity-status.html`: `deadline` passed → Closed; `o
 ### Accessibility conventions
 - Skip link (`a.skip-link` → `main#main`) is the first element in `nav.html`.
 - Desktop dropdowns open on `:hover` **and** `:focus-within` (input.css). Hamburger and mobile accordions toggle `aria-expanded`; Escape closes the menu.
-- Heading order must be sequential on every page (tested). Page `<h1>` is the hero title; section headings `h2`; cards/items `h3`; footer column headings are `h2`.
+- Heading order must be sequential on every page (tested). Page `<h1>` is the hero title; section headings `h2`; cards/items `h3`. The footer has no headings.
 - `*:focus-visible` outline is global; form fields also use `focus:ring-2`.
 - Social icon links carry `aria-label`; SVGs are `aria-hidden`.
 - Portrait images: square boxes sized to the 160px source (no stretching/cropping), with `width`/`height`, `loading="lazy"`, and `alt="Portrait of …"`.
@@ -251,10 +254,13 @@ See `layouts/partials/opportunity-status.html`: `deadline` passed → Closed; `o
 ### Positioning / copy
 The site uses one framing everywhere: **mitochondrial plasticity, morphology and dynamics in liver health and disease**, studied in patient-derived human liver models (PCLS, tumour slices) for ALD/SLD and liver cancer. Keep `labDescription` (hugo.toml), the home description (`content/_index.md`), page intros, and Elena's bio aligned with it (tested in `js/site-build.test.js`).
 
+### Static CSS/JS links are cache-busted
+Always link files from `static/` through `{{ partial "asset-url.html" "js/foo.js" }}`, never a bare `relURL`. It appends `?v=<md5 of the file>`, so a changed script or stylesheet is fetched fresh instead of the browser running a stale copy (tested on every page).
+
 ### Navigation
 Defined in `hugo.toml` `[menu]` blocks. The nav partial reads `$.Site.Menus.main`.
 - "Collaborators" menu URL: `/collaborators/` (not `/people/collaborators/`)
-- Footer also links to `/collaborators/`
+- Footer is a single row: a small © Dr Elena Palma / "Built with Hugo · Hosted on GitHub Pages" block, then `nav[aria-label="Footer"]` with Projects · Techniques · Publications · Lab Members · Alumni · Collaborators · Events · Contact me →, then the social icons. No lab name, address or column headings (tested).
 
 ## Deliberate choices (do not "fix")
 - **No email address on the site** — the Formspree contact form is the only channel, to avoid spam harvesting. It is tested and works. Do not add `mailto:` links or print addresses.
@@ -283,6 +289,18 @@ The News section is fully built but intentionally hidden. All files are preserve
 - `layouts/news/list.html` — news list page
 - `layouts/news/single.html` — individual news post
 
+### Opportunities page and "Join" calls to action
+Hidden because the lab is no longer recruiting. Nothing is deleted.
+
+**To re-enable:**
+1. In `content/join.md`: remove the `sitemap` / `build` block
+2. In `hugo.toml`: uncomment the `[[menu.main]]` block for Opportunities (parent People, weight 3)
+3. In `layouts/index.html`: unwrap the `{{/* ... */}}` Hugo comment around `<!-- ══ JOIN CTA ══ -->`, and decide whether the second hero button (now "Work with me" → `/contact/`) should go back to "Join the Lab" → `/join/`
+4. Add an "Opportunities" link back to `layouts/partials/footer.html`
+5. In `js/site-build.test.js`: un-skip `join page badges and buttons`, add `'join'` back to `ALL`, and drop the `opportunities stay hidden` block
+
+**Files preserved:** `content/join.md`, `layouts/join/single.html`, `data/opportunities.yaml` (still validated), `layouts/partials/opportunity-status.html`
+
 ## TODO
 
 ### SEO assets
@@ -298,7 +316,6 @@ The News section is fully built but intentionally hidden. All files are preserve
 ### Content still placeholder / to be filled
 - [ ] News posts (`content/news/`) — currently placeholder; section is hidden in nav until real content is ready
 - [ ] Real "now" positions for alumni Ravi Jagatia and Ewald Jan Doornebal (`data/people.yaml`)
-- [ ] Update `deadline` / `opens` in `data/opportunities.yaml` when the next King's/FLR fellowship call and clinical fellowship round are announced (the April 2026 call currently shows "Closed")
 
 ### Deferred (waiting on assets from Elena)
 - [ ] **Higher-resolution portraits** — current files in `static/images/people/` are 160×160. When larger photos arrive (≥ 600px on the long edge), drop them in, then switch `layouts/people/single.html` and `layouts/index.html` to Hugo image processing (`resources.Get` + `.Fill`) so the boxes can grow again (PI ~220px, members ~128px, home grid full width) without upscaling.

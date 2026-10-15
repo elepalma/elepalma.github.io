@@ -4,10 +4,12 @@ members:
     pub_name: "Palma E"
     photo: "/images/people/elepalma.JPG"
     initials: "EP"
-    role: "Principal Investigator and Lecturer (Adj/Hon)"
+    role: "Principal Scientist"
+    appointments:
+      - "Principal Scientist"
     role_type: "pi"
-    area: "Mitochondrial Medicine · ALD · Liver Cancer · Translational Research"
-    bio: "Ele leads the Palma Lab at the Roger Williams Institute of Liver Studies, King's College London. With nearly 15 years of experience in hepatology research, her work investigates how mitochondrial plasticity, morphology, and dynamics shape hepatocyte adaptation and injury in liver disease, with a focus on alcohol-related and steatotic liver disease and liver cancer. The lab develops patient-derived organotypic models, including precision-cut liver and tumour slices, to study mitochondria directly in human tissue and to test new multi-pronged therapies, bridging fundamental organelle biology and preclinical drug discovery. She holds a PhD in Cellular Biology and a degree in Pharmaceutical Chemistry and Technology from the University of Padova, Italy."
+    area: "Mitochondrial Biology · Patient-Derived Liver Models · ALD · Liver Cancer"
+    bio: "Ele is a translational scientist with fifteen years of experience in developing research programmes on mitochondrial morphology in liver disease and complex experimental models. She has run studies from hypothesis generation to platform building, including patient-derived organotypic cultures, and developed assays for decision-grade testing of compounds and biological products. She holds a PhD in Cellular Biology and a degree in Pharmaceutical Chemistry and Technology from the University of Padova, Italy."
     twitter: "https://x.com/DrElePalma"
     linkedin: "https://www.linkedin.com/in/elena-palma-4400a52a/"
     researchgate: "https://www.researchgate.net/profile/Elena-Palma-2"
@@ -22,7 +24,7 @@ members:
     role: "Research Fellow"
     role_type: "postdoc"
     area: "Mitochondrial Dynamics · ALD · MetALD"
-    bio: "Meliz joined the Palma Lab in 2024 as a Postdoctoral Research Assistant. She holds an MSc and PhD from Imperial College London and brings experience from both academia and industry. Her current work investigates changes in mitochondrial dynamics and function in Alcohol-Related Liver Disease (ALD) and Metabolic Dysfunction and Alcohol-Related Steatotic Liver Disease (MetALD), with a particular focus on megamitochondria and their role in disease diagnosis and treatment."
+    bio: "Meliz joined the Palma Lab in 2024 as a Postdoctoral Research Assistant. She holds an MSc and PhD from Imperial College London and brought experience from both academia and industry. Her work in the lab investigated changes in mitochondrial dynamics and function in Alcohol-Related Liver Disease (ALD) and Metabolic Dysfunction and Alcohol-Related Steatotic Liver Disease (MetALD), with a particular focus on megamitochondria and their role in disease diagnosis and treatment."
     profile: "https://www.kcl.ac.uk/people/meliz-sahuri-arisoylu"
 
   - name: "Una Rastovic"
@@ -32,7 +34,7 @@ members:
     role: "PhD Student"
     role_type: "phd"
     area: "Mitochondrial Morphology · ALD · Liver Fibrosis"
-    bio: "Una joined the Roger Williams Institute of Liver Studies as a Research Assistant in 2020 and started her PhD in the Palma Lab in 2023. She completed her BSc in Molecular Biology at the University of Zagreb and her MSc in Cancer Immunology and Biotechnology at the University of Nottingham. Her PhD investigates changes in mitochondrial morphology and function in ALD and liver fibrosis, with the aim of targeting mitochondria as a therapeutic strategy. She is a recipient of the Research Society on Alcohol Doctoral Students Small Grant."
+    bio: "Una joined the Roger Williams Institute of Liver Studies as a Research Assistant in 2020 and started her PhD in the Palma Lab in 2023. She completed her BSc in Molecular Biology at the University of Zagreb and her MSc in Cancer Immunology and Biotechnology at the University of Nottingham. Her PhD investigated changes in mitochondrial morphology and function in ALD and liver fibrosis, with the aim of targeting mitochondria as a therapeutic strategy. She received the Research Society on Alcohol Doctoral Students Small Grant."
     profile: "https://www.kcl.ac.uk/people/una-rastovic"
     awards:
       - "RSA Doctoral Student Small Grant - 2025"
@@ -48,7 +50,7 @@ members:
     role_type: "phd"
     area: "CCA · Tumour Models · Drug Testing"
     profile: "https://www.kcl.ac.uk/people/moyosoreoluwa-feyide"
-    bio: "Moyo joined the Palma Lab in 2022 for his MRes research project focused on liver cancer precision cut tumour slice models and returned in 2023 to start his PhD. His research has focused on advancing and characterising human cholangiocarcinoma organotypic models for drug testing and the study of mitochondrial dynamics in CCA."
+    bio: "Moyo joined the Palma Lab in 2022 for his MRes research project on liver cancer precision-cut tumour slice models and returned in 2023 to start his PhD. His research focused on advancing and characterising human cholangiocarcinoma organotypic models for drug testing and the study of mitochondrial dynamics in CCA."
     awards:
       - "Precision-BTC-Network, Short-term scientific mission grant (STSM) - 2025"
       - "DMM Conference Travel Grant - 2025"
@@ -60,7 +62,7 @@ members:
     role: "MRes Student"
     role_type: "msc"
     area: "CCA · Tumour Models · Drug Testing"
-    bio: "Anna is a Biomedical & Molecular Sciences Research MRes student working on the project 'Decoding the Cholangiocarcinoma Tumour Microenvironment to develop novel therapies'. As part of her dissertation project she was awarded the Matt Wilson Scholarship."
+    bio: "Anna was a Biomedical & Molecular Sciences Research MRes student in the Palma Lab, working on the project 'Decoding the Cholangiocarcinoma Tumour Microenvironment to develop novel therapies'. For her dissertation project she was awarded the Matt Wilson Scholarship."
     profile: ""
     awards:
       - "Matt Wilson Scholarship - 2024/2025"
@@ -72,7 +74,7 @@ members:
     role: "Visiting PhD Student"
     role_type: "phd"
     area: "SLD · Mitochondria"
-    bio: "Sara is a visiting PhD student from the group of Prof Geltrude Mingrone, Fondazione Policlinico Universitario A. Gemelli IRCCS."
+    bio: "Sara joined the Palma Lab as a visiting PhD student from the group of Prof Geltrude Mingrone, Fondazione Policlinico Universitario A. Gemelli IRCCS."
     profile: ""
 
 alumni:

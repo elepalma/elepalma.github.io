@@ -30,12 +30,6 @@ groups:
     url: "https://www.plymouth.ac.uk/research/centre-of-environmental-hepatology"
 
   - type: "Academic"
-    name: "Thomas Marjot"
-    affiliation: "Roger Williams Institute of Liver Studies, King's College London"
-    description: "Steatotic Liver Disease (SLD) and experimental medicine."
-    url: "https://www.kcl.ac.uk/people/thomas-marjot"
-
-  - type: "Academic"
     name: "Geltrude Mingrone"
     affiliation: "Fondazione Policlinico Universitario A. Gemelli IRCCS, King's College London"
     description: "Perilipins and mitochondria in Steatotic Liver Disease (SLD)."
