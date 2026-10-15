@@ -1,5 +1,11 @@
 ---
 title: "Join Us"
+# Hidden: page kept for future use. Remove sitemap/build to re-enable.
+sitemap:
+  disable: true
+build:
+  list: never
+  render: never
 description: "Open positions and opportunities to join the Palma Lab at King's College London — PhD studentships, postdoctoral fellowships, and research collaborations in liver disease."
 ---
 

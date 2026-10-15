@@ -10,7 +10,7 @@ keywords: ["drug testing", "precision-cut slices", "precision-cut liver slices",
 ---
 
 ## Overview
-The translation of experimental discoveries into effective therapies requires models that accurately recapitulate cellular and tissue processes associated with human diseases. Our laboratory develops and applies organotypic liver models, including precision cut liver slices and tumour slices, to evaluate therapeutic strategies in a physiologically relevant environment.
+The translation of experimental discoveries into effective therapies requires models that accurately recapitulate cellular and tissue processes associated with human diseases. This programme develops and applies organotypic liver models, including precision cut liver slices and tumour slices, to evaluate therapeutic strategies in a physiologically relevant environment.
 These models maintain multicellular interactions and tissue architecture, allowing the investigation of therapeutic responses directly in human liver tissue.
 
 ## Objectives

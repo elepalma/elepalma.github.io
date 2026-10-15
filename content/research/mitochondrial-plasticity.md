@@ -11,7 +11,7 @@ keywords: ["mitochondria", "mitochondrial dynamics", "megamitochondria", "cyclop
 
 ## Overview
 Mitochondria are dynamic organelles that continuously remodel their shape, size and organisation in response to cellular signalling and metabolic demands. These structural adaptations reflect the remarkable plasticity of mitochondria, which enables cells to respond to environmental and metabolic challenges.
-Our research aims to define the principles that regulate mitochondrial plasticity, with a particular focus on how signalling pathways and metabolic stressors influence mitochondrial architecture and function.
+This research aims to define the principles that regulate mitochondrial plasticity, with a particular focus on how signalling pathways and metabolic stressors influence mitochondrial architecture and function.
 Understanding how mitochondria adapt to stress will provide new insights into how mitochondrial structural changes contribute to cellular physiology and disease.
 
 ## Objectives

@@ -2,6 +2,7 @@
   "name": "elepalma-site",
   "type": "module",
   "scripts": {
+    "dev": "bash scripts/dev.sh",
     "build:css": "tailwindcss -i assets/css/input.css -o static/css/main.css --minify",
     "watch:css": "tailwindcss -i assets/css/input.css -o static/css/main.css --watch",
     "test": "vitest run",

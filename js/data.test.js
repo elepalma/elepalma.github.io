@@ -142,3 +142,48 @@ describe('research project front matter', () => {
     expect(body).not.toMatch(/^# /m);
   });
 });
+
+describe('events.yaml dates agree with their display fields', () => {
+  const { events } = load('events.yaml');
+  const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+  it.each(events.map(e => [e.title, e]))('%s: month and last day match `date`', (_, e) => {
+    expect(e.month).toBe(MONTHS[Number(e.date.slice(5, 7)) - 1]);
+    if (e.day) {
+      // `date` is the last day of a multi-day event, e.g. day "11–13" -> date ends in -13
+      const last = String(e.day).split(/[–-]/).pop().trim();
+      expect(Number(last)).toBe(Number(e.date.slice(8, 10)));
+    }
+  });
+});
+
+describe('British spelling in site copy', () => {
+  // US spellings to catch; publication titles are left alone (they are quoted as published)
+  const US = /\b(tumors?|colou?r(?<!colour)|centers?|behaviors?|analyz\w*|characteriz\w*|organiz\w*|modeling|labor|favorite|fiber)\b/i;
+  const PROPER_NOUNS = ['Center for Biomedical Research'];
+  const strip = (t) => PROPER_NOUNS.reduce((acc, n) => acc.split(n).join(''), t);
+  const files = [
+    ...readdirSync(DATA).filter(f => f.endsWith('.yaml') && f !== 'publications.yaml').map(f => join(DATA, f)),
+    ...readdirSync(join(ROOT, 'content'), { recursive: true }).filter(f => f.endsWith('.md')).map(f => join(ROOT, 'content', f)),
+  ];
+
+  it.each(files.map(f => [f.replace(ROOT + '/', ''), f]))('%s uses British spelling', (_, f) => {
+    const bad = readFileSync(f, 'utf8').split('\n').map(strip).filter(l => !/https?:\/\//.test(l) && US.test(l));
+    expect(bad).toEqual([]);
+  });
+});
+
+describe('collaborators.yaml entries are unique and cleanly formatted', () => {
+  const { groups } = load('collaborators.yaml');
+
+  it('has no duplicate collaborator names', () => {
+    const names = groups.map(g => g.name.trim().toLowerCase());
+    expect(names.filter((n, i) => names.indexOf(n) !== i)).toEqual([]);
+  });
+
+  it.each(groups.map(g => [g.name, g]))('%s has no stray commas or double spaces', (_, g) => {
+    [g.name, g.affiliation || '', g.description].forEach(t => {
+      expect(t).not.toMatch(/ {2}|,\s*,|,\s*$|^\s*,|\s+[,.]/);
+    });
+  });
+});

@@ -1,5 +1,5 @@
 baseURL = "https://palmalab.co.uk/"
-title = "Elena Palma's Mitochondrial Medicine Lab · King's College London"
+title = "Palma Lab · Mitochondrial medicine and human liver models"
 disableKinds = ["taxonomy", "term"]
 enableGitInfo = true
 
@@ -8,12 +8,7 @@ enableGitInfo = true
 
 [params]
   labName        = "Palma Lab"
-  labSubtitle    = "King's College London"
-  labDescription = "A translational research group investigating how mitochondrial plasticity, morphology, and dynamics shape cellular adaptation and maladaptation in liver health and disease."
-  department     = "The Roger Williams Institute of Liver Studies"
-  institution    = "King's College London · Faculty of Life Sciences & Medicine"
-  address        = "111 Coldharbour Ln, London SE5 9NT"
-  phone          = "(+44) 020 7255 9844"
+  labDescription = "A translational research programme on how mitochondrial plasticity, morphology, and dynamics shape cellular adaptation and maladaptation in liver health and disease."
   contactPage    = "/contact/"
   twitter        = "https://x.com/DrElePalma"
   linkedin       = "https://www.linkedin.com/in/elena-palma-4400a52a/"
@@ -64,11 +59,12 @@ enableGitInfo = true
     url    = "/collaborators/"
     parent = "People"
     weight = 2
-  [[menu.main]]
-    name   = "Opportunities"
-    url    = "/join/"
-    parent = "People"
-    weight = 3
+  # Opportunities menu entry hidden — content/join.md and layouts/join/ preserved for future use
+  # [[menu.main]]
+  #   name   = "Opportunities"
+  #   url    = "/join/"
+  #   parent = "People"
+  #   weight = 3
   # News menu entry hidden — content/news/ and layouts/news/ preserved for future use
   # [[menu.main]]
   #   name   = "News"

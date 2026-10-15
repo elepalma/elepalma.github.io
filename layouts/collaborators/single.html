@@ -10,29 +10,8 @@
 
 <div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-6 sm:py-10">
 
-  {{ $types := slice }}
-  {{ range hugo.Data.collaborators.groups }}
-    {{ $types = $types | append .type }}
-  {{ end }}
-
-  {{ range ($types | uniq) }}
-  {{ $type := . }}
-  <div class="mb-8">
-    <h2 class="font-sans text-2xl tracking-tight mb-6 pb-3 border-b border-rule">{{ $type }}</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      {{ range where hugo.Data.collaborators.groups "type" $type }}
-      <div class="bg-white border border-rule rounded-lg p-5 flex flex-col gap-2 hover:border-accent transition-colors">
-        <h3 class="text-sm font-medium leading-snug">{{ .name }}</h3>
-        {{ with .affiliation }}<p class="text-2xs text-ink-faint italic">{{ . }}</p>{{ end }}
-        <p class="text-xs text-ink-faint leading-relaxed">{{ .description }}</p>
-        {{ with .url }}
-        <a href="{{ . }}" target="_blank" rel="noopener" class="self-start mt-1 text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors">Visit →</a>
-        {{ end }}
-      </div>
-      {{ end }}
-    </div>
-  </div>
-  {{ end }}
+  <h2 class="font-sans text-2xl tracking-tight mb-6">Collaborations</h2>
+  {{ partial "collaborator-grid.html" . }}
 
 </div>
 {{ end }}

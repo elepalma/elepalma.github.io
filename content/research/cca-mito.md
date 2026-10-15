@@ -10,7 +10,7 @@ keywords: ["liver cancer", "precision-cut slices", "tumour microenvironment", "d
 ---
 
 ## Overview
-Intrahepatic cholangiocarcinoma is an aggressive liver cancer with limited therapeutic options. Our research aims to advance and characterise human cholangiocarcinoma models that preserve key features of the tumour microenvironment and can be used to study mitochondrial behaviour in a more physiologically relevant context.
+Intrahepatic cholangiocarcinoma is an aggressive liver cancer with limited therapeutic options. This research aims to advance and characterise human cholangiocarcinoma models that preserve key features of the tumour microenvironment and can be used to study mitochondrial behaviour in a more physiologically relevant context.
 
 Using human tumour slice models and co-cultures with immune cells, we investigate how mitochondrial morphology and dynamics are altered in cholangiocarcinoma cells and how these changes may influence tumour adaptation, progression, and therapeutic response.
 

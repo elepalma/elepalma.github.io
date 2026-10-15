@@ -90,7 +90,8 @@ describe('events page rendering', () => {
 });
 
 describe('home page rendering', () => {
-  const HOME = `<div id="home-upcoming"></div><p id="home-upcoming-empty" class="hidden"></p>`;
+  const HOME = `<div id="home-upcoming"></div><p id="home-upcoming-empty" class="hidden"></p>
+    <div id="home-recent"></div><p id="home-recent-empty" class="hidden"></p>`;
 
   it('shows only upcoming events, at most HOME_LIMIT, soonest first', async () => {
     await load(HOME);
@@ -103,6 +104,26 @@ describe('home page rendering', () => {
   it('links the title on the home row when a link exists', async () => {
     await load(HOME);
     expect(document.querySelector('#home-upcoming a').getAttribute('href')).toBe('https://ueg.eu/');
+  });
+
+  it('shows the most recent past events, newest first, in the Recent column with grey date boxes', async () => {
+    await load(HOME);
+    const rows = [...document.querySelectorAll('#home-recent > div')];
+    expect(rows.map(r => r.textContent)).toEqual([expect.stringContaining('FEBS'), expect.stringContaining('EASL 2025')]);
+    expect(rows[0].firstElementChild.className).toMatch(/bg-rule/);
+    expect(document.getElementById('home-recent').textContent).not.toContain('DDM Summit');
+    expect(document.getElementById('home-recent-empty').classList.contains('hidden')).toBe(true);
+  });
+
+  it('caps the Recent column at HOME_LIMIT', async () => {
+    const past = [1, 2, 3, 4, 5].map(i => item({ date: `2024-0${i}-01`, month: 'Jan', year: '2024', title: `Past ${i}`, type: 'Talk', location: 'X', link: '' })).join('');
+    document.body.innerHTML = `<div id="event-data">${past}</div>` + HOME;
+    vi.resetModules();
+    await import('../static/js/events-filter.js');
+    window.PalmaEvents.init(TODAY);
+    const rows = [...document.querySelectorAll('#home-recent > div')];
+    expect(rows).toHaveLength(window.PalmaEvents.HOME_LIMIT);
+    expect(rows[0].textContent).toContain('Past 5');
   });
 
   it('shows the empty message when nothing is upcoming', async () => {

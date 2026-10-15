@@ -1,7 +1,7 @@
 /**
  * Events — client-side split into upcoming / past, sorted, rendered.
  * Used by the Events page (#upcoming-list / #past-list) and by the
- * home page (#home-upcoming, limited to a few items). The event data is
+ * home page (#home-upcoming and #home-recent, each limited to a few items). The event data is
  * emitted by Hugo into #event-data as data attributes (partial event-data.html).
  *
  * Exposed as window.PalmaEvents so the pure logic can be unit tested.
@@ -76,20 +76,23 @@
     return row;
   }
 
-  function buildHomeRow(d) {
+  function buildHomeRow(d, isPast) {
     var row = document.createElement('div');
+    var box = isPast ? 'bg-rule text-ink-light' : 'bg-accent text-white';
+    var line = 'text-2xs font-semibold uppercase tracking-widest' + (isPast ? '' : ' opacity-90');
+    var badge = isPast ? 'text-ink-light bg-rule' : 'text-accent bg-accent-light';
     row.className = 'flex items-center gap-4 sm:gap-5 py-4';
     row.innerHTML =
-      '<div class="shrink-0 w-12 bg-accent text-white rounded-md text-center py-1.5">' +
-        (d.day ? '<p class="text-2xs font-semibold uppercase tracking-widest opacity-90">' + esc(d.day) + '</p>' : '') +
-        '<p class="text-2xs font-semibold uppercase tracking-widest opacity-90">' + esc(d.month) + '</p>' +
-        '<p class="text-2xs font-semibold uppercase tracking-widest opacity-90">' + esc(d.year) + '</p>' +
+      '<div class="shrink-0 w-12 ' + box + ' rounded-md text-center py-1.5">' +
+        (d.day ? '<p class="' + line + '">' + esc(d.day) + '</p>' : '') +
+        '<p class="' + line + '">' + esc(d.month) + '</p>' +
+        '<p class="' + line + '">' + esc(d.year) + '</p>' +
       '</div>' +
       '<div class="flex-1 min-w-0">' +
         '<p class="text-sm font-medium leading-snug">' + titleHtml(d, '') + '</p>' +
         '<p class="text-xs text-ink-light mt-0.5">' + esc(d.location) + '</p>' +
       '</div>' +
-      '<span class="hidden sm:inline-block text-2xs font-semibold uppercase tracking-wide text-accent bg-accent-light px-2.5 py-1 rounded-full shrink-0">' + esc(d.type) + '</span>';
+      '<span class="hidden sm:inline-block text-2xs font-semibold uppercase tracking-wide ' + badge + ' px-2.5 py-1 rounded-full shrink-0">' + esc(d.type) + '</span>';
     return row;
   }
 
@@ -124,8 +127,15 @@
     var home = document.getElementById('home-upcoming');
     if (home) {
       home.innerHTML = '';
-      split.upcoming.slice(0, HOME_LIMIT).forEach(function (d) { home.appendChild(buildHomeRow(d)); });
+      split.upcoming.slice(0, HOME_LIMIT).forEach(function (d) { home.appendChild(buildHomeRow(d, false)); });
       setHidden('home-upcoming-empty', split.upcoming.length > 0);
+    }
+
+    var recent = document.getElementById('home-recent');
+    if (recent) {
+      recent.innerHTML = '';
+      split.past.slice(0, HOME_LIMIT).forEach(function (d) { recent.appendChild(buildHomeRow(d, true)); });
+      setHidden('home-recent-empty', split.past.length > 0);
     }
     return split;
   }

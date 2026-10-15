@@ -28,5 +28,5 @@
 
 {{ partial "event-data.html" . }}
 
-<script src="{{ "js/events-filter.js" | relURL }}"></script>
+<script src="{{ partial "asset-url.html" "js/events-filter.js" }}"></script>
 {{ end }}

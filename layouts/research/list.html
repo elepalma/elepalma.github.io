@@ -3,7 +3,7 @@
 <div class="page-hero">
   <div class="max-w-wide mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 py-6 sm:py-10">
     <p class="text-2xs font-semibold uppercase tracking-widest text-accent mb-2">Research</p>
-    <h1 class="font-sans text-3xl sm:text-4xl xl:text-5xl tracking-tight text-ink">Our Research</h1>
+    <h1 class="font-sans text-3xl sm:text-4xl xl:text-5xl tracking-tight text-ink">Research</h1>
     <p class="mt-3 text-sm sm:text-base text-ink-light max-w-xl leading-relaxed">We investigate how mitochondrial plasticity, morphology, and dynamics shape liver health and disease — from fundamental organelle biology to patient-derived human liver models and preclinical drug testing.</p>
     <div class="flex flex-wrap gap-3 mt-6">
       <a href="{{ "/publications/" | relURL }}" class="inline-flex items-center px-4 py-2 rounded bg-accent text-white text-xs font-medium hover:bg-accent-dark transition-colors">Publications</a>
@@ -34,19 +34,7 @@
   <!-- Collaborators strip -->
   <div class="border-t border-rule pt-6">
     <h2 class="font-sans text-2xl tracking-tight mb-6">Key Collaborations</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-      {{ range hugo.Data.collaborators.groups }}
-      <div class="bg-white border border-rule rounded-lg p-5 flex flex-col gap-2 hover:border-accent transition-colors">
-        <p class="text-2xs font-semibold uppercase tracking-widest text-accent">{{ .type }}</p>
-        <h3 class="text-sm font-medium leading-snug">{{ .name }}</h3>
-        {{ with .affiliation }}<p class="text-2xs text-ink-faint italic">{{ . }}</p>{{ end }}
-        <p class="text-xs text-ink-faint leading-relaxed">{{ .description }}</p>
-        {{ with .url }}
-        <a href="{{ . }}" target="_blank" rel="noopener" class="self-start mt-1 text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors">Visit →</a>
-        {{ end }}
-      </div>
-      {{ end }}
-    </div>
+    {{ partial "collaborator-grid.html" . }}
   </div>
 
 </div>

@@ -1,0 +1,5 @@
+{{/* Cache-busted URL for a file in static/: "js/main.js" -> "/js/main.js?v=<content hash>".
+     The hash changes whenever the file's contents change, so browsers never run a stale copy.
+     Usage: {{ partial "asset-url.html" "js/main.js" }} */}}
+{{- $hash := readFile (printf "static/%s" .) | md5 | truncate 10 "" -}}
+{{- return printf "%s?v=%s" (. | relURL) $hash -}}

@@ -1,0 +1,10 @@
+{{/* True when at least one paper's authors string contains this pub_name (same match the publications filter uses).
+     Usage: {{ if partial "has-papers.html" .pub_name }} … {{ end }} */}}
+{{- $name := . -}}
+{{- $found := false -}}
+{{- with $name -}}
+  {{- range hugo.Data.publications.papers -}}
+    {{- if strings.Contains .authors $name -}}{{- $found = true -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $found -}}

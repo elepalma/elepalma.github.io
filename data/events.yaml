@@ -1,4 +1,24 @@
 events:
+  - date: "2027-02-13"
+    sort_key: 202702
+    month: "Feb"
+    day: "11–13"
+    year: "2027"
+    title: "EASL Steatotic Liver Disease Summit 2027"
+    location: "Berlin, Germany"
+    type: "Conference"
+    detail: "Scientific Organiser"
+    link: "https://easl.eu/event/easl-sld-summit-2027/"
+
+  - date: "2027-01-31"
+    sort_key: 202701
+    month: "Jan"
+    year: "2027"
+    title: "International expert meeting on preclinical models in vascular liver disease"
+    location: "Madeira, Portugal"
+    type: "Expert meeting"
+    detail: "Invited participant · Sponsored by the COST Action EURO-VALDI-NET"
+
   - date: "2026-05-18"
     sort_key: 202605
     month: "May"
