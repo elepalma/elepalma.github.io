@@ -273,6 +273,32 @@ describe('work with me', () => {
   });
 });
 
+describe('no King\'s College London affiliation for Elena or the lab', () => {
+  const KINGS = /King's College|kcl\.ac\.uk|Roger Williams|Faculty of Life Sciences/;
+
+  it.each(ALL)('/%s structured data names no institution for Elena or the lab', (p) => {
+    const ld = [...page(p).querySelectorAll('script[type="application/ld+json"]')].map(s => s.textContent).join('\n');
+    expect(ld).not.toMatch(KINGS);
+    expect(ld).not.toMatch(/parentOrganization|"affiliation"/);
+  });
+
+  it('Elena\'s People card has no KCL profile link', () => {
+    const card = [...page('people').querySelectorAll('h3')].find(h => h.textContent.includes('Elena Palma')).closest('div').parentElement;
+    expect(card.querySelector('a[href*="kcl.ac.uk"]')).toBeNull();
+  });
+});
+
+describe('no "our" in site copy', () => {
+  it.each([...ALL, '404.html'])('/%s never says "our"', (p) => {
+    const doc = p === '404.html'
+      ? new parserWindow.DOMParser().parseFromString(readFileSync(join(OUT, '404.html'), 'utf8'), 'text/html')
+      : page(p);
+    const body = doc.body.cloneNode(true);
+    body.querySelectorAll('script, style').forEach(el => el.remove());
+    expect(body.textContent).not.toMatch(/\bour\b/i);
+  });
+});
+
 describe('cache-busted assets', () => {
   it.each(ALL)('/%s links CSS and JS with a content-hash version so browsers never run stale copies', (p) => {
     const doc = page(p);

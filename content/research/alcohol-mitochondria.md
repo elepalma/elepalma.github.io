@@ -11,7 +11,7 @@ keywords: ["ALD", "alcoholic liver disease", "alcoholic hepatitis", "mitochondri
 
 ## Overview
 Alcohol is a major metabolic stressor for the liver and a key driver of alcohol related liver disease (ALD), which forms part of the broader spectrum of steatotic liver disease (SLD). Chronic ethanol exposure disrupts cellular metabolism and profoundly affects mitochondrial structure and function.
-Our research investigates how ethanol alters mitochondrial morphology, size and structural organisation in hepatocytes. 
+This research investigates how ethanol alters mitochondrial morphology, size and structural organisation in hepatocytes.
 By studying how ethanol reshapes mitochondrial architecture, we aim to understand how mitochondrial adaptations contribute to hepatocyte stress responses and disease progression in ALD.
 
 ## Objectives

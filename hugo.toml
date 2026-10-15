@@ -8,10 +8,7 @@ enableGitInfo = true
 
 [params]
   labName        = "Palma Lab"
-  labSubtitle    = "King's College London"
   labDescription = "A translational research programme on how mitochondrial plasticity, morphology, and dynamics shape cellular adaptation and maladaptation in liver health and disease."
-  department     = "The Roger Williams Institute of Liver Studies"
-  institution    = "King's College London · Faculty of Life Sciences & Medicine"
   contactPage    = "/contact/"
   twitter        = "https://x.com/DrElePalma"
   linkedin       = "https://www.linkedin.com/in/elena-palma-4400a52a/"

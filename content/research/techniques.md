@@ -16,6 +16,7 @@ We combine cutting-edge experimental approaches across scales from organelles to
 - Human precision cut tumour slices
 - Primary human hepatocytes
 - Human liver organoids
+- Peripheral blood mononuclear cells
 - Co culture models with immune cells
 
 ## Techniques
@@ -28,6 +29,7 @@ We combine cutting-edge experimental approaches across scales from organelles to
 - Histology and tissue viability assessment
 - Drug testing in human tissue models
 - Functional mitochondrial assays
+- Gene modulation delivery
 - RNA sequencing and proteomics in selected models
 - Extracellular matrix assessment
 - Tumour microenvironment profiling

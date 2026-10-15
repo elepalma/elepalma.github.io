@@ -8,7 +8,7 @@ Before every commit, scan all changed text content (data YAML files, layout HTML
 - Trailing spaces in names/affiliations
 
 ## Project overview
-Static lab website for **Dr Elena Palma's research group** at the Roger Williams Institute of Liver Studies, King's College London. Focused on ALD, liver cancer, mitochondrial dysfunction, and fibrosis.
+Static website for **Dr Elena Palma** and the Palma Lab, focused on ALD, liver cancer, mitochondrial dysfunction, and fibrosis. The site carries no King's College London affiliation for Elena or the lab (tested); collaborators' and students' own institutions are fine.
 
 - **URL**: https://elepalma.github.io/
 - **Repo**: https://github.com/elepalma/elepalma.github.io (main branch)
@@ -149,7 +149,7 @@ members:
     gscholar: ""
     twitter: ""
     linkedin: ""
-    kcl: ""                    # KCL staff page URL
+    profile: ""                # Optional staff/profile page URL ("Profile" button). Elena has none (no institutional affiliation)
 
 alumni:
   - name: "Full Name"

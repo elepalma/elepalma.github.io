@@ -5,15 +5,6 @@
   "name": "{{ .Site.Params.labName }}",
   "url": "{{ .Site.BaseURL }}",
   "description": "{{ .Site.Params.labDescription }}",
-  "parentOrganization": {
-    "@type": "EducationalOrganization",
-    "name": "King's College London",
-    "url": "https://www.kcl.ac.uk"
-  },
-  "department": {
-    "@type": "Organization",
-    "name": "{{ .Site.Params.department }}"
-  },
   "sameAs": [
     "{{ .Site.Params.twitter }}",
     "{{ .Site.Params.linkedin }}",
@@ -27,16 +18,11 @@
   "@type": "Person",
   "name": "Dr Elena Palma",
   "jobTitle": "Principal Scientist",
-  "url": "https://www.kcl.ac.uk/people/elena-palma",
+  "url": "{{ .Site.BaseURL }}",
   "worksFor": {
     "@type": "ResearchOrganization",
     "name": "Palma Lab",
     "url": "{{ .Site.BaseURL }}"
-  },
-  "affiliation": {
-    "@type": "EducationalOrganization",
-    "name": "King's College London",
-    "url": "https://www.kcl.ac.uk"
   },
   "sameAs": [
     "https://orcid.org/0000-0001-6294-6676",

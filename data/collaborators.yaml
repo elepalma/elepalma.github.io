@@ -1,5 +1,11 @@
 groups:
   - type: "Academic"
+    name: "Anna Schurich"
+    affiliation: "King's College London, Department of Infectious Diseases"
+    description: "Advancing tumour slice models of liver cancers for immune cell therapy development."
+    url: "https://www.kcl.ac.uk/people/anna-schurich"
+
+  - type: "Academic"
     name: "Luca Urbani"
     affiliation: "King's College London, Roger Williams Institute of Liver Studies"
     description: "Role of mitochondria in Hepatic Stellate Cells (HSC) and organotypic liver models."
