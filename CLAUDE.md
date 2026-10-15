@@ -43,9 +43,9 @@ hugo --minify
 | `js/main.test.js` | Mobile menu toggle, accordion, `aria-expanded`, Escape-to-close |
 | `js/publications-filter.test.js` | Pure filter logic (`js/publications-filter.js`) and the DOM wiring in `static/js/publications-filter.js`, including the empty-state message |
 | `js/events-filter.test.js` | `static/js/events-filter.js` — upcoming/past partition, sorting, linked titles, home-page limit, empty states |
-| `js/data.test.js` | Validates every `data/*.yaml` file and research front matter: trailing spaces in quotes, unbalanced quotes, duplicate punctuation, `role_type` enum, ISO dates, DOI/URL format, journal not a bare year, clean `tag`, `keywords` present |
+| `js/data.test.js` | Validates every `data/*.yaml` file and research front matter: trailing spaces in quotes, unbalanced quotes, duplicate punctuation, `role_type` enum, ISO dates, DOI/URL format, journal not a bare year, clean `tag`, `keywords` present, event `month`/`day` agree with `date`, British spelling in copy (not paper titles), unique and cleanly formatted collaborators |
 | `js/tokens.test.js` | WCAG AA contrast (≥ 4.5:1) for every text/background token pair in `tailwind.config.js`; minimum `2xs` size |
-| `js/site-build.test.js` | Builds the site with Hugo into a temp dir and checks the HTML: one `h1` per page, sequential heading levels, skip link + `main#main`, no internal link with `target=_blank`, hamburger aria, focus CSS present, hero without `<br>`, all projects (not Techniques) on home and research grids, client-side events block, mitochondria framing in intros/bio, square portrait boxes, DOI-linked paper titles, author buttons only for people with papers, date-derived opportunity badges, Enquire/Apply labels, related publications on every project page, news and the join page not built, no `/join/` links, flat footer |
+| `js/site-build.test.js` | Builds the site with Hugo into a temp dir and checks the HTML: one `h1` per page, sequential heading levels, skip link + `main#main`, no internal link with `target=_blank`, hamburger aria, focus CSS present, hero without `<br>`, all projects (not Techniques) on home and research grids, client-side events block, mitochondria framing in intros/bio, square portrait boxes, DOI-linked paper titles, author buttons only for people with papers, date-derived opportunity badges, Enquire/Apply labels, related publications on every project page, news and the join page not built, no `/join/` links, flat footer, Papers buttons only for people with ≥ 1 paper, valid JSON-LD, no email/phone anywhere, every internal link and anchor resolves, sitemap = public pages only, unique titles/descriptions, og:image exists |
 
 `js/yaml-lite.js` is a tiny dependency-free reader for the flat YAML in `data/` (no `yaml` package is installed). Keep data files in the simple `key: "value"` / inline-array / block-list shape it supports.
 
@@ -59,7 +59,9 @@ layouts/          # All HTML templates (Hugo)
   index.html      # Home page
   partials/       # nav.html, footer.html, section-header.html, structured-data.html,
                   # event-data.html (hidden events data block), opportunity-status.html (date-aware badge), icon-x.html,
-                  # asset-url.html (content-hash cache busting for static CSS/JS)
+                  # asset-url.html (content-hash cache busting for static CSS/JS),
+                  # collaborator-grid.html (collaborator cards shared by /research/ and /collaborators/),
+                  # has-papers.html (true if a pub_name appears in any paper's authors; gates the Papers button)
   people/         # single.html — People page
   publications/   # single.html — Publications (with JS filtering)
   research/       # list.html (projects grid), single.html (project detail)

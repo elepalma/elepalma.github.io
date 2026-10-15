@@ -35,7 +35,7 @@
           <a href="{{ "/contact/" | relURL }}" class="text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors">Contact</a>
           {{ with .orcid }}<a href="{{ . }}" target="_blank" rel="noopener" class="text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors">ORCID</a>{{ end }}
           {{ with .gscholar }}<a href="{{ . }}" target="_blank" rel="noopener" class="text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors">Google Scholar</a>{{ end }}
-          {{ with .pub_name }}<a href="{{ "/publications/" | relURL }}?author={{ . | urlquery }}" class="text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors">Papers</a>{{ end }}
+          {{ with .pub_name }}{{ if partial "has-papers.html" . }}<a href="{{ "/publications/" | relURL }}?author={{ . | urlquery }}" class="text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors">Papers</a>{{ end }}{{ end }}
           {{ with .profile }}<a href="{{ . }}" target="_blank" rel="noopener" class="text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors">Profile</a>{{ end }}
         </div>
       </div>
@@ -73,9 +73,9 @@
           {{ end }}
         </div>
         {{ end }}
-        {{ if or .profile .pub_name }}
+        {{ if or .profile (partial "has-papers.html" .pub_name) }}
         <div class="flex gap-2 mt-3">
-          {{ with .pub_name }}<a href="{{ "/publications/" | relURL }}?author={{ . | urlquery }}" class="text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors">Papers</a>{{ end }}
+          {{ with .pub_name }}{{ if partial "has-papers.html" . }}<a href="{{ "/publications/" | relURL }}?author={{ . | urlquery }}" class="text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors">Papers</a>{{ end }}{{ end }}
           {{ with .profile }}<a href="{{ . }}" target="_blank" rel="noopener" class="text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors">Profile</a>{{ end }}
         </div>
         {{ end }}
@@ -105,7 +105,7 @@
             <p class="text-sm font-medium min-w-[180px]">{{ .name }}</p>
             <p class="text-xs text-ink-faint flex-1">{{ .role }} · {{ .years }}</p>
             {{ with .now }}<p class="text-xs text-ink-faint shrink-0">{{ . }}</p>{{ end }}
-            {{ with .pub_name }}<a href="{{ "/publications/" | relURL }}?author={{ . | urlquery }}" class="text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors shrink-0 self-start">Papers</a>{{ end }}
+            {{ with .pub_name }}{{ if partial "has-papers.html" . }}<a href="{{ "/publications/" | relURL }}?author={{ . | urlquery }}" class="text-xs text-accent border border-accent px-3 py-1 rounded hover:bg-accent hover:text-white transition-colors shrink-0 self-start">Papers</a>{{ end }}{{ end }}
           </div>
           {{ with .bio }}
           <p class="text-xs text-ink-light leading-relaxed mt-1">{{ . }}</p>

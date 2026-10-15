@@ -309,6 +309,113 @@ describe('cache-busted assets', () => {
   });
 });
 
+describe('collaborators', () => {
+  const cards = (p) => [...page(p).querySelectorAll('h3')]
+    .filter(h => h.previousElementSibling?.matches('p.uppercase'))
+    .map(h => ({ type: h.previousElementSibling.textContent.trim(), name: h.textContent.trim(), grid: h.closest('.grid').className }));
+
+  it('the Collaborators page shows the same cards, in the same style, as Key Collaborations on /research/', () => {
+    const onResearch = cards('research');
+    expect(onResearch.length).toBeGreaterThan(5);
+    expect(cards('collaborators')).toEqual(onResearch);
+  });
+});
+
+// happy-dom leaves numeric character references (e.g. &#43; for "+") undecoded in attribute values; browsers decode them.
+const attr = (el, name) => el.getAttribute(name)?.replace(/&#(\d+);/g, (_, c) => String.fromCharCode(c)).replace(/&amp;/g, '&');
+
+const page404 = () => new parserWindow.DOMParser().parseFromString(readFileSync(join(OUT, '404.html'), 'utf8'), 'text/html');
+const withAll404 = [...ALL.map(p => [p, () => page(p)]), ['404.html', page404]];
+
+describe('Papers buttons', () => {
+  const { papers } = parseYamlLite(readFileSync(join(ROOT, 'data', 'publications.yaml'), 'utf8'));
+  const { members, alumni } = parseYamlLite(readFileSync(join(ROOT, 'data', 'people.yaml'), 'utf8'));
+  const withPapers = [...members, ...alumni].map(m => m.pub_name)
+    .filter(n => n && papers.some(pp => pp.authors.includes(n)));
+
+  it('appear exactly for people with at least one paper, never leading to an empty list', () => {
+    const shown = [...page('people').querySelectorAll('a')]
+      .filter(a => a.textContent.trim() === 'Papers')
+      .map(a => new URLSearchParams(attr(a, 'href').split('?')[1]).get('author'));
+    expect(shown.sort()).toEqual([...withPapers].sort());
+  });
+});
+
+describe('structured data', () => {
+  it.each(ALL)('/%s has only valid JSON-LD blocks', (p) => {
+    const blocks = [...page(p).querySelectorAll('script[type="application/ld+json"]')];
+    blocks.forEach(b => expect(() => JSON.parse(b.textContent)).not.toThrow());
+  });
+});
+
+describe('no email address or phone number on the site', () => {
+  it.each(withAll404.map(([p]) => p))('/%s has no mailto:/tel: link, email address or phone number', (p) => {
+    const doc = withAll404.find(([q]) => q === p)[1]();
+    expect(doc.querySelector('a[href^="mailto:"], a[href^="tel:"]')).toBeNull();
+    const body = doc.body.cloneNode(true);
+    body.querySelectorAll('script, style').forEach(el => el.remove());
+    const text = body.textContent;
+    expect(text).not.toMatch(/[\w.+-]+@[\w-]+\.[a-z]{2,}/i);
+    expect(text).not.toMatch(/\(?\+44\)?\s?\d|\b0\d{2,4}[\s-]?\d{3,4}[\s-]?\d{3,4}\b/);
+  });
+});
+
+describe('internal links', () => {
+  const resolve = (path) => {
+    const rel = decodeURI(path).replace(/^\//, '');
+    return [rel, join(rel, 'index.html')].map(r => join(OUT, r)).find(f => existsSync(f) && f.endsWith('.html') || (existsSync(f) && !f.endsWith('/')));
+  };
+
+  it.each(withAll404.map(([p]) => p))('/%s links only to pages and anchors that exist', (p) => {
+    const doc = withAll404.find(([q]) => q === p)[1]();
+    const broken = [];
+    [...doc.querySelectorAll('a[href^="/"], link[href^="/"], script[src^="/"]')].forEach(el => {
+      const url = attr(el, 'href') || attr(el, 'src');
+      if (url.startsWith('/livereload')) return;
+      const [beforeHash, frag] = url.split('#');
+      const path = beforeHash.split('?')[0] || `/${p}`;
+      const file = resolve(path);
+      if (!file) return broken.push(url);
+      if (frag && file.endsWith('.html')) {
+        const target = new parserWindow.DOMParser().parseFromString(readFileSync(file, 'utf8'), 'text/html');
+        if (!target.getElementById(frag)) broken.push(url);
+      }
+    });
+    expect(broken).toEqual([]);
+  });
+});
+
+describe('sitemap', () => {
+  const locs = () => [...readFileSync(join(OUT, 'sitemap.xml'), 'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)]
+    .map(m => new URL(m[1]).pathname.replace(/^\/|\/$/g, ''));
+
+  it('lists every public page and only pages that exist', () => {
+    const listed = locs();
+    ALL.forEach(p => expect(listed).toContain(p));
+    listed.forEach(p => expect(existsSync(join(OUT, p, 'index.html'))).toBe(true));
+  });
+
+  it('leaves out hidden sections', () => {
+    expect(locs().filter(p => /^(join|news)(\/|$)/.test(p))).toEqual([]);
+  });
+});
+
+describe('page metadata', () => {
+  it('every page has its own <title> and meta description', () => {
+    const titles = ALL.map(p => page(p).querySelector('title').textContent.trim());
+    const descs = ALL.map(p => page(p).querySelector('meta[name=description]').getAttribute('content').trim());
+    expect(new Set(titles).size).toBe(ALL.length);
+    expect(new Set(descs).size).toBe(ALL.length);
+    descs.forEach(d => expect(d.length).toBeGreaterThan(20));
+  });
+
+  it.each(ALL)('/%s has a social sharing image that exists', (p) => {
+    const img = page(p).querySelector('meta[property="og:image"]')?.getAttribute('content');
+    expect(img).toBeTruthy();
+    expect(existsSync(join(ROOT, 'static', new URL(img, 'https://x.invalid').pathname))).toBe(true);
+  });
+});
+
 describe('contact form', () => {
   it('offers only Consultancy, Collaboration and Media/Press as reasons', () => {
     const options = [...page('contact').querySelectorAll('select#reason option')].map(o => o.textContent.trim());

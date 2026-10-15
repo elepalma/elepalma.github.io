@@ -59,15 +59,21 @@ groups:
     description: "Imaging analysis to study mitochondrial morphometrics."
     url: "https://giacomellolab.org/"
 
-  - type: "Clinical"
-    name: "Liver Histopathology Laboratory"
-    affiliation: "King's College Hospital"
-    description: "Characterisation of mitochondrial alterations in patients with alcohol use disorder (AUD) and alcohol related liver disease (ALD)."
-
   - type: "Academic"
     name: "TITAN Consortium"
     affiliation: "Prof Jesús M. Bañales, Dr Pedro Rodrigues, Prof Fernando Cossío, Dr Iván Rivilla, Prof Jean Charles Nault, Dr Sandra Rebouissou, Prof Ana Lleo, Dr Michela Polidoro"
     description: "Development of novel therapeutic strategies for liver cancer. Testing efficacy of cisplatin derivatives in cholangiocarcinoma preclinical models."
+    url: 'https://transcan.eu/output/funded-projects/project.php?slug=titan'
+
+  - type: "Academic"
+    name: "PCLS Global Consensus"
+    affiliation: "Elena Palma, Jordi Gracia Sancho, Jelena Mann, Peter Olinga, Barbara Testoni, Andres Roca Suarez, Shilpa Chokshi, Fiona Oakley, Leo A.B. van Grunsven, Giovanni Sorrentino, Jagdeep Nanchahal, John Bischof, Mirco Castoldi, Sonya MacParland, Yongtao Wang, Scott Friedman"
+    description: "International initiative led by Dr Elena Palma involving leading experts in precision cut liver slices with the aim to build consensus around terminology, experimental design, quality control, minimum reporting requirements and interpretation of results."
+
+  - type: "Clinical"
+    name: "Liver Histopathology Laboratory"
+    affiliation: "King's College Hospital"
+    description: "Characterisation of mitochondrial alterations in patients with alcohol use disorder (AUD) and alcohol related liver disease (ALD)."
 
   - type: "Societies and Committees"
     name: "ESBRA - European Society for Biomedical Research on Alcohol"
